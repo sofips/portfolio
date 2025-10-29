@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "title": "Sample Project 1",
+      "description": "This is a sample project description. Replace this with your own project details, including what you built, the technologies used, and the problems you solved.",
+      "tags": ["HTML", "CSS", "JavaScript"],
+      "link": "https://github.com/yourusername/project1"
+    },
+    {
+      "title": "Sample Project 2",
+      "description": "Another example project. You can describe the features, your role in the project, and any interesting challenges you overcame during development.",
+      "tags": ["React", "Node.js", "MongoDB"],
+      "link": "https://github.com/yourusername/project2"
+    },
+    {
+      "title": "Sample Project 3",
+      "description": "A third sample project to demonstrate the grid layout. Add as many projects as you want by following this same structure in the JSON file.",
+      "tags": ["Python", "Flask", "PostgreSQL"],
+      "link": "https://github.com/yourusername/project3"
+    },
+    {
+      "title": "Work in Progress",
+      "description": "This could be a project you're currently working on. The nostalgic design makes it perfect for showcasing both completed and ongoing work.",
+      "tags": ["TypeScript", "Next.js", "TailwindCSS"],
+      "link": ""
+    }
+  ]
+}
