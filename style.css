@@ -21,16 +21,70 @@
 
 body {
     font-family: 'Courier New', Courier, monospace;
-    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+    background: var(--primary-bg);
     color: var(--text-primary);
     line-height: 1.6;
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Language Switcher */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    gap: 5px;
+    background: rgba(15, 52, 96, 0.8);
+    padding: 5px;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+.lang-btn {
+    background: transparent;
+    color: var(--text-secondary);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    color: var(--text-primary);
+    background: rgba(233, 69, 96, 0.2);
+}
+
+.lang-btn.active {
+    background: var(--highlight);
+    color: var(--text-primary);
+}
+
+/* Ripple Grid Background */
+.ripple-grid-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.3;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Header Styles with Glitch Effect */
@@ -54,29 +108,36 @@ body {
 .glitch {
     position: relative;
     color: var(--text-primary);
+    display: inline-block;
 }
 
 .glitch:hover::before {
     content: attr(data-text);
     position: absolute;
-    left: 2px;
+    left: 0;
+    right: 0;
     text-shadow: -2px 0 var(--highlight);
     top: 0;
     color: var(--text-primary);
     background: transparent;
     overflow: hidden;
-    animation: glitch-anim 0.3s infinite;
+    filter: blur(2px);
+    opacity: 0.8;
+    animation: glitch-anim 0.8s infinite;
 }
 
 .glitch:hover::after {
     content: attr(data-text);
     position: absolute;
-    left: -2px;
-    text-shadow: 2px 0 cyan;
+    left: 0;
+    right: 0;
+    text-shadow: 3px 0 cyan;
     top: 0;
     color: var(--text-primary);
     background: transparent;
     overflow: hidden;
+    filter: blur(3px);
+    opacity: 0.7;
     animation: glitch-anim 0.3s infinite reverse;
 }
 
@@ -162,6 +223,32 @@ body {
 .about-content {
     font-size: 1.1em;
     line-height: 1.8;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.about-photo {
+    flex-shrink: 0;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--highlight);
+    box-shadow: 0 8px 24px rgba(233, 69, 96, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(233, 69, 96, 0.6);
+}
+
+.about-text {
+    flex: 1;
 }
 
 .about-content p {
@@ -236,6 +323,142 @@ body {
 .project-link:hover {
     background: var(--highlight);
     color: var(--text-primary);
+}
+
+/* Publications Section */
+.publications-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.publication-item {
+    background: linear-gradient(135deg, var(--card-bg) 0%, var(--accent-color) 100%);
+    border: 3px solid var(--border-color);
+    border-radius: 10px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.publication-item:hover {
+    transform: translateX(5px);
+    border-color: var(--highlight);
+    box-shadow: 0 8px 24px rgba(233, 69, 96, 0.4);
+}
+
+.publication-title {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: var(--highlight);
+    font-weight: bold;
+}
+
+.publication-authors {
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 12px;
+    font-size: 0.95em;
+}
+
+.publication-description {
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.publication-link {
+    display: inline-block;
+    color: var(--highlight);
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid var(--highlight);
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.publication-link:hover {
+    background: var(--highlight);
+    color: var(--text-primary);
+}
+
+/* Publication Detail Page */
+.publication-detail .publication-content {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.publication-detail h3 {
+    color: var(--highlight);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.publication-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.back-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--highlight);
+}
+
+/* Reading Section */
+.reading-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.reading-item {
+    background: linear-gradient(135deg, var(--card-bg) 0%, var(--accent-color) 100%);
+    border: 3px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.reading-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--highlight);
+    box-shadow: 0 8px 24px rgba(233, 69, 96, 0.4);
+}
+
+.reading-title {
+    font-size: 1.3em;
+    margin-bottom: 12px;
+    color: var(--highlight);
+    font-weight: bold;
+}
+
+.reading-description {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.reading-link {
+    display: inline-block;
+    color: var(--highlight);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.reading-link:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
 }
 
 /* Contact Section */

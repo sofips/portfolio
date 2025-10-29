@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,40 +7,109 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <canvas id="ripple-grid" class="ripple-grid-background"></canvas>
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
     <div class="container">
         <header class="header">
             <div class="header-content">
-                <h1 class="glitch" data-text="My Portfolio">My Portfolio</h1>
-                <p class="subtitle">Things I did, things I'm doing, things I would like to do</p>
+                <h1 class="glitch" data-text="My Portfolio">Sofía Perón Santana</h1>
+                <p class="subtitle" data-es="Cosas que hice, cosas que estoy haciendo y cosas que me gustaría hacer" data-en="Things I've done, things I'm doing, and things I'd like to do">Cosas que hice, cosas que estoy haciendo y cosas que me gustaría hacer</p>
             </div>
         </header>
 
         <nav class="nav">
-            <a href="#about" class="nav-link">About</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#about" class="nav-link" data-es="Sobre mí" data-en="About me">Sobre mí</a>
+            <a href="#publications" class="nav-link" data-es="Publicaciones" data-en="Publications">Publicaciones</a>
+            <a href="#datascience" class="nav-link" data-es="Data Science" data-en="Data Science">Data Science</a>
+            <a href="#reading" class="nav-link" data-es="Cosas que leo" data-en="Reading">Cosas que leo</a>
+            <a href="#contact" class="nav-link" data-es="Contacto" data-en="Contact">Contacto</a>
         </nav>
 
         <main class="main">
             <section id="about" class="section about-section">
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title" data-es="Sobre mí" data-en="About me">Sobre mí</h2>
                 <div class="about-content">
-                    <p>Welcome to my portfolio! This is where I showcase my work and projects.</p>
-                    <p>Feel free to explore and get in touch if you'd like to collaborate.</p>
+                    <div class="about-photo">
+                        <img src="tu-foto.jpg" alt="Foto de Sofía Perón" class="profile-photo">
+                    </div>
+                    <div class="about-text">
+                        <p data-es="¡Hola! Soy Sofi Perón, licenciada en física, nostálgica de internet y entusiasta de las pelis noventeras. ¡Bienvenidx! Por acá vas a encontrar un resumen de mis trabajos, ideas y proyectos." data-en="Hi! I'm Sofi Perón, a physics graduate, internet nostalgic, and nineties movie enthusiast. Welcome! Here you'll find a summary of my work, ideas, and projects.">¡Hola! Soy Sofi Perón, licenciada en física, nostálgica de internet y entusiasta de las pelis noventeras. ¡Bienvenidx! Por acá vas a encontrar un resumen de mis trabajos, ideas y proyectos.</p>
+                        <p data-es="Actualmente, soy becaria doctoral en CONICET 🇦🇷 e investigo aplicaciones de Machine Learning a la mecánica cuántica." data-en="Currently, I'm a doctoral fellow at CONICET 🇦🇷 and I research Machine Learning applications to quantum mechanics.">Actualmente, soy becaria doctoral en CONICET <span role="img" aria-label="bandera de Argentina">🇦🇷</span> e investigo aplicaciones de Machine Learning a la mecánica cuántica.</p>
+                        <p data-es="En la sección publicaciones, podés encontrar mis trabajos más recientes donde exploro la aplicación de Deep Reinforcement Learning a la transmisión de estados cuánticos" data-en="In the publications section, you can find my most recent work exploring the application of Deep Reinforcement Learning to quantum state transfer">En la sección publicaciones, podés encontrar mis trabajos más recientes donde exploro la aplicación de Deep Reinforcement Learning a la transmisión de estados cuánticos</p>
+                        <p data-es="También me interesan otras aplicaciones de estas tecnologías por lo que estoy realizando una Diplomatura en Ciencia de Datos." data-en="I'm also interested in other applications of these technologies, which is why I'm pursuing a Data Science Diploma.">También me interesan otras aplicaciones de estas tecnologías por lo que estoy realizando una Diplomatura en Ciencia de Datos.</p>
+                        <p data-es="Por acá dejo algunos de los trabajos que realicé en aprendizaje supervisado, no supervisado y sobre procesamiento de lenguaje natural" data-en="Here are some of the projects I've worked on in supervised learning, unsupervised learning, and natural language processing">Por acá dejo algunos de los trabajos que realicé en aprendizaje supervisado, no supervisado y sobre procesamiento de lenguaje natural</p>
+
+                        
+                        <p data-es="También vas a encontrar mi info de contacto por si algo te llama la atención." data-en="You'll also find my contact info if something catches your attention.">También vas a encontrar mi info de contacto por si algo te llama la atención.</p>
+                    </div>
                 </div>
             </section>
 
-            <section id="projects" class="section projects-section">
-                <h2 class="section-title">Projects</h2>
-                <div id="projects-container" class="projects-grid">
-                    <!-- Projects will be loaded dynamically -->
+            <section id="publications" class="section publications-section">
+                <h2 class="section-title" data-es="Publicaciones" data-en="Publications">Publicaciones</h2>
+                <div class="publications-content">
+                    <div class="publication-item">
+                        <h3 class="publication-title">Quantum State Transfer via Deep Reinforcement Learning</h3>
+                        <p class="publication-authors">S. Perón et al.</p>
+                        <p class="publication-description" data-es="Investigación sobre la aplicación de Deep Reinforcement Learning para optimizar la transferencia de estados cuánticos en sistemas de información cuántica." data-en="Research on applying Deep Reinforcement Learning to optimize quantum state transfer in quantum information systems.">Investigación sobre la aplicación de Deep Reinforcement Learning para optimizar la transferencia de estados cuánticos en sistemas de información cuántica.</p>
+                        <a href="publicaciones/quantum-transfer.html" class="publication-link" data-es="Ver detalles →" data-en="View details →">Ver detalles →</a>
+                    </div>
+                    <!-- Agregar más publicaciones aquí -->
+                </div>
+            </section>
+
+            <section id="datascience" class="section datascience-section">
+                <h2 class="section-title" data-es="Data Science" data-en="Data Science">Data Science</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3 class="project-title" data-es="Aprendizaje Supervisado" data-en="Supervised Learning">Aprendizaje Supervisado</h3>
+                        <p class="project-description" data-es="Proyectos y trabajos realizados en aprendizaje supervisado." data-en="Projects and work done in supervised learning.">Proyectos y trabajos realizados en aprendizaje supervisado.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Python</span>
+                        </div>
+                        <a href="https://github.com/sofips" class="project-link" target="_blank" data-es="Ver proyecto →" data-en="View project →">Ver proyecto →</a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title" data-es="Aprendizaje No Supervisado" data-en="Unsupervised Learning">Aprendizaje No Supervisado</h3>
+                        <p class="project-description" data-es="Proyectos de clustering y análisis de datos sin etiquetas." data-en="Clustering projects and unlabeled data analysis.">Proyectos de clustering y análisis de datos sin etiquetas.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Clustering</span>
+                            <span class="project-tag">Python</span>
+                        </div>
+                        <a href="https://github.com/sofips" class="project-link" target="_blank" data-es="Ver proyecto →" data-en="View project →">Ver proyecto →</a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title" data-es="Procesamiento de Lenguaje Natural" data-en="Natural Language Processing">Procesamiento de Lenguaje Natural</h3>
+                        <p class="project-description" data-es="Trabajos sobre NLP y análisis de texto." data-en="Work on NLP and text analysis.">Trabajos sobre NLP y análisis de texto.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">Python</span>
+                        </div>
+                        <a href="https://github.com/sofips" class="project-link" target="_blank" data-es="Ver proyecto →" data-en="View project →">Ver proyecto →</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="reading" class="section reading-section">
+                <h2 class="section-title" data-es="Cosas que leo" data-en="Reading">Cosas que leo</h2>
+                <div class="reading-content">
+                    <div class="reading-item">
+                        <h3 class="reading-title">Attention Is All You Need</h3>
+                        <p class="reading-description" data-es="El paper fundamental que introdujo la arquitectura Transformer, revolucionando el campo del procesamiento de lenguaje natural y la inteligencia artificial." data-en="The groundbreaking paper that introduced the Transformer architecture, revolutionizing the field of natural language processing and artificial intelligence.">El paper fundamental que introdujo la arquitectura Transformer, revolucionando el campo del procesamiento de lenguaje natural y la inteligencia artificial.</p>
+                        <a href="https://arxiv.org/abs/1706.03762" class="reading-link" target="_blank" data-es="Leer más →" data-en="Read more →">Leer más →</a>
+                    </div>
+                    <!-- Agregar más lecturas aquí -->
                 </div>
             </section>
 
             <section id="contact" class="section contact-section">
-                <h2 class="section-title">Get In Touch</h2>
+                <h2 class="section-title" data-es="Contacto" data-en="Get In Touch">Contacto</h2>
                 <div class="contact-content">
-                    <p>Interested in working together? Let's connect!</p>
+                    <p data-es="¿Interesado en trabajar juntos? ¡Conectemos!" data-en="Interested in working together? Let's connect!">¿Interesado en trabajar juntos? ¡Conectemos!</p>
                     <div class="contact-links">
                         <a href="mailto:your.email@example.com" class="contact-link">Email</a>
                         <a href="https://github.com/yourusername" class="contact-link" target="_blank">GitHub</a>
