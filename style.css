@@ -306,6 +306,13 @@ body {
 }
 
 /* Scrollbar Styling for nostalgic feel */
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--gradient-end) var(--primary-bg);
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
     width: 12px;
 }

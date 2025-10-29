@@ -57,8 +57,8 @@ function createProjectCard(project) {
         card.appendChild(tagsContainer);
     }
 
-    // Add link if it exists
-    if (project.link) {
+    // Add link if it exists and is not empty
+    if (project.link && project.link.trim()) {
         const link = document.createElement('a');
         link.className = 'project-link';
         link.href = project.link;
