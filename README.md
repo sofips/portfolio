@@ -6,7 +6,6 @@ A simple, modern portfolio webpage with a nostalgic theme inspired by early 2000
 
 ## Features
 
-- 🎨 Nostalgic color palette with modern gradients and shadows
 - ✨ Glitch effect on hover for the main title
 - 📱 Responsive design that works on all devices
 - 🔧 Easy to customize through JSON configuration
