@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectura Distante de Canciones Argentinas</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <canvas id="ripple-grid" class="ripple-grid-background"></canvas>
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 data-es="Lectura Distante de Canciones Argentinas" data-en="Distant Reading of Argentine Songs">Lectura Distante de Canciones Argentinas</h1>
+                <p class="subtitle" data-es="Análisis de ~30.000 letras de canciones argentinas" data-en="Analysis of ~30,000 Argentine song lyrics">Análisis de ~30.000 letras de canciones argentinas</p>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <a href="../index.html" class="nav-link" data-es="← Volver" data-en="← Back">← Volver</a>
+        </nav>
+
+        <main class="main">
+            <section class="section project-detail">
+                <div class="project-content">
+                    <h2 data-es="Descripción" data-en="Description">Descripción</h2>
+                    <p data-es="Este proyecto aplica técnicas de Procesamiento de Lenguaje Natural (NLP) al análisis y clasificación de aproximadamente 30.000 letras de canciones argentinas. El objetivo es estudiar variaciones semánticas y estilísticas, identificar temáticas principales, explorar su relación con la popularidad de las canciones y evaluar distintos modelos de clasificación." data-en="This project applies Natural Language Processing (NLP) techniques to analyze and classify approximately 30,000 Argentine song lyrics. The goal is to study semantic and stylistic variations, identify main themes, explore their relationship with song popularity, and evaluate different classification models.">Este proyecto aplica técnicas de Procesamiento de Lenguaje Natural (NLP) al análisis y clasificación de aproximadamente 30.000 letras de canciones argentinas. El objetivo es estudiar variaciones semánticas y estilísticas, identificar temáticas principales, explorar su relación con la popularidad de las canciones y evaluar distintos modelos de clasificación.</p>
+
+                    <h2 data-es="Metodología" data-en="Methodology">Metodología</h2>
+                    <ul>
+                        <li data-es="Análisis Exploratorio de Datos (EDA)" data-en="Exploratory Data Analysis (EDA)">Análisis Exploratorio de Datos (EDA)</li>
+                        <li data-es="Procesamiento de texto y tokenización" data-en="Text preprocessing and tokenization">Procesamiento de texto y tokenización</li>
+                        <li data-es="Modelado de Tópicos (LDA - Latent Dirichlet Allocation)" data-en="Topic Modeling (LDA - Latent Dirichlet Allocation)">Modelado de Tópicos (LDA - Latent Dirichlet Allocation)</li>
+                        <li data-es="Análisis de sentimientos y emociones" data-en="Sentiment and emotion analysis">Análisis de sentimientos y emociones</li>
+                        <li data-es="Visualización de patrones temáticos" data-en="Visualization of thematic patterns">Visualización de patrones temáticos</li>
+                    </ul>
+
+                    <h2 data-es="Gráficos Principales" data-en="Main Graphics">Gráficos Principales</h2>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <h3 data-es="Distribución de Tópicos" data-en="Topic Distribution">Distribución de Tópicos</h3>
+                            <div class="gallery-placeholder">
+                                <p data-es="Gráfico de tópicos" data-en="Topic chart">📊</p>
+                            </div>
+                            <p data-es="Muestra los tópicos principales identificados en las canciones y su prevalencia." data-en="Shows the main topics identified in songs and their prevalence.">Muestra los tópicos principales identificados en las canciones y su prevalencia.</p>
+                        </div>
+                        <div class="gallery-item">
+                            <h3 data-es="Análisis de Sentimientos" data-en="Sentiment Analysis">Análisis de Sentimientos</h3>
+                            <div class="gallery-placeholder">
+                                <p data-es="Análisis de sentimientos" data-en="Sentiment chart">💭</p>
+                            </div>
+                            <p data-es="Distribución de sentimientos y emociones encontrados en las letras." data-en="Distribution of feelings and emotions found in the lyrics.">Distribución de sentimientos y emociones encontrados en las letras.</p>
+                        </div>
+                        <div class="gallery-item">
+                            <h3 data-es="Evolución Temporal" data-en="Temporal Evolution">Evolución Temporal</h3>
+                            <div class="gallery-placeholder">
+                                <p data-es="Evolución temporal" data-en="Timeline chart">⏳</p>
+                            </div>
+                            <p data-es="Cambios en temáticas y estilos a lo largo de los años." data-en="Changes in themes and styles over the years.">Cambios en temáticas y estilos a lo largo de los años.</p>
+                        </div>
+                    </div>
+
+                    <h2 data-es="Tecnologías y Librerías" data-en="Technologies and Libraries">Tecnologías y Librerías</h2>
+                    <ul>
+                        <li>Python, Pandas, NumPy</li>
+                        <li>NLTK, spaCy</li>
+                        <li>Scikit-learn (LDA)</li>
+                        <li>Matplotlib, Seaborn</li>
+                    </ul>
+
+                    <h2 data-es="Resultados" data-en="Results">Resultados</h2>
+                    <p data-es="El análisis reveló patrones interesantes en la evolución musical argentina, identificando tópicos recurrentes como amor, política, nostalgia y diversidad cultural. Se encontró una correlación entre ciertos patrones temáticos y la popularidad de las canciones." data-en="The analysis revealed interesting patterns in the evolution of Argentine music, identifying recurring topics such as love, politics, nostalgia, and cultural diversity. A correlation was found between certain thematic patterns and song popularity.">El análisis reveló patrones interesantes en la evolución musical argentina, identificando tópicos recurrentes como amor, política, nostalgia y diversidad cultural. Se encontró una correlación entre ciertos patrones temáticos y la popularidad de las canciones.</p>
+
+                    <h2 data-es="Repositorio y Notebooks" data-en="Repository and Notebooks">Repositorio y Notebooks</h2>
+                    <p data-es="Los notebooks utilizados en este proyecto son:" data-en="The notebooks used in this project are:">Los notebooks utilizados en este proyecto son:</p>
+                    <ul>
+                        <li><code>tp1_m18_g1_kwist_peron_puican.ipynb</code> - Exploración inicial</li>
+                        <li><code>tp2_kwist_puican_peron.ipynb</code> - Análisis detallado</li>
+                        <li><code>tp3_kwist_puican_peron.ipynb</code> - Modelado y resultados</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 My Portfolio. Made with ♥</p>
+        </footer>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

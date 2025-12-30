@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Diabetes</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <canvas id="ripple-grid" class="ripple-grid-background"></canvas>
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 data-es="Predicción de Diabetes" data-en="Diabetes Prediction">Predicción de Diabetes</h1>
+                <p class="subtitle" data-es="Modelos de clasificación para diagnóstico temprano" data-en="Classification models for early diagnosis">Modelos de clasificación para diagnóstico temprano</p>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <a href="../index.html" class="nav-link" data-es="← Volver" data-en="← Back">← Volver</a>
+        </nav>
+
+        <main class="main">
+            <section class="section project-detail">
+                <div class="project-content">
+                    <h2 data-es="Descripción" data-en="Description">Descripción</h2>
+                    <p data-es="Este proyecto utiliza datos clínicos y demográficos de pacientes para entrenar modelos de aprendizaje automático que predicen la presencia de diabetes. El análisis también identifica los factores más relevantes asociados al riesgo de desarrollar la enfermedad, contribuyendo al diagnóstico temprano y la prevención." data-en="This project uses clinical and demographic patient data to train machine learning models that predict the presence of diabetes. The analysis also identifies the most relevant factors associated with disease risk, contributing to early diagnosis and prevention.">Este proyecto utiliza datos clínicos y demográficos de pacientes para entrenar modelos de aprendizaje automático que predicen la presencia de diabetes. El análisis también identifica los factores más relevantes asociados al riesgo de desarrollar la enfermedad, contribuyendo al diagnóstico temprano y la prevención.</p>
+
+                    <h2 data-es="Metodología" data-en="Methodology">Metodología</h2>
+                    <ul>
+                        <li data-es="Análisis Exploratorio de Datos clínicos" data-en="Exploratory analysis of clinical data">Análisis Exploratorio de Datos clínicos</li>
+                        <li data-es="Limpieza y manejo de valores faltantes" data-en="Data cleaning and missing value handling">Limpieza y manejo de valores faltantes</li>
+                        <li data-es="Ingeniería de características" data-en="Feature engineering">Ingeniería de características</li>
+                        <li data-es="Entrenamiento de múltiples clasificadores" data-en="Training of multiple classifiers">Entrenamiento de múltiples clasificadores</li>
+                        <li data-es="Evaluación y validación cruzada" data-en="Evaluation and cross-validation">Evaluación y validación cruzada</li>
+                        <li data-es="Análisis de importancia de features" data-en="Feature importance analysis">Análisis de importancia de features</li>
+                    </ul>
+
+                    <h2 data-es="Variables Clínicas Utilizadas" data-en="Clinical Variables Used">Variables Clínicas Utilizadas</h2>
+                    <ul>
+                        <li data-es="Edad y características demográficas" data-en="Age and demographic characteristics">Edad y características demográficas</li>
+                        <li data-es="Índice de Masa Corporal (BMI)" data-en="Body Mass Index (BMI)">Índice de Masa Corporal (BMI)</li>
+                        <li data-es="Presión arterial" data-en="Blood pressure">Presión arterial</li>
+                        <li data-es="Niveles de glucosa en sangre" data-en="Blood glucose levels">Niveles de glucosa en sangre</li>
+                        <li data-es="Insulina y otros biomarcadores" data-en="Insulin and other biomarkers">Insulina y otros biomarcadores</li>
+                    </ul>
+
+                    <h2 data-es="Gráficos Principales" data-en="Main Graphics">Gráficos Principales</h2>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <h3 data-es="Matriz de Confusión" data-en="Confusion Matrix">Matriz de Confusión</h3>
+                            <div class="gallery-placeholder">
+                                <p data-es="Matriz de confusión" data-en="Confusion matrix">📊</p>
+                            </div>
+                            <p data-es="Visualización del desempeño del modelo clasificador." data-en="Visualization of classifier model performance.">Visualización del desempeño del modelo clasificador.</p>
+                        </div>
+                        <div class="gallery-item">
+                            <h3 data-es="Importancia de Features" data-en="Feature Importance">Importancia de Features</h3>
+                            <div class="gallery-placeholder">
+                                <p data-es="Importancia de variables" data-en="Feature importance">⭐</p>
+                            </div>
+                            <p data-es="Variables más relevantes para predecir diabetes." data-en="Most relevant variables for predicting diabetes.">Variables más relevantes para predecir diabetes.</p>
+                        </div>
+                        <div class="gallery-item">
+                            <h3 data-es="Curva ROC" data-en="ROC Curve">Curva ROC</h3>
+                            <div class="gallery-placeholder">
+                                <p data-es="Curva ROC" data-en="ROC curve">📈</p>
+                            </div>
+                            <p data-es="Evaluación del trade-off entre sensibilidad y especificidad." data-en="Evaluation of sensitivity-specificity trade-off.">Evaluación del trade-off entre sensibilidad y especificidad.</p>
+                        </div>
+                    </div>
+
+                    <h2 data-es="Modelos Utilizados" data-en="Models Used">Modelos Utilizados</h2>
+                    <ul>
+                        <li>Logistic Regression</li>
+                        <li>Random Forest</li>
+                        <li>Gradient Boosting (XGBoost)</li>
+                        <li>Support Vector Machines (SVM)</li>
+                    </ul>
+
+                    <h2 data-es="Resultados" data-en="Results">Resultados</h2>
+                    <p data-es="Los modelos lograron una precisión superior al 85% en la predicción de diabetes. Se identificaron factores de riesgo clave como niveles de glucosa elevados, BMI, y edad, que podrían utilizarse en protocolos de screening médico." data-en="The models achieved over 85% accuracy in diabetes prediction. Key risk factors were identified such as elevated glucose levels, BMI, and age, which could be used in medical screening protocols.">Los modelos lograron una precisión superior al 85% en la predicción de diabetes. Se identificaron factores de riesgo clave como niveles de glucosa elevados, BMI, y edad, que podrían utilizarse en protocolos de screening médico.</p>
+
+                    <h2 data-es="Archivo del Proyecto" data-en="Project File">Archivo del Proyecto</h2>
+                    <p><code>Entregable_Britos_Peron_Alabi_Nieto_Avila.ipynb</code></p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 My Portfolio. Made with ♥</p>
+        </footer>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

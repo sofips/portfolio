@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis y Clustering de Jugadores de Fútbol</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <canvas id="ripple-grid" class="ripple-grid-background"></canvas>
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 data-es="Análisis y Clustering de Jugadores de Fútbol" data-en="Football Players Clustering Analysis">Análisis y Clustering de Jugadores de Fútbol</h1>
+                <p class="subtitle" data-es="Segmentación de jugadores por habilidades y características" data-en="Segmentation of players by skills and characteristics">Segmentación de jugadores por habilidades y características</p>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <a href="../index.html" class="nav-link" data-es="← Volver" data-en="← Back">← Volver</a>
+        </nav>
+
+        <main class="main">
+            <section class="section project-detail">
+                <div class="project-content">
+                    <h2 data-es="Descripción" data-en="Description">Descripción</h2>
+                    <p data-es="Este proyecto realiza un análisis exploratorio, visual y no supervisado de una completa base de datos de jugadores de fútbol. El objetivo es aplicar técnicas de normalización, clustering y proyección dimensional para identificar grupos de jugadores con habilidades equivalentes y patrones similares de desempeño." data-en="This project performs an exploratory, visual, and unsupervised analysis of a comprehensive football player database. The goal is to apply normalization, clustering, and dimensional projection techniques to identify groups of players with equivalent skills and similar performance patterns.">Este proyecto realiza un análisis exploratorio, visual y no supervisado de una completa base de datos de jugadores de fútbol. El objetivo es aplicar técnicas de normalización, clustering y proyección dimensional para identificar grupos de jugadores con habilidades equivalentes y patrones similares de desempeño.</p>
+
+                    <h2 data-es="Metodología" data-en="Methodology">Metodología</h2>
+                    <ul>
+                        <li data-es="Análisis Exploratorio de Datos (EDA)" data-en="Exploratory Data Analysis (EDA)">Análisis Exploratorio de Datos (EDA)</li>
+                        <li data-es="Normalización y escalado de características" data-en="Feature normalization and scaling">Normalización y escalado de características</li>
+                        <li data-es="Algoritmos de clustering: K-means, DBSCAN, Hierarchical" data-en="Clustering algorithms: K-means, DBSCAN, Hierarchical">Algoritmos de clustering: K-means, DBSCAN, Hierarchical</li>
+                        <li data-es="Proyección dimensional: PCA, t-SNE" data-en="Dimensional projection: PCA, t-SNE">Proyección dimensional: PCA, t-SNE</li>
+                        <li data-es="Visualización interactiva de clusters" data-en="Interactive cluster visualization">Visualización interactiva de clusters</li>
+                    </ul>
+
+                    <h2 data-es="Características Analizadas" data-en="Analyzed Features">Características Analizadas</h2>
+                    <ul>
+                        <li data-es="Atributos físicos: altura, peso, velocidad" data-en="Physical attributes: height, weight, speed">Atributos físicos: altura, peso, velocidad</li>
+                        <li data-es="Habilidades técnicas: precisión de pase, regate, tiro" data-en="Technical skills: pass accuracy, dribbling, shooting">Habilidades técnicas: precisión de pase, regate, tiro</li>
+                        <li data-es="Estadísticas de juego: goles, asistencias, apariciones" data-en="Game statistics: goals, assists, appearances">Estadísticas de juego: goles, asistencias, apariciones</li>
+                        <li data-es="Posición en el campo" data-en="Position on field">Posición en el campo</li>
+                    </ul>
+
+                    <h2 data-es="Gráficos Principales" data-en="Main Graphics">Gráficos Principales</h2>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <h3 data-es="Proyección PCA" data-en="PCA Projection">Proyección PCA</h3>
+                            <div class="gallery-placeholder">
+                                <p data-es="Gráfico PCA" data-en="PCA chart">📈</p>
+                            </div>
+                            <p data-es="Visualización de los clusters en el espacio de las dos primeras componentes principales." data-en="Visualization of clusters in the space of the first two principal components.">Visualización de los clusters en el espacio de las dos primeras componentes principales.</p>
+                        </div>
+                        <div class="gallery-item">
+                            <h3 data-es="Proyección t-SNE" data-en="t-SNE Projection">Proyección t-SNE</h3>
+                            <div class="gallery-placeholder">
+                                <p data-es="Gráfico t-SNE" data-en="t-SNE chart">🎯</p>
+                            </div>
+                            <p data-es="Representación no lineal mostrando separación clara entre grupos de jugadores." data-en="Non-linear representation showing clear separation between player groups.">Representación no lineal mostrando separación clara entre grupos de jugadores.</p>
+                        </div>
+                        <div class="gallery-item">
+                            <h3 data-es="Dendrograma" data-en="Dendrogram">Dendrograma</h3>
+                            <div class="gallery-placeholder">
+                                <p data-es="Dendrograma" data-en="Dendrogram">🌳</p>
+                            </div>
+                            <p data-es="Análisis jerárquico de las relaciones entre clusters." data-en="Hierarchical analysis of relationships between clusters.">Análisis jerárquico de las relaciones entre clusters.</p>
+                        </div>
+                    </div>
+
+                    <h2 data-es="Resultados" data-en="Results">Resultados</h2>
+                    <p data-es="El análisis identificó aproximadamente 5-7 clusters principales correspondientes a diferentes posiciones y perfiles de jugadores: delanteros, centrocampistas, defensas, y porteros. Cada cluster muestra patrones distintivos de habilidades que permiten identificar jugadores con roles similares en el campo." data-en="The analysis identified approximately 5-7 main clusters corresponding to different player positions and profiles: forwards, midfielders, defenders, and goalkeepers. Each cluster shows distinctive skill patterns that allow identifying players with similar roles on the field.">El análisis identificó aproximadamente 5-7 clusters principales correspondientes a diferentes posiciones y perfiles de jugadores: delanteros, centrocampistas, defensas, y porteros. Cada cluster muestra patrones distintivos de habilidades que permiten identificar jugadores con roles similares en el campo.</p>
+
+                    <h2 data-es="Tecnologías Utilizadas" data-en="Technologies Used">Tecnologías Utilizadas</h2>
+                    <ul>
+                        <li>Python, Pandas, NumPy</li>
+                        <li>Scikit-learn (K-means, DBSCAN, PCA)</li>
+                        <li>TSNE (Manifold Learning)</li>
+                        <li>Matplotlib, Seaborn, Plotly</li>
+                    </ul>
+
+                    <h2 data-es="Archivo del Proyecto" data-en="Project File">Archivo del Proyecto</h2>
+                    <p><code>Entregable_final_Peron_Britos_Alabi_Nieto_Avila.ipynb</code></p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 My Portfolio. Made with ♥</p>
+        </footer>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>
