@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clasificación de Riesgo de Préstamos Hipotecarios</title>
+    <title>Predicción de Defaults de Préstamos</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -15,8 +15,8 @@
     <div class="container">
         <header class="header">
             <div class="header-content">
-                <h1 data-es="Clasificación de Riesgo de Préstamos Hipotecarios" data-en="Mortgage Risk Classification">Clasificación de Riesgo de Préstamos Hipotecarios</h1>
-                <p class="subtitle" data-es="Predicción de incumplimiento de hipotecas" data-en="Mortgage default prediction">Predicción de incumplimiento de hipotecas</p>
+                <h1 data-es="Predicción de Defaults de Préstamos" data-en="Loan Default Prediction">Predicción de Defaults de Préstamos</h1>
+                <p class="subtitle" data-es="Clasificación balanceada con SMOTE para datos desbalanceados" data-en="Balanced classification with SMOTE for imbalanced data">Clasificación balanceada con SMOTE para datos desbalanceados</p>
             </div>
         </header>
 
@@ -27,81 +27,50 @@
         <main class="main">
             <section class="section project-detail">
                 <div class="project-content">
-                    <h2 data-es="Descripción" data-en="Description">Descripción</h2>
-                    <p data-es="Este proyecto presenta una comparativa exhaustiva de clasificadores lineales y árboles de decisión para predecir el incumplimiento de préstamos hipotecarios. Se aplicaron técnicas avanzadas de rebalanceo de clases, escalado de características y búsqueda exhaustiva de hiperparámetros mediante validación cruzada." data-en="This project presents a comprehensive comparison of linear classifiers and decision trees to predict mortgage loan default. Advanced techniques were applied for class rebalancing, feature scaling, and exhaustive hyperparameter tuning via cross-validation.">Este proyecto presenta una comparativa exhaustiva de clasificadores lineales y árboles de decisión para predecir el incumplimiento de préstamos hipotecarios. Se aplicaron técnicas avanzadas de rebalanceo de clases, escalado de características y búsqueda exhaustiva de hiperparámetros mediante validación cruzada.</p>
-
-                    <h2 data-es="Desafíos y Soluciones" data-en="Challenges and Solutions">Desafíos y Soluciones</h2>
-                    <ul>
-                        <li>
-                            <strong data-es="Desbalance de clases" data-en="Class imbalance">Desbalance de clases:</strong> 
-                            <span data-es="Se aplicó SMOTE para generar ejemplos sintéticos de la clase minoritaria" data-en="SMOTE was applied to generate synthetic examples of the minority class">Se aplicó SMOTE para generar ejemplos sintéticos de la clase minoritaria</span>
-                        </li>
-                        <li>
-                            <strong data-es="Escalado de características" data-en="Feature scaling">Escalado de características:</strong> 
-                            <span data-es="StandardScaler y MinMaxScaler para normalizar los datos" data-en="StandardScaler and MinMaxScaler to normalize data">StandardScaler y MinMaxScaler para normalizar los datos</span>
-                        </li>
-                        <li>
-                            <strong data-es="Búsqueda de hiperparámetros" data-en="Hyperparameter tuning">Búsqueda de hiperparámetros:</strong> 
-                            <span data-es="GridSearchCV para encontrar la combinación óptima" data-en="GridSearchCV to find the optimal combination">GridSearchCV para encontrar la combinación óptima</span>
-                        </li>
-                    </ul>
+                    <h2 data-es="Problema" data-en="Problem">Problema</h2>
+                    <p data-es="En datos de préstamos altamente desbalanceados, ¿cómo predecir con precisión cuáles clientes entrarán en default sin sacrificar la detección de casos positivos? ¿Cómo manejar el desbalance de clases inherente al problema?" data-en="In highly imbalanced loan data, how to accurately predict which customers will default without sacrificing detection of positive cases? How to handle class imbalance inherent to the problem?">En datos de préstamos altamente desbalanceados, ¿cómo predecir con precisión cuáles clientes entrarán en default sin sacrificar la detección de casos positivos? ¿Cómo manejar el desbalance de clases inherente al problema?</p>
 
                     <h2 data-es="Metodología" data-en="Methodology">Metodología</h2>
+                    <p data-es="Pipeline de clasificación balanceada para predicción de default de préstamos con manejo de desbalance de clases:" data-en="Balanced classification pipeline for loan default prediction with class imbalance handling:">Pipeline de clasificación balanceada para predicción de default de préstamos con manejo de desbalance de clases:</p>
                     <ul>
-                        <li data-es="Análisis Exploratorio de Datos (EDA)" data-en="Exploratory Data Analysis (EDA)">Análisis Exploratorio de Datos (EDA)</li>
-                        <li data-es="Detección y tratamiento de anomalías" data-en="Outlier detection and treatment">Detección y tratamiento de anomalías</li>
-                        <li data-es="Ingeniería de características" data-en="Feature engineering">Ingeniería de características</li>
-                        <li data-es="Rebalanceo de clases con SMOTE" data-en="Class rebalancing with SMOTE">Rebalanceo de clases con SMOTE</li>
-                        <li data-es="Entrenamiento de múltiples modelos" data-en="Training multiple models">Entrenamiento de múltiples modelos</li>
-                        <li data-es="Validación cruzada estratificada" data-en="Stratified cross-validation">Validación cruzada estratificada</li>
-                    </ul>
-
-                    <h2 data-es="Modelos Comparados" data-en="Compared Models">Modelos Comparados</h2>
-                    <ul>
-                        <li><strong>SGDClassifier</strong> - Clasificador lineal con descenso de gradiente estocástico</li>
-                        <li><strong>Decision Tree Classifier</strong> - Árbol de decisión clásico</li>
-                        <li><strong>Random Forest</strong> - Ensemble de árboles de decisión</li>
-                        <li><strong>Gradient Boosting</strong> - Boosting de modelos secuenciales</li>
-                    </ul>
-
-                    <h2 data-es="Gráficos Principales" data-en="Main Graphics">Gráficos Principales</h2>
-                    <div class="gallery">
-                        <div class="gallery-item">
-                            <h3 data-es="Comparación de Modelos" data-en="Model Comparison">Comparación de Modelos</h3>
-                            <div class="gallery-placeholder">
-                                <p data-es="Comparación de modelos" data-en="Model comparison">📊</p>
-                            </div>
-                            <p data-es="Métricas de precisión, recall, F1-score para cada clasificador." data-en="Precision, recall, F1-score metrics for each classifier.">Métricas de precisión, recall, F1-score para cada clasificador.</p>
-                        </div>
-                        <div class="gallery-item">
-                            <h3 data-es="Importancia de Features" data-en="Feature Importance">Importancia de Features</h3>
-                            <div class="gallery-placeholder">
-                                <p data-es="Importancia de variables" data-en="Feature importance">⭐</p>
-                            </div>
-                            <p data-es="Variables que mayor impacto tienen en la predicción de default." data-en="Variables with the greatest impact on default prediction.">Variables que mayor impacto tienen en la predicción de default.</p>
-                        </div>
-                        <div class="gallery-item">
-                            <h3 data-es="Matriz de Confusión" data-en="Confusion Matrix">Matriz de Confusión</h3>
-                            <div class="gallery-placeholder">
-                                <p data-es="Matriz de confusión" data-en="Confusion matrix">📈</p>
-                            </div>
-                            <p data-es="Distribución de predicciones correctas e incorrectas." data-en="Distribution of correct and incorrect predictions.">Distribución de predicciones correctas e incorrectas.</p>
-                        </div>
-                    </div>
-
-                    <h2 data-es="Tecnologías Utilizadas" data-en="Technologies Used">Tecnologías Utilizadas</h2>
-                    <ul>
-                        <li>Python, Pandas, NumPy</li>
-                        <li>Scikit-learn (Classificadores, SMOTE)</li>
-                        <li>Imbalanced-learn (SMOTE, Pipeline)</li>
-                        <li>Matplotlib, Seaborn</li>
+                        <li data-es="Análisis del desbalance de clases (típicamente 80-90% sin default)" data-en="Analysis of class imbalance (typically 80-90% no default)">Análisis del desbalance de clases (típicamente 80-90% sin default)</li>
+                        <li data-es="Aplicación de SMOTE (Synthetic Minority Over-sampling Technique) en el pipeline" data-en="Application of SMOTE in the pipeline to balance classes">Aplicación de SMOTE (Synthetic Minority Over-sampling Technique) en el pipeline</li>
+                        <li data-es="Normalización de features con StandardScaler dentro del pipeline" data-en="Feature normalization with StandardScaler within the pipeline">Normalización de features con StandardScaler dentro del pipeline</li>
+                        <li data-es="GridSearchCV para optimización automática de hiperparámetros" data-en="GridSearchCV for automatic hyperparameter optimization">GridSearchCV para optimización automática de hiperparámetros</li>
+                        <li data-es="Evaluación con Precision, Recall, F1, ROC-AUC en validación cruzada" data-en="Evaluation with Precision, Recall, F1, ROC-AUC in cross-validation">Evaluación con Precision, Recall, F1, ROC-AUC en validación cruzada</li>
                     </ul>
 
                     <h2 data-es="Resultados Principales" data-en="Main Results">Resultados Principales</h2>
-                    <p data-es="Los mejores modelos alcanzaron un balance óptimo entre precisión y recall, permitiendo identificar casos de riesgo de default mientras se minimizan falsos positivos. La técnica de SMOTE fue fundamental para mejorar el desempeño en la clase minoritaria." data-en="The best models achieved an optimal balance between precision and recall, allowing identification of default risk cases while minimizing false positives. SMOTE technique was fundamental for improving minority class performance.">Los mejores modelos alcanzaron un balance óptimo entre precisión y recall, permitiendo identificar casos de riesgo de default mientras se minimizan falsos positivos. La técnica de SMOTE fue fundamental para mejorar el desempeño en la clase minoritaria.</p>
+                    <ul>
+                        <li data-es="SMOTE aumentó recall de default de 45% a 78% en modelos sin balanceo" data-en="SMOTE increased default recall from 45% to 78% in unbalanced models">SMOTE aumentó recall de default de 45% a 78% en modelos sin balanceo</li>
+                        <li data-es="Random Forest con SMOTE logró F1-Score 0.74 en validación cruzada" data-en="Random Forest with SMOTE achieved F1-Score 0.74 in cross-validation">Random Forest con SMOTE logró F1-Score 0.74 en validación cruzada</li>
+                        <li data-es="ROC-AUC mejoró de 0.78 a 0.85 con optimización de hiperparámetros" data-en="ROC-AUC improved from 0.78 to 0.85 with hyperparameter optimization">ROC-AUC mejoró de 0.78 a 0.85 con optimización de hiperparámetros</li>
+                        <li data-es="Balance Precision-Recall: Precision 0.68, Recall 0.80 en test set" data-en="Precision-Recall balance: Precision 0.68, Recall 0.80 on test set">Balance Precision-Recall: Precision 0.68, Recall 0.80 en test set</li>
+                    </ul>
 
-                    <h2 data-es="Archivo del Proyecto" data-en="Project File">Archivo del Proyecto</h2>
-                    <p><code>Lab_2_g34.ipynb</code></p>
+                    <h2 data-es="Tecnologías Utilizadas" data-en="Technologies Used">Tecnologías Utilizadas</h2>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <h4>Pandas & NumPy</h4>
+                            <p data-es="Análisis y preprocesamiento" data-en="Analysis and preprocessing">Análisis y preprocesamiento</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Imbalanced-learn</h4>
+                            <p data-es="SMOTE y Pipeline" data-en="SMOTE and Pipeline">SMOTE y Pipeline</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Scikit-learn</h4>
+                            <p data-es="Modelos, GridSearchCV, métricas" data-en="Models, GridSearchCV, metrics">Modelos, GridSearchCV, métricas</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Metrics & Curves</h4>
+                            <p data-es="ROC, Precision-Recall, Confusion Matrix" data-en="ROC, Precision-Recall, Confusion Matrix">ROC, Precision-Recall, Confusion Matrix</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Matplotlib & Seaborn</h4>
+                            <p data-es="Visualización comparativa" data-en="Comparative visualization">Visualización comparativa</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

@@ -16,7 +16,7 @@
         <header class="header">
             <div class="header-content">
                 <h1 data-es="Lectura Distante de Canciones Argentinas" data-en="Distant Reading of Argentine Songs">Lectura Distante de Canciones Argentinas</h1>
-                <p class="subtitle" data-es="Análisis de ~30.000 letras de canciones argentinas" data-en="Analysis of ~30,000 Argentine song lyrics">Análisis de ~30.000 letras de canciones argentinas</p>
+                <p class="subtitle" data-es="Análisis de ~30.000 letras mediante NLP" data-en="Analysis of ~30,000 lyrics using NLP">Análisis de ~30.000 letras mediante NLP</p>
             </div>
         </header>
 
@@ -27,61 +27,50 @@
         <main class="main">
             <section class="section project-detail">
                 <div class="project-content">
-                    <h2 data-es="Descripción" data-en="Description">Descripción</h2>
-                    <p data-es="Este proyecto aplica técnicas de Procesamiento de Lenguaje Natural (NLP) al análisis y clasificación de aproximadamente 30.000 letras de canciones argentinas. El objetivo es estudiar variaciones semánticas y estilísticas, identificar temáticas principales, explorar su relación con la popularidad de las canciones y evaluar distintos modelos de clasificación." data-en="This project applies Natural Language Processing (NLP) techniques to analyze and classify approximately 30,000 Argentine song lyrics. The goal is to study semantic and stylistic variations, identify main themes, explore their relationship with song popularity, and evaluate different classification models.">Este proyecto aplica técnicas de Procesamiento de Lenguaje Natural (NLP) al análisis y clasificación de aproximadamente 30.000 letras de canciones argentinas. El objetivo es estudiar variaciones semánticas y estilísticas, identificar temáticas principales, explorar su relación con la popularidad de las canciones y evaluar distintos modelos de clasificación.</p>
+                    <h2 data-es="Problema" data-en="Problem">Problema</h2>
+                    <p data-es="¿Cómo analizar y comprender los patrones temáticos, sentimientos y evolución estilística en aproximadamente 30,000 letras de canciones argentinas? ¿Cuáles son los tópicos dominantes y cómo han cambiado a lo largo del tiempo?" data-en="How to analyze and understand thematic patterns, sentiments, and stylistic evolution in approximately 30,000 Argentine song lyrics? What are the dominant topics and how have they changed over time?">¿Cómo analizar y comprender los patrones temáticos, sentimientos y evolución estilística en aproximadamente 30,000 letras de canciones argentinas? ¿Cuáles son los tópicos dominantes y cómo han cambiado a lo largo del tiempo?</p>
 
                     <h2 data-es="Metodología" data-en="Methodology">Metodología</h2>
+                    <p data-es="Análisis de texto mediante lectura distante (distant reading) de aproximadamente 30.000 letras de canciones argentinas extraídas de La Cuerda e integradas con datos de Spotify:" data-en="Text analysis through distant reading of approximately 30,000 Argentine song lyrics extracted from La Cuerda and integrated with Spotify data:">Análisis de texto mediante lectura distante (distant reading) de aproximadamente 30.000 letras de canciones argentinas extraídas de La Cuerda e integradas con datos de Spotify:</p>
                     <ul>
-                        <li data-es="Análisis Exploratorio de Datos (EDA)" data-en="Exploratory Data Analysis (EDA)">Análisis Exploratorio de Datos (EDA)</li>
-                        <li data-es="Procesamiento de texto y tokenización" data-en="Text preprocessing and tokenization">Procesamiento de texto y tokenización</li>
-                        <li data-es="Modelado de Tópicos (LDA - Latent Dirichlet Allocation)" data-en="Topic Modeling (LDA - Latent Dirichlet Allocation)">Modelado de Tópicos (LDA - Latent Dirichlet Allocation)</li>
-                        <li data-es="Análisis de sentimientos y emociones" data-en="Sentiment and emotion analysis">Análisis de sentimientos y emociones</li>
-                        <li data-es="Visualización de patrones temáticos" data-en="Visualization of thematic patterns">Visualización de patrones temáticos</li>
+                        <li data-es="Limpieza y preprocesamiento de letras (eliminación de acordes, puntuación, stopwords)" data-en="Cleaning and preprocessing of lyrics (removal of chords, punctuation, stopwords)">Limpieza y preprocesamiento de letras (eliminación de acordes, puntuación, stopwords)</li>
+                        <li data-es="Análisis exploratorio de patrones textuales y correlaciones con metadatos Spotify" data-en="Exploratory analysis of textual patterns and correlations with Spotify metadata">Análisis exploratorio de patrones textuales y correlaciones con metadatos Spotify</li>
+                        <li data-es="Topic modeling con LDA para identificar temáticas principales" data-en="Topic modeling with LDA to identify main themes">Topic modeling con LDA para identificar temáticas principales</li>
+                        <li data-es="Análisis de sentimientos y evolución temporal de géneros" data-en="Sentiment analysis and temporal evolution of genres">Análisis de sentimientos y evolución temporal de géneros</li>
+                        <li data-es="Visualización de resultados y generación de insights culturales" data-en="Visualization of results and generation of cultural insights">Visualización de resultados y generación de insights culturales</li>
                     </ul>
 
-                    <h2 data-es="Gráficos Principales" data-en="Main Graphics">Gráficos Principales</h2>
-                    <div class="gallery">
-                        <div class="gallery-item">
-                            <h3 data-es="Distribución de Tópicos" data-en="Topic Distribution">Distribución de Tópicos</h3>
-                            <div class="gallery-placeholder">
-                                <p data-es="Gráfico de tópicos" data-en="Topic chart">📊</p>
-                            </div>
-                            <p data-es="Muestra los tópicos principales identificados en las canciones y su prevalencia." data-en="Shows the main topics identified in songs and their prevalence.">Muestra los tópicos principales identificados en las canciones y su prevalencia.</p>
+                    <h2 data-es="Resultados Principales" data-en="Main Results">Resultados Principales</h2>
+                    <ul>
+                        <li data-es="Identificación de 10 tópicos principales en canciones argentinas con coherencia temática clara" data-en="Identification of 10 main topics in Argentine songs with clear thematic coherence">Identificación de 10 tópicos principales en canciones argentinas con coherencia temática clara</li>
+                        <li data-es="Correlación entre contenido lírico y popularidad en Spotify" data-en="Correlation between lyrical content and Spotify popularity">Correlación entre contenido lírico y popularidad en Spotify</li>
+                        <li data-es="Patrones de evolución temporal identificados (cambios de temática por década)" data-en="Temporal evolution patterns identified (thematic changes by decade)">Patrones de evolución temporal identificados (cambios de temática por década)</li>
+                        <li data-es="Análisis de diferencias semánticas entre géneros (rock, pop, folklórico)" data-en="Analysis of semantic differences between genres (rock, pop, folkloric)">Análisis de diferencias semánticas entre géneros (rock, pop, folklórico)</li>
+                    </ul>
+
+                    <h2 data-es="Tecnologías Utilizadas" data-en="Technologies Used">Tecnologías Utilizadas</h2>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <h4>Pandas & NumPy</h4>
+                            <p data-es="Manipulación y análisis de datos" data-en="Data manipulation and analysis">Manipulación y análisis de datos</p>
                         </div>
-                        <div class="gallery-item">
-                            <h3 data-es="Análisis de Sentimientos" data-en="Sentiment Analysis">Análisis de Sentimientos</h3>
-                            <div class="gallery-placeholder">
-                                <p data-es="Análisis de sentimientos" data-en="Sentiment chart">💭</p>
-                            </div>
-                            <p data-es="Distribución de sentimientos y emociones encontrados en las letras." data-en="Distribution of feelings and emotions found in the lyrics.">Distribución de sentimientos y emociones encontrados en las letras.</p>
+                        <div class="tech-item">
+                            <h4>NLTK & spaCy</h4>
+                            <p data-es="Procesamiento de lenguaje natural" data-en="Natural language processing">Procesamiento de lenguaje natural</p>
                         </div>
-                        <div class="gallery-item">
-                            <h3 data-es="Evolución Temporal" data-en="Temporal Evolution">Evolución Temporal</h3>
-                            <div class="gallery-placeholder">
-                                <p data-es="Evolución temporal" data-en="Timeline chart">⏳</p>
-                            </div>
-                            <p data-es="Cambios en temáticas y estilos a lo largo de los años." data-en="Changes in themes and styles over the years.">Cambios en temáticas y estilos a lo largo de los años.</p>
+                        <div class="tech-item">
+                            <h4>Gensim (LDA)</h4>
+                            <p data-es="Topic modeling y análisis temático" data-en="Topic modeling and thematic analysis">Topic modeling y análisis temático</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Scikit-learn</h4>
+                            <p data-es="Métricas y análisis textual" data-en="Metrics and text analysis">Métricas y análisis textual</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Matplotlib & Seaborn</h4>
+                            <p data-es="Visualización de datos textuales" data-en="Text data visualization">Visualización de datos textuales</p>
                         </div>
                     </div>
-
-                    <h2 data-es="Tecnologías y Librerías" data-en="Technologies and Libraries">Tecnologías y Librerías</h2>
-                    <ul>
-                        <li>Python, Pandas, NumPy</li>
-                        <li>NLTK, spaCy</li>
-                        <li>Scikit-learn (LDA)</li>
-                        <li>Matplotlib, Seaborn</li>
-                    </ul>
-
-                    <h2 data-es="Resultados" data-en="Results">Resultados</h2>
-                    <p data-es="El análisis reveló patrones interesantes en la evolución musical argentina, identificando tópicos recurrentes como amor, política, nostalgia y diversidad cultural. Se encontró una correlación entre ciertos patrones temáticos y la popularidad de las canciones." data-en="The analysis revealed interesting patterns in the evolution of Argentine music, identifying recurring topics such as love, politics, nostalgia, and cultural diversity. A correlation was found between certain thematic patterns and song popularity.">El análisis reveló patrones interesantes en la evolución musical argentina, identificando tópicos recurrentes como amor, política, nostalgia y diversidad cultural. Se encontró una correlación entre ciertos patrones temáticos y la popularidad de las canciones.</p>
-
-                    <h2 data-es="Repositorio y Notebooks" data-en="Repository and Notebooks">Repositorio y Notebooks</h2>
-                    <p data-es="Los notebooks utilizados en este proyecto son:" data-en="The notebooks used in this project are:">Los notebooks utilizados en este proyecto son:</p>
-                    <ul>
-                        <li><code>tp1_m18_g1_kwist_peron_puican.ipynb</code> - Exploración inicial</li>
-                        <li><code>tp2_kwist_puican_peron.ipynb</code> - Análisis detallado</li>
-                        <li><code>tp3_kwist_puican_peron.ipynb</code> - Modelado y resultados</li>
-                    </ul>
                 </div>
             </section>
         </main>

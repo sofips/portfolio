@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Predicción de Precios de Viviendas en California</title>
+    <title>Predicción de Precios Inmobiliarios</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -15,8 +15,8 @@
     <div class="container">
         <header class="header">
             <div class="header-content">
-                <h1 data-es="Predicción de Precios de Viviendas en California" data-en="California Housing Price Prediction">Predicción de Precios de Viviendas en California</h1>
-                <p class="subtitle" data-es="Modelado de regresión a partir de datos del censo" data-en="Regression modeling from census data">Modelado de regresión a partir de datos del censo</p>
+                <h1 data-es="Predicción de Precios Inmobiliarios California" data-en="California Real Estate Price Prediction">Predicción de Precios Inmobiliarios California</h1>
+                <p class="subtitle" data-es="Regresión multivariable con técnicas de machine learning" data-en="Multivariate regression with machine learning techniques">Regresión multivariable con técnicas de machine learning</p>
             </div>
         </header>
 
@@ -27,87 +27,50 @@
         <main class="main">
             <section class="section project-detail">
                 <div class="project-content">
-                    <h2 data-es="Descripción" data-en="Description">Descripción</h2>
-                    <p data-es="Este proyecto presenta un análisis exploratorio exhaustivo y modelado de regresión para predecir precios de viviendas en California. Utilizando datos del censo de 1990, se incorporan características geográficas y demográficas con visualización interactiva de relaciones entre variables, selección estratégica de características, y comparación sistemática de algoritmos de regresión." data-en="This project presents a comprehensive exploratory analysis and regression modeling to predict California housing prices. Using 1990 census data, it incorporates geographic and demographic features with interactive visualization of variable relationships, strategic feature selection, and systematic comparison of regression algorithms.">Este proyecto presenta un análisis exploratorio exhaustivo y modelado de regresión para predecir precios de viviendas en California. Utilizando datos del censo de 1990, se incorporan características geográficas y demográficas con visualización interactiva de relaciones entre variables, selección estratégica de características, y comparación sistemática de algoritmos de regresión.</p>
-
-                    <h2 data-es="Dataset" data-en="Dataset">Dataset</h2>
-                    <p data-es="El conjunto de datos contiene 20,640 registros de propiedades de California del censo de 1990, con variables como:" data-en="The dataset contains 20,640 records of California properties from the 1990 census, with variables such as:">El conjunto de datos contiene 20,640 registros de propiedades de California del censo de 1990, con variables como:</p>
-                    <ul>
-                        <li data-es="Latitud y Longitud" data-en="Latitude and Longitude">Latitud y Longitud</li>
-                        <li data-es="Edad promedio de las viviendas" data-en="Average housing age">Edad promedio de las viviendas</li>
-                        <li data-es="Número total de cuartos" data-en="Total number of rooms">Número total de cuartos</li>
-                        <li data-es="Población" data-en="Population">Población</li>
-                        <li data-es="Ingresos promedio del hogar (variable objetivo)" data-en="Median household income (target variable)">Ingresos promedio del hogar (variable objetivo)</li>
-                    </ul>
+                    <h2 data-es="Problema" data-en="Problem">Problema</h2>
+                    <p data-es="¿Cómo predecir el precio de una vivienda en California usando características como ubicación, cantidad de habitaciones, ingresos medios del área y ocupancia? ¿Qué modelo de regresión ofrece el mejor balance entre sesgo y varianza?" data-en="How to predict housing prices in California using features like location, number of rooms, average area income, and occupancy? Which regression model offers the best bias-variance tradeoff?">¿Cómo predecir el precio de una vivienda en California usando características como ubicación, cantidad de habitaciones, ingresos medios del área y ocupancia? ¿Qué modelo de regresión ofrece el mejor balance entre sesgo y varianza?</p>
 
                     <h2 data-es="Metodología" data-en="Methodology">Metodología</h2>
+                    <p data-es="Pipeline de regresión para predicción de precios de viviendas en California usando dataset de censo 1990:" data-en="Regression pipeline for California housing price prediction using 1990 census dataset:">Pipeline de regresión para predicción de precios de viviendas en California usando dataset de censo 1990:</p>
                     <ul>
-                        <li data-es="Análisis Exploratorio de Datos (EDA) detallado" data-en="Detailed Exploratory Data Analysis (EDA)">Análisis Exploratorio de Datos (EDA) detallado</li>
-                        <li data-es="Visualización de distribuciones y correlaciones" data-en="Visualization of distributions and correlations">Visualización de distribuciones y correlaciones</li>
-                        <li data-es="Detección y tratamiento de outliers" data-en="Outlier detection and treatment">Detección y tratamiento de outliers</li>
-                        <li data-es="Normalización y escalado de características" data-en="Feature normalization and scaling">Normalización y escalado de características</li>
-                        <li data-es="Análisis de correlación y multicolinealidad" data-en="Correlation and multicollinearity analysis">Análisis de correlación y multicolinealidad</li>
-                        <li data-es="Selección de características (feature selection)" data-en="Feature selection">Selección de características (feature selection)</li>
-                        <li data-es="Entrenamiento de múltiples modelos de regresión" data-en="Training of multiple regression models">Entrenamiento de múltiples modelos de regresión</li>
-                        <li data-es="Validación cruzada y evaluación" data-en="Cross-validation and evaluation">Validación cruzada y evaluación</li>
+                        <li data-es="EDA con 8 características: Latitud, Longitud, Edad vivienda, Total cuartos, Total dormitorios, Población, Ocupancia, Ingresos" data-en="EDA with 8 features: Latitude, Longitude, House age, Total rooms, Total bedrooms, Population, Occupancy, Income">EDA con 8 características: Latitud, Longitud, Edad vivienda, Total cuartos, Total dormitorios, Población, Ocupancia, Ingresos</li>
+                        <li data-es="Filtrado de outliers por percentiles (Q1/Q95) para mejorar robustez" data-en="Outlier filtering by percentiles (Q1/Q95) for improved robustness">Filtrado de outliers por percentiles (Q1/Q95) para mejorar robustez</li>
+                        <li data-es="Normalización con StandardScaler y selección de features relevantes" data-en="Normalization with StandardScaler and relevant feature selection">Normalización con StandardScaler y selección de features relevantes</li>
+                        <li data-es="Entrenamiento de múltiples modelos: Linear, Ridge, Lasso, Random Forest, Gradient Boosting" data-en="Training multiple models: Linear, Ridge, Lasso, Random Forest, Gradient Boosting">Entrenamiento de múltiples modelos: Linear, Ridge, Lasso, Random Forest, Gradient Boosting</li>
+                        <li data-es="Evaluación con MSE, RMSE, MAE, R² y análisis de residuos" data-en="Evaluation with MSE, RMSE, MAE, R² and residuals analysis">Evaluación con MSE, RMSE, MAE, R² y análisis de residuos</li>
                     </ul>
 
-                    <h2 data-es="Gráficos Principales" data-en="Main Graphics">Gráficos Principales</h2>
-                    <div class="gallery">
-                        <div class="gallery-item">
-                            <h3 data-es="Mapa Geográfico" data-en="Geographic Map">Mapa Geográfico</h3>
-                            <div class="gallery-placeholder">
-                                <p data-es="Mapa geográfico" data-en="Geographic map">🗺️</p>
-                            </div>
-                            <p data-es="Visualización de precios de viviendas por ubicación geográfica en California." data-en="Visualization of housing prices by geographic location in California.">Visualización de precios de viviendas por ubicación geográfica en California.</p>
-                        </div>
-                        <div class="gallery-item">
-                            <h3 data-es="Matriz de Correlación" data-en="Correlation Matrix">Matriz de Correlación</h3>
-                            <div class="gallery-placeholder">
-                                <p data-es="Matriz de correlación" data-en="Correlation matrix">📊</p>
-                            </div>
-                            <p data-es="Relaciones entre variables predictorias y la variable objetivo." data-en="Relationships between predictor variables and target variable.">Relaciones entre variables predictorias y la variable objetivo.</p>
-                        </div>
-                        <div class="gallery-item">
-                            <h3 data-es="Predicciones vs Reales" data-en="Predictions vs Actual">Predicciones vs Reales</h3>
-                            <div class="gallery-placeholder">
-                                <p data-es="Predicciones vs reales" data-en="Predictions vs actual">📈</p>
-                            </div>
-                            <p data-es="Comparación entre valores predichos y valores reales." data-en="Comparison between predicted and actual values.">Comparación entre valores predichos y valores reales.</p>
-                        </div>
-                    </div>
-
-                    <h2 data-es="Modelos Evaluados" data-en="Evaluated Models">Modelos Evaluados</h2>
+                    <h2 data-es="Resultados Principales" data-en="Main Results">Resultados Principales</h2>
                     <ul>
-                        <li>Linear Regression</li>
-                        <li>Polynomial Regression</li>
-                        <li>Ridge Regression (L2 regularization)</li>
-                        <li>Lasso Regression (L1 regularization)</li>
-                        <li>Random Forest Regression</li>
-                        <li>Gradient Boosting Regression</li>
+                        <li data-es="Random Forest y Gradient Boosting lograron R² > 0.87 en test set" data-en="Random Forest and Gradient Boosting achieved R² > 0.87 on test set">Random Forest y Gradient Boosting lograron R² > 0.87 en test set</li>
+                        <li data-es="RMSE < $69,000 (mejora vs baseline de $90,000)" data-en="RMSE < $69,000 (improvement vs $90,000 baseline)">RMSE < $69,000 (mejora vs baseline de $90,000)</li>
+                        <li data-es="Features más importantes: Longitud, Latitud, Edad vivienda, Ingresos" data-en="Most important features: Longitude, Latitude, House age, Income">Features más importantes: Longitud, Latitud, Edad vivienda, Ingresos</li>
+                        <li data-es="Modelos capturan bien relaciones no-lineales geoespaciales y temporales" data-en="Models well capture non-linear geospatial and temporal relationships">Modelos capturan bien relaciones no-lineales geoespaciales y temporales</li>
                     </ul>
-
-                    <h2 data-es="Métricas de Evaluación" data-en="Evaluation Metrics">Métricas de Evaluación</h2>
-                    <ul>
-                        <li data-es="Mean Absolute Error (MAE)" data-en="Mean Absolute Error (MAE)">Mean Absolute Error (MAE)</li>
-                        <li data-es="Mean Squared Error (MSE)" data-en="Mean Squared Error (MSE)">Mean Squared Error (MSE)</li>
-                        <li data-es="Root Mean Squared Error (RMSE)" data-en="Root Mean Squared Error (RMSE)">Root Mean Squared Error (RMSE)</li>
-                        <li data-es="R² (Coeficiente de Determinación)" data-en="R² (Coefficient of Determination)">R² (Coeficiente de Determinación)</li>
-                    </ul>
-
-                    <h2 data-es="Resultados" data-en="Results">Resultados</h2>
-                    <p data-es="Los modelos basados en ensambles (Random Forest y Gradient Boosting) alcanzaron el mejor desempeño predictivo, con un R² superior a 0.85. Las características geográficas (latitud y longitud) junto con el tamaño promedio de las viviendas resultaron ser los predictores más importantes." data-en="Ensemble-based models (Random Forest and Gradient Boosting) achieved the best predictive performance, with an R² greater than 0.85. Geographic features (latitude and longitude) along with average housing size proved to be the most important predictors.">Los modelos basados en ensambles (Random Forest y Gradient Boosting) alcanzaron el mejor desempeño predictivo, con un R² superior a 0.85. Las características geográficas (latitud y longitud) junto con el tamaño promedio de las viviendas resultaron ser los predictores más importantes.</p>
 
                     <h2 data-es="Tecnologías Utilizadas" data-en="Technologies Used">Tecnologías Utilizadas</h2>
-                    <ul>
-                        <li>Python, Pandas, NumPy</li>
-                        <li>Scikit-learn (Regresores)</li>
-                        <li>Matplotlib, Seaborn, Folium (Geolocalización)</li>
-                        <li>Plotly (Visualización interactiva)</li>
-                    </ul>
-
-                    <h2 data-es="Archivo del Proyecto" data-en="Project File">Archivo del Proyecto</h2>
-                    <p><code>Entregable_Avila_Peron_Britos_Nieto_Alabi.ipynb</code></p>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <h4>Pandas & NumPy</h4>
+                            <p data-es="Análisis y preprocesamiento" data-en="Analysis and preprocessing">Análisis y preprocesamiento</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Scikit-learn</h4>
+                            <p data-es="Modelos, StandardScaler, métricas" data-en="Models, StandardScaler, metrics">Modelos, StandardScaler, métricas</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Regression Models</h4>
+                            <p data-es="Linear, Ridge, Lasso, RF, GB" data-en="Linear, Ridge, Lasso, RF, GB">Linear, Ridge, Lasso, RF, GB</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Metrics & Curves</h4>
+                            <p data-es="MSE, RMSE, MAE, R², Residuals" data-en="MSE, RMSE, MAE, R², Residuals">MSE, RMSE, MAE, R², Residuals</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Matplotlib & Seaborn</h4>
+                            <p data-es="Visualización exploratoria" data-en="Exploratory visualization">Visualización exploratoria</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

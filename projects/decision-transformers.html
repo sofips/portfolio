@@ -16,7 +16,7 @@
         <header class="header">
             <div class="header-content">
                 <h1 data-es="Decision Transformers para Recomendaciones" data-en="Decision Transformers for Recommendations">Decision Transformers para Recomendaciones</h1>
-                <p class="subtitle" data-es="Sistemas de recomendación offline usando Deep Reinforcement Learning" data-en="Offline recommendation systems using Deep Reinforcement Learning">Sistemas de recomendación offline usando Deep Reinforcement Learning</p>
+                <p class="subtitle" data-es="Sistemas de recomendación offline con Deep Reinforcement Learning" data-en="Offline recommendation systems with Deep Reinforcement Learning">Sistemas de recomendación offline con Deep Reinforcement Learning</p>
             </div>
         </header>
 
@@ -27,55 +27,50 @@
         <main class="main">
             <section class="section project-detail">
                 <div class="project-content">
-                    <h2 data-es="Descripción" data-en="Description">Descripción</h2>
-                    <p data-es="Este proyecto evalúa Decision Transformers como un sistema innovador de recomendación offline de películas. El enfoque consiste en modelar las interacciones usuario-ítem como trayectorias de un Proceso de Decisión de Markov (MDP) y comparar el desempeño de Decision Transformers con métodos tradicionales de recomendación." data-en="This project evaluates Decision Transformers as an innovative offline movie recommendation system. The approach involves modeling user-item interactions as trajectories of a Markov Decision Process (MDP) and comparing Decision Transformers' performance with traditional recommendation methods.">Este proyecto evalúa Decision Transformers como un sistema innovador de recomendación offline de películas. El enfoque consiste en modelar las interacciones usuario-ítem como trayectorias de un Proceso de Decisión de Markov (MDP) y comparar el desempeño de Decision Transformers con métodos tradicionales de recomendación.</p>
+                    <h2 data-es="Problema" data-en="Problem">Problema</h2>
+                    <p data-es="Los sistemas de recomendación tradicionales tienen limitaciones para trabajar en entornos offline. ¿Cómo pueden los Decision Transformers, una arquitectura moderna basada en Transformers, resolver el problema de recomendación de películas sin acceso a retroalimentación en tiempo real?" data-en="Traditional recommendation systems have limitations for offline environments. How can Decision Transformers, a modern Transformer-based architecture, solve the movie recommendation problem without access to real-time feedback?">Los sistemas de recomendación tradicionales tienen limitaciones para trabajar en entornos offline. ¿Cómo pueden los Decision Transformers, una arquitectura moderna basada en Transformers, resolver el problema de recomendación de películas sin acceso a retroalimentación en tiempo real?</p>
 
                     <h2 data-es="Metodología" data-en="Methodology">Metodología</h2>
+                    <p data-es="Implementación de Decision Transformers como arquitectura alternativa para sistemas de recomendación offline:" data-en="Implementation of Decision Transformers as an alternative architecture for offline recommendation systems:">Implementación de Decision Transformers como arquitectura alternativa para sistemas de recomendación offline:</p>
                     <ul>
-                        <li data-es="Conceptualización del problema como un MDP" data-en="Problem conceptualization as an MDP">Conceptualización del problema como un MDP</li>
-                        <li data-es="Preparación de datos de interacciones usuario-películas" data-en="Preparation of user-movie interaction data">Preparación de datos de interacciones usuario-películas</li>
-                        <li data-es="Implementación de Decision Transformers" data-en="Decision Transformers implementation">Implementación de Decision Transformers</li>
-                        <li data-es="Entrenamiento con técnicas offline RL" data-en="Training with offline RL techniques">Entrenamiento con técnicas offline RL</li>
-                        <li data-es="Evaluación comparativa con baselines" data-en="Comparative evaluation with baselines">Evaluación comparativa con baselines</li>
+                        <li data-es="Modelado de interacciones usuario-película como trayectorias de Markov Decision Process" data-en="Modeling user-movie interactions as Markov Decision Process trajectories">Modelado de interacciones usuario-película como trayectorias de Markov Decision Process</li>
+                        <li data-es="Arquitectura Transformer para procesar historiales de puntuaciones secuenciales" data-en="Transformer architecture to process sequential rating histories">Arquitectura Transformer para procesar historiales de puntuaciones secuenciales</li>
+                        <li data-es="Entrenamiento con aprendizaje por refuerzo offline (imitar políticas de alto retorno)" data-en="Training with offline reinforcement learning (imitating high-return policies)">Entrenamiento con aprendizaje por refuerzo offline (imitar políticas de alto retorno)</li>
+                        <li data-es="Comparación con métodos baseline: filtrado colaborativo y basado en contenido" data-en="Comparison with baseline methods: collaborative filtering and content-based">Comparación con métodos baseline: filtrado colaborativo y basado en contenido</li>
+                        <li data-es="Evaluación en dataset de Netflix con métricas de recall@k y ranking" data-en="Evaluation on Netflix dataset with recall@k and ranking metrics">Evaluación en dataset de Netflix con métricas de recall@k y ranking</li>
                     </ul>
 
-                    <h2 data-es="Arquitectura del Modelo" data-en="Model Architecture">Arquitectura del Modelo</h2>
-                    <p data-es="Decision Transformers utiliza una arquitectura Transformer que procesa trayectorias de retorno-a-realizar, estados y acciones pasadas para predecir la próxima acción óptima." data-en="Decision Transformers uses a Transformer architecture that processes trajectories of returns-to-go, past states, and actions to predict the next optimal action.">Decision Transformers utiliza una arquitectura Transformer que procesa trayectorias de retorno-a-realizar, estados y acciones pasadas para predecir la próxima acción óptima.</p>
-
-                    <h2 data-es="Gráficos Principales" data-en="Main Graphics">Gráficos Principales</h2>
-                    <div class="gallery">
-                        <div class="gallery-item">
-                            <h3 data-es="Comparación de Desempeño" data-en="Performance Comparison">Comparación de Desempeño</h3>
-                            <img src="../../Decision-Transformer-Recomendaciones-main/results/model_comparison_plots.png" alt="Model Comparison" class="gallery-image">
-                            <p data-es="Métricas de precisión y recall comparadas con métodos basados en contenido y filtrado colaborativo." data-en="Precision and recall metrics compared with content-based and collaborative filtering methods.">Métricas de precisión y recall comparadas con métodos basados en contenido y filtrado colaborativo.</p>
-                        </div>
-                        <div class="gallery-item">
-                            <h3 data-es="Curvas de Aprendizaje" data-en="Learning Curves">Curvas de Aprendizaje</h3>
-                            <img src="../../Decision-Transformer-Recomendaciones-main/results/loss_comparison_refactored_vs_reference.png" alt="Learning Curves" class="gallery-image">
-                            <p data-es="Evolución del modelo durante el entrenamiento." data-en="Model evolution during training.">Evolución del modelo durante el entrenamiento.</p>
-                        </div>
-                        <div class="gallery-item">
-                            <h3 data-es="Análisis de Recomendaciones" data-en="Recommendation Analysis">Análisis de Recomendaciones</h3>
-                            <p data-es="Distribución de géneros y características de películas recomendadas." data-en="Distribution of genres and characteristics of recommended movies.">Distribución de géneros y características de películas recomendadas.</p>
-                        </div>
-                    </div>
+                    <h2 data-es="Resultados Principales" data-en="Main Results">Resultados Principales</h2>
+                    <ul>
+                        <li data-es="Decision Transformers logró capturar patrones de preferencia usuario de forma eficiente" data-en="Decision Transformers successfully captured user preference patterns efficiently">Decision Transformers logró capturar patrones de preferencia usuario de forma eficiente</li>
+                        <li data-es="Competitividad en entorno offline sin necesidad de retroalimentación en tiempo real" data-en="Competitive performance in offline setting without real-time feedback">Competitividad en entorno offline sin necesidad de retroalimentación en tiempo real</li>
+                        <li data-es="Arquitectura modular permitió experimentación con variantes de embeddings y design" data-en="Modular architecture allowed experimentation with embedding variants and design">Arquitectura modular permitió experimentación con variantes de embeddings y design</li>
+                        <li data-es="Comparación detallada con código de referencia y baselines establecidos" data-en="Detailed comparison with reference code and established baselines">Comparación detallada con código de referencia y baselines establecidos</li>
+                    </ul>
 
                     <h2 data-es="Tecnologías Utilizadas" data-en="Technologies Used">Tecnologías Utilizadas</h2>
-                    <ul>
-                        <li>PyTorch, TensorFlow</li>
-                        <li>Transformers (Hugging Face)</li>
-                        <li>Decision Transformers (original implementation)</li>
-                        <li>Netflix Dataset / MovieLens</li>
-                    </ul>
-
-                    <h2 data-es="Resultados" data-en="Results">Resultados</h2>
-                    <p data-es="El proyecto demostró que Decision Transformers puede ser una alternativa prometedora para sistemas de recomendación offline, superando a algunos baselines tradicionales en ciertos escenarios y manteniendo competitividad en otros." data-en="The project showed that Decision Transformers can be a promising alternative for offline recommendation systems, outperforming some traditional baselines in certain scenarios and remaining competitive in others.">El proyecto demostró que Decision Transformers puede ser una alternativa prometedora para sistemas de recomendación offline, superando a algunos baselines tradicionales en ciertos escenarios y manteniendo competitividad en otros.</p>
-
-                    <h2 data-es="Referencias" data-en="References">Referencias</h2>
-                    <ul>
-                        <li data-es="Chen et al. (2021) - Decision Transformer: Reinforcement Learning via Sequence Modeling" data-en="Chen et al. (2021) - Decision Transformer: Reinforcement Learning via Sequence Modeling">Chen et al. (2021) - Decision Transformer: Reinforcement Learning via Sequence Modeling</li>
-                        <li><code>Informe_rl_avila_peron.pdf</code> - Informe detallado del proyecto</li>
-                    </ul>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <h4>PyTorch</h4>
+                            <p data-es="Framework para construcción de modelos deep learning" data-en="Framework for deep learning model construction">Framework para construcción de modelos deep learning</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Transformers</h4>
+                            <p data-es="Arquitectura de atención para secuencias" data-en="Attention architecture for sequences">Arquitectura de atención para secuencias</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Pandas & NumPy</h4>
+                            <p data-es="Procesamiento y análisis de datos" data-en="Data processing and analysis">Procesamiento y análisis de datos</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Scikit-learn</h4>
+                            <p data-es="Baselines y métricas de evaluación" data-en="Baselines and evaluation metrics">Baselines y métricas de evaluación</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Matplotlib & Seaborn</h4>
+                            <p data-es="Visualización de resultados" data-en="Results visualization">Visualización de resultados</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

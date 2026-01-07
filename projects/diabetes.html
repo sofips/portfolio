@@ -16,7 +16,7 @@
         <header class="header">
             <div class="header-content">
                 <h1 data-es="Predicción de Diabetes" data-en="Diabetes Prediction">Predicción de Diabetes</h1>
-                <p class="subtitle" data-es="Modelos de clasificación para diagnóstico temprano" data-en="Classification models for early diagnosis">Modelos de clasificación para diagnóstico temprano</p>
+                <p class="subtitle" data-es="Clasificación binaria con múltiples algoritmos" data-en="Binary classification with multiple algorithms">Clasificación binaria con múltiples algoritmos</p>
             </div>
         </header>
 
@@ -27,66 +27,50 @@
         <main class="main">
             <section class="section project-detail">
                 <div class="project-content">
-                    <h2 data-es="Descripción" data-en="Description">Descripción</h2>
-                    <p data-es="Este proyecto utiliza datos clínicos y demográficos de pacientes para entrenar modelos de aprendizaje automático que predicen la presencia de diabetes. El análisis también identifica los factores más relevantes asociados al riesgo de desarrollar la enfermedad, contribuyendo al diagnóstico temprano y la prevención." data-en="This project uses clinical and demographic patient data to train machine learning models that predict the presence of diabetes. The analysis also identifies the most relevant factors associated with disease risk, contributing to early diagnosis and prevention.">Este proyecto utiliza datos clínicos y demográficos de pacientes para entrenar modelos de aprendizaje automático que predicen la presencia de diabetes. El análisis también identifica los factores más relevantes asociados al riesgo de desarrollar la enfermedad, contribuyendo al diagnóstico temprano y la prevención.</p>
+                    <h2 data-es="Problema" data-en="Problem">Problema</h2>
+                    <p data-es="¿Cómo predecir con precisión si un paciente tiene diabetes basándose en mediciones clínicas y demográficas? ¿Qué algoritmo de clasificación ofrece el mejor balance entre precisión, recall y AUC?" data-en="How to accurately predict whether a patient has diabetes based on clinical and demographic measurements? Which classification algorithm offers the best balance between precision, recall, and AUC?">¿Cómo predecir con precisión si un paciente tiene diabetes basándose en mediciones clínicas y demográficas? ¿Qué algoritmo de clasificación ofrece el mejor balance entre precisión, recall y AUC?</p>
 
                     <h2 data-es="Metodología" data-en="Methodology">Metodología</h2>
+                    <p data-es="Pipeline de aprendizaje supervisado para predicción binaria de diabetes usando dataset diabetes_prediction_dataset:" data-en="Supervised learning pipeline for binary diabetes prediction using diabetes_prediction_dataset:">Pipeline de aprendizaje supervisado para predicción binaria de diabetes usando dataset diabetes_prediction_dataset:</p>
                     <ul>
-                        <li data-es="Análisis Exploratorio de Datos clínicos" data-en="Exploratory analysis of clinical data">Análisis Exploratorio de Datos clínicos</li>
-                        <li data-es="Limpieza y manejo de valores faltantes" data-en="Data cleaning and missing value handling">Limpieza y manejo de valores faltantes</li>
-                        <li data-es="Ingeniería de características" data-en="Feature engineering">Ingeniería de características</li>
-                        <li data-es="Entrenamiento de múltiples clasificadores" data-en="Training of multiple classifiers">Entrenamiento de múltiples clasificadores</li>
-                        <li data-es="Evaluación y validación cruzada" data-en="Evaluation and cross-validation">Evaluación y validación cruzada</li>
-                        <li data-es="Análisis de importancia de features" data-en="Feature importance analysis">Análisis de importancia de features</li>
+                        <li data-es="EDA con 9 variables clínicas y demográficas (género, edad, hipertensión, enfermedad cardíaca, BMI, HbA1c, glucosa)" data-en="EDA with 9 clinical and demographic variables (gender, age, hypertension, heart disease, BMI, HbA1c, glucose)">EDA con 9 variables clínicas y demográficas (género, edad, hipertensión, enfermedad cardíaca, BMI, HbA1c, glucosa)</li>
+                        <li data-es="Balanceo de clases desbalanceadas mediante submuestreo estratificado" data-en="Balancing imbalanced classes through stratified undersampling">Balanceo de clases desbalanceadas mediante submuestreo estratificado</li>
+                        <li data-es="Normalización de features con StandardScaler y encoding de variables categóricas" data-en="Feature normalization with StandardScaler and categorical variable encoding">Normalización de features con StandardScaler y encoding de variables categóricas</li>
+                        <li data-es="Entrenamiento de 5 modelos: Logistic Regression, Decision Tree, Random Forest, XGBoost, SVM" data-en="Training 5 models: Logistic Regression, Decision Tree, Random Forest, XGBoost, SVM">Entrenamiento de 5 modelos: Logistic Regression, Decision Tree, Random Forest, XGBoost, SVM</li>
+                        <li data-es="Evaluación con Cross-Validation y análisis de Confusion Matrix, ROC-AUC, Feature Importance" data-en="Evaluation with Cross-Validation and Confusion Matrix, ROC-AUC, Feature Importance analysis">Evaluación con Cross-Validation y análisis de Confusion Matrix, ROC-AUC, Feature Importance</li>
                     </ul>
 
-                    <h2 data-es="Variables Clínicas Utilizadas" data-en="Clinical Variables Used">Variables Clínicas Utilizadas</h2>
+                    <h2 data-es="Resultados Principales" data-en="Main Results">Resultados Principales</h2>
                     <ul>
-                        <li data-es="Edad y características demográficas" data-en="Age and demographic characteristics">Edad y características demográficas</li>
-                        <li data-es="Índice de Masa Corporal (BMI)" data-en="Body Mass Index (BMI)">Índice de Masa Corporal (BMI)</li>
-                        <li data-es="Presión arterial" data-en="Blood pressure">Presión arterial</li>
-                        <li data-es="Niveles de glucosa en sangre" data-en="Blood glucose levels">Niveles de glucosa en sangre</li>
-                        <li data-es="Insulina y otros biomarcadores" data-en="Insulin and other biomarkers">Insulina y otros biomarcadores</li>
+                        <li data-es="Random Forest y XGBoost alcanzaron Accuracy > 95% en validación cruzada" data-en="Random Forest and XGBoost achieved Accuracy > 95% in cross-validation">Random Forest y XGBoost alcanzaron Accuracy > 95% en validación cruzada</li>
+                        <li data-es="ROC-AUC > 0.92 demostrando excelente capacidad discriminativa" data-en="ROC-AUC > 0.92 demonstrating excellent discriminative ability">ROC-AUC > 0.92 demostrando excelente capacidad discriminativa</li>
+                        <li data-es="Features más importantes: blood_glucose_level, HbA1c_level, BMI" data-en="Most important features: blood_glucose_level, HbA1c_level, BMI">Features más importantes: blood_glucose_level, HbA1c_level, BMI</li>
+                        <li data-es="Modelos bien balanceados en Precision/Recall (>92% en ambas)" data-en="Well-balanced models in Precision/Recall (>92% in both)">Modelos bien balanceados en Precision/Recall (>92% en ambas)</li>
                     </ul>
 
-                    <h2 data-es="Gráficos Principales" data-en="Main Graphics">Gráficos Principales</h2>
-                    <div class="gallery">
-                        <div class="gallery-item">
-                            <h3 data-es="Matriz de Confusión" data-en="Confusion Matrix">Matriz de Confusión</h3>
-                            <div class="gallery-placeholder">
-                                <p data-es="Matriz de confusión" data-en="Confusion matrix">📊</p>
-                            </div>
-                            <p data-es="Visualización del desempeño del modelo clasificador." data-en="Visualization of classifier model performance.">Visualización del desempeño del modelo clasificador.</p>
+                    <h2 data-es="Tecnologías Utilizadas" data-en="Technologies Used">Tecnologías Utilizadas</h2>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <h4>Pandas & NumPy</h4>
+                            <p data-es="Manipulación de datos clínicos" data-en="Clinical data manipulation">Manipulación de datos clínicos</p>
                         </div>
-                        <div class="gallery-item">
-                            <h3 data-es="Importancia de Features" data-en="Feature Importance">Importancia de Features</h3>
-                            <div class="gallery-placeholder">
-                                <p data-es="Importancia de variables" data-en="Feature importance">⭐</p>
-                            </div>
-                            <p data-es="Variables más relevantes para predecir diabetes." data-en="Most relevant variables for predicting diabetes.">Variables más relevantes para predecir diabetes.</p>
+                        <div class="tech-item">
+                            <h4>Scikit-learn</h4>
+                            <p data-es="Modelos, StandardScaler, GridSearchCV" data-en="Models, StandardScaler, GridSearchCV">Modelos, StandardScaler, GridSearchCV</p>
                         </div>
-                        <div class="gallery-item">
-                            <h3 data-es="Curva ROC" data-en="ROC Curve">Curva ROC</h3>
-                            <div class="gallery-placeholder">
-                                <p data-es="Curva ROC" data-en="ROC curve">📈</p>
-                            </div>
-                            <p data-es="Evaluación del trade-off entre sensibilidad y especificidad." data-en="Evaluation of sensitivity-specificity trade-off.">Evaluación del trade-off entre sensibilidad y especificidad.</p>
+                        <div class="tech-item">
+                            <h4>XGBoost</h4>
+                            <p data-es="Gradient Boosting avanzado" data-en="Advanced Gradient Boosting">Gradient Boosting avanzado</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Cross-Validation</h4>
+                            <p data-es="StratifiedKFold para validación robusta" data-en="StratifiedKFold for robust validation">StratifiedKFold para validación robusta</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Matplotlib & Seaborn</h4>
+                            <p data-es="Visualización de métricas y resultados" data-en="Metrics and results visualization">Visualización de métricas y resultados</p>
                         </div>
                     </div>
-
-                    <h2 data-es="Modelos Utilizados" data-en="Models Used">Modelos Utilizados</h2>
-                    <ul>
-                        <li>Logistic Regression</li>
-                        <li>Random Forest</li>
-                        <li>Gradient Boosting (XGBoost)</li>
-                        <li>Support Vector Machines (SVM)</li>
-                    </ul>
-
-                    <h2 data-es="Resultados" data-en="Results">Resultados</h2>
-                    <p data-es="Los modelos lograron una precisión superior al 85% en la predicción de diabetes. Se identificaron factores de riesgo clave como niveles de glucosa elevados, BMI, y edad, que podrían utilizarse en protocolos de screening médico." data-en="The models achieved over 85% accuracy in diabetes prediction. Key risk factors were identified such as elevated glucose levels, BMI, and age, which could be used in medical screening protocols.">Los modelos lograron una precisión superior al 85% en la predicción de diabetes. Se identificaron factores de riesgo clave como niveles de glucosa elevados, BMI, y edad, que podrían utilizarse en protocolos de screening médico.</p>
-
-                    <h2 data-es="Archivo del Proyecto" data-en="Project File">Archivo del Proyecto</h2>
-                    <p><code>Entregable_Britos_Peron_Alabi_Nieto_Avila.ipynb</code></p>
                 </div>
             </section>
         </main>

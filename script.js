@@ -147,7 +147,7 @@ function switchLanguage(lang) {
     document.querySelectorAll('[data-es][data-en]').forEach(element => {
         const text = element.getAttribute(`data-${lang}`);
         if (text) {
-            element.textContent = text;
+            element.innerHTML = text;
         }
     });
     

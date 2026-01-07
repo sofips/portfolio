@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análisis y Clustering de Jugadores de Fútbol</title>
+    <title>Análisis de Clustering de Futbolistas</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -15,8 +15,8 @@
     <div class="container">
         <header class="header">
             <div class="header-content">
-                <h1 data-es="Análisis y Clustering de Jugadores de Fútbol" data-en="Football Players Clustering Analysis">Análisis y Clustering de Jugadores de Fútbol</h1>
-                <p class="subtitle" data-es="Segmentación de jugadores por habilidades y características" data-en="Segmentation of players by skills and characteristics">Segmentación de jugadores por habilidades y características</p>
+                <h1 data-es="Análisis de Clustering de Futbolistas FIFA" data-en="FIFA Football Player Clustering Analysis">Análisis de Clustering de Futbolistas FIFA</h1>
+                <p class="subtitle" data-es="Segmentación de jugadores por características técnicas" data-en="Player segmentation by technical characteristics">Segmentación de jugadores por características técnicas</p>
             </div>
         </header>
 
@@ -27,64 +27,50 @@
         <main class="main">
             <section class="section project-detail">
                 <div class="project-content">
-                    <h2 data-es="Descripción" data-en="Description">Descripción</h2>
-                    <p data-es="Este proyecto realiza un análisis exploratorio, visual y no supervisado de una completa base de datos de jugadores de fútbol. El objetivo es aplicar técnicas de normalización, clustering y proyección dimensional para identificar grupos de jugadores con habilidades equivalentes y patrones similares de desempeño." data-en="This project performs an exploratory, visual, and unsupervised analysis of a comprehensive football player database. The goal is to apply normalization, clustering, and dimensional projection techniques to identify groups of players with equivalent skills and similar performance patterns.">Este proyecto realiza un análisis exploratorio, visual y no supervisado de una completa base de datos de jugadores de fútbol. El objetivo es aplicar técnicas de normalización, clustering y proyección dimensional para identificar grupos de jugadores con habilidades equivalentes y patrones similares de desempeño.</p>
+                    <h2 data-es="Problema" data-en="Problem">Problema</h2>
+                    <p data-es="Con miles de futbolistas en FIFA, ¿cómo identificar grupos homogéneos de jugadores con características técnicas similares? ¿Cómo pueden descubrirse patrones naturales sin usar las posiciones oficiales?" data-en="With thousands of FIFA players, how can we identify homogeneous groups of players with similar technical characteristics? How can we discover natural patterns without using official positions?">Con miles de futbolistas en FIFA, ¿cómo identificar grupos homogéneos de jugadores con características técnicas similares? ¿Cómo pueden descubrirse patrones naturales sin usar las posiciones oficiales?</p>
 
                     <h2 data-es="Metodología" data-en="Methodology">Metodología</h2>
+                    <p data-es="Análisis integrado de clustering de jugadores de fútbol de la base de datos male_players.csv con técnicas multidimensionales:" data-en="Integrated clustering analysis of football players from male_players.csv database with multidimensional techniques:">Análisis integrado de clustering de jugadores de fútbol de la base de datos male_players.csv con técnicas multidimensionales:</p>
                     <ul>
-                        <li data-es="Análisis Exploratorio de Datos (EDA)" data-en="Exploratory Data Analysis (EDA)">Análisis Exploratorio de Datos (EDA)</li>
-                        <li data-es="Normalización y escalado de características" data-en="Feature normalization and scaling">Normalización y escalado de características</li>
-                        <li data-es="Algoritmos de clustering: K-means, DBSCAN, Hierarchical" data-en="Clustering algorithms: K-means, DBSCAN, Hierarchical">Algoritmos de clustering: K-means, DBSCAN, Hierarchical</li>
-                        <li data-es="Proyección dimensional: PCA, t-SNE" data-en="Dimensional projection: PCA, t-SNE">Proyección dimensional: PCA, t-SNE</li>
-                        <li data-es="Visualización interactiva de clusters" data-en="Interactive cluster visualization">Visualización interactiva de clusters</li>
+                        <li data-es="Análisis exploratorio de 35+ características (pace, shooting, passing, dribbling, defense, physical)" data-en="Exploratory analysis of 35+ characteristics (pace, shooting, passing, dribbling, defense, physical)">Análisis exploratorio de 35+ características (pace, shooting, passing, dribbling, defense, physical)</li>
+                        <li data-es="Determinación de número óptimo de clusters mediante Elbow Method y Silhouette Score" data-en="Determination of optimal cluster number using Elbow Method and Silhouette Score">Determinación de número óptimo de clusters mediante Elbow Method y Silhouette Score</li>
+                        <li data-es="K-means clustering con normalización StandardScaler y validación cruzada" data-en="K-means clustering with StandardScaler normalization and cross-validation">K-means clustering con normalización StandardScaler y validación cruzada</li>
+                        <li data-es="Reducción dimensional con PCA y visualización 2D con t-SNE" data-en="Dimensionality reduction with PCA and 2D visualization with t-SNE">Reducción dimensional con PCA y visualización 2D con t-SNE</li>
+                        <li data-es="Clustering jerárquico (dendrogramas) para validación de estructura" data-en="Hierarchical clustering (dendrograms) for structure validation">Clustering jerárquico (dendrogramas) para validación de estructura</li>
                     </ul>
 
-                    <h2 data-es="Características Analizadas" data-en="Analyzed Features">Características Analizadas</h2>
+                    <h2 data-es="Resultados Principales" data-en="Main Results">Resultados Principales</h2>
                     <ul>
-                        <li data-es="Atributos físicos: altura, peso, velocidad" data-en="Physical attributes: height, weight, speed">Atributos físicos: altura, peso, velocidad</li>
-                        <li data-es="Habilidades técnicas: precisión de pase, regate, tiro" data-en="Technical skills: pass accuracy, dribbling, shooting">Habilidades técnicas: precisión de pase, regate, tiro</li>
-                        <li data-es="Estadísticas de juego: goles, asistencias, apariciones" data-en="Game statistics: goals, assists, appearances">Estadísticas de juego: goles, asistencias, apariciones</li>
-                        <li data-es="Posición en el campo" data-en="Position on field">Posición en el campo</li>
+                        <li data-es="Identificación de 5-7 clusters significativos con Silhouette Score > 0.4" data-en="Identification of 5-7 significant clusters with Silhouette Score > 0.4">Identificación de 5-7 clusters significativos con Silhouette Score > 0.4</li>
+                        <li data-es="Grupos de jugadores con perfiles claramente diferenciados (defensores, mediocampistas, delanteros)" data-en="Player groups with clearly differentiated profiles (defenders, midfielders, forwards)">Grupos de jugadores con perfiles claramente diferenciados (defensores, mediocampistas, delanteros)</li>
+                        <li data-es="Correlación parcial entre clusters automáticos y posiciones oficiales" data-en="Partial correlation between automatic clusters and official positions">Correlación parcial entre clusters automáticos y posiciones oficiales</li>
+                        <li data-es="Validación robusta mediante PCA, t-SNE y clustering jerárquico consistente" data-en="Robust validation through consistent PCA, t-SNE and hierarchical clustering">Validación robusta mediante PCA, t-SNE y clustering jerárquico consistente</li>
                     </ul>
-
-                    <h2 data-es="Gráficos Principales" data-en="Main Graphics">Gráficos Principales</h2>
-                    <div class="gallery">
-                        <div class="gallery-item">
-                            <h3 data-es="Proyección PCA" data-en="PCA Projection">Proyección PCA</h3>
-                            <div class="gallery-placeholder">
-                                <p data-es="Gráfico PCA" data-en="PCA chart">📈</p>
-                            </div>
-                            <p data-es="Visualización de los clusters en el espacio de las dos primeras componentes principales." data-en="Visualization of clusters in the space of the first two principal components.">Visualización de los clusters en el espacio de las dos primeras componentes principales.</p>
-                        </div>
-                        <div class="gallery-item">
-                            <h3 data-es="Proyección t-SNE" data-en="t-SNE Projection">Proyección t-SNE</h3>
-                            <div class="gallery-placeholder">
-                                <p data-es="Gráfico t-SNE" data-en="t-SNE chart">🎯</p>
-                            </div>
-                            <p data-es="Representación no lineal mostrando separación clara entre grupos de jugadores." data-en="Non-linear representation showing clear separation between player groups.">Representación no lineal mostrando separación clara entre grupos de jugadores.</p>
-                        </div>
-                        <div class="gallery-item">
-                            <h3 data-es="Dendrograma" data-en="Dendrogram">Dendrograma</h3>
-                            <div class="gallery-placeholder">
-                                <p data-es="Dendrograma" data-en="Dendrogram">🌳</p>
-                            </div>
-                            <p data-es="Análisis jerárquico de las relaciones entre clusters." data-en="Hierarchical analysis of relationships between clusters.">Análisis jerárquico de las relaciones entre clusters.</p>
-                        </div>
-                    </div>
-
-                    <h2 data-es="Resultados" data-en="Results">Resultados</h2>
-                    <p data-es="El análisis identificó aproximadamente 5-7 clusters principales correspondientes a diferentes posiciones y perfiles de jugadores: delanteros, centrocampistas, defensas, y porteros. Cada cluster muestra patrones distintivos de habilidades que permiten identificar jugadores con roles similares en el campo." data-en="The analysis identified approximately 5-7 main clusters corresponding to different player positions and profiles: forwards, midfielders, defenders, and goalkeepers. Each cluster shows distinctive skill patterns that allow identifying players with similar roles on the field.">El análisis identificó aproximadamente 5-7 clusters principales correspondientes a diferentes posiciones y perfiles de jugadores: delanteros, centrocampistas, defensas, y porteros. Cada cluster muestra patrones distintivos de habilidades que permiten identificar jugadores con roles similares en el campo.</p>
 
                     <h2 data-es="Tecnologías Utilizadas" data-en="Technologies Used">Tecnologías Utilizadas</h2>
-                    <ul>
-                        <li>Python, Pandas, NumPy</li>
-                        <li>Scikit-learn (K-means, DBSCAN, PCA)</li>
-                        <li>TSNE (Manifold Learning)</li>
-                        <li>Matplotlib, Seaborn, Plotly</li>
-                    </ul>
-
-                    <h2 data-es="Archivo del Proyecto" data-en="Project File">Archivo del Proyecto</h2>
-                    <p><code>Entregable_final_Peron_Britos_Alabi_Nieto_Avila.ipynb</code></p>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <h4>Pandas & NumPy</h4>
+                            <p data-es="Manipulación y análisis de datos" data-en="Data manipulation and analysis">Manipulación y análisis de datos</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Scikit-learn</h4>
+                            <p data-es="K-means, PCA, StandardScaler" data-en="K-means, PCA, StandardScaler">K-means, PCA, StandardScaler</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Scikit-learn Metrics</h4>
+                            <p data-es="Silhouette Score, Calinski-Harabasz" data-en="Silhouette Score, Calinski-Harabasz">Silhouette Score, Calinski-Harabasz</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>SciPy</h4>
+                            <p data-es="Clustering jerárquico y dendrogramas" data-en="Hierarchical clustering and dendrograms">Clustering jerárquico y dendrogramas</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Matplotlib & Seaborn</h4>
+                            <p data-es="Visualización exploratoria avanzada" data-en="Advanced exploratory visualization">Visualización exploratoria avanzada</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
