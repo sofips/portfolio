@@ -27,6 +27,7 @@ body {
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+    text-align: justify;
 }
 
 /* Language Switcher */
@@ -99,7 +100,7 @@ body {
 }
 
 .header-content h1 {
-    font-size: 3.5em;
+    font-size: 4.0em;
     font-weight: bold;
     margin-bottom: 10px;
     text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
@@ -352,6 +353,7 @@ body {
     text-decoration: none;
     flex-grow: 1;
     font-size: 1.2em;
+    text-align: left;
 }
 
 .project-title {
@@ -359,6 +361,8 @@ body {
     margin-bottom: 12px;
     color: var(--highlight);
     font-weight: bold;
+    text-align: left;
+
 }
 
 .project-description {
