@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum State Transfer with Genetic Algorithms</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <canvas id="ripple-grid" class="ripple-grid-background"></canvas>
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 data-es="Transferencia de Estados Cuánticos en Cadenas de Espín tipo Heisenberg diseñadas con Algoritmos Genéticos" data-en="Quantum State Transfer in Heisenberg Spin Chains Designed with Genetic Algorithms">Transferencia de Estados Cuánticos en Cadenas de Espín tipo Heisenberg diseñadas con Algoritmos Genéticos</h1>
+                <p class="subtitle" data-es="Optimización de cadenas de espín Heisenberg para comunicación cuántica" data-en="Optimization of Heisenberg spin chains for quantum communication">Optimización de cadenas de espín Heisenberg para comunicación cuántica</p>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <a href="../index.html" class="nav-link" data-es="← Volver" data-en="← Back">← Volver</a>
+        </nav>
+
+        <main class="main">
+            <section class="section project-detail">
+                <div class="project-content">
+                    
+                    <p data-es="Diseñar buenos canales de transmisión para estados cuánticos arbitrarios en cadenas de espín implica optimizar una función costo. Generalmente, esa función es la <strong>fidelidad promedio de transmisión</strong>, que mide qué tan similar es el estado transmitido al estado que se preparó al principio del protocolo de transmisión. Cuando se promedia sobre todos los estados iniciales posibles, es una figura de mérito que cuantifica la calidad del protocolo." data-en="Designing a good transfer channel for arbitrary quantum states in spin chains implies optimizing a cost function. Usually, this function is the <strong>averaged fidelity of transmission</strong>, which measures how much the transferred state resembles the state prepared at the beginning of the transfer protocol. When averaged over all the possible initial states, this figure of merit quantifies the quality of the protocol.">Diseñar buenos canales de transmisión para estados cuánticos arbitrarios en cadenas de espín implica optimizar una función costo. Generalmente, esa función es la <strong>fidelidad promedio de transmisión</strong>, que mide qué tan similar es el estado transmitido al estado que se preparó al principio del protocolo de transmisión. Cuando se promedia sobre todos los estados iniciales posibles, es una figura de mérito que cuantifica la calidad del protocolo.</p>
+
+                    <p data-es="En particular, se considera el diseño de <strong>cadenas de espín de tipo Heisenberg</strong> usando <strong>algoritmos genéticos</strong>. Este algoritmo altamente eficiente permite estudiar distintas propiedades de Hamiltonianos con buena capacidad de transmisión. Una de las desventajas aparentes de usar un método basado en aleatoriedad es que la intensidad de los coeficientes puede variar abruptamente entre los sitios. Modificando la función costo, se obtienen Hamiltonianos con coeficientes de intercambio que varían suavemente de sitio a sitio." data-en="In particular, we consider the design of <strong>Heisenberg spin chains</strong> using <strong>genetic algorithms</strong>. This highly efficient algorithm allows us to study different properties of Hamiltonians with good transfer ability. One apparent drawback of using randomness-based methods is that exchange coefficient strengths change abruptly from site to site. By modifying the cost function, we obtain Hamiltonians with exchange coefficients varying smoothly along the chain length.">En particular, se considera el diseño de <strong>cadenas de espín de tipo Heisenberg</strong> usando <strong>algoritmos genéticos</strong>. Este algoritmo altamente eficiente permite estudiar distintas propiedades de Hamiltonianos con buena capacidad de transmisión. Una de las desventajas aparentes de usar un método basado en aleatoriedad es que la intensidad de los coeficientes puede variar abruptamente entre los sitios. Modificando la función costo, se obtienen Hamiltonianos con coeficientes de intercambio que varían suavemente de sitio a sitio.</p>
+
+                    <h2 data-es="Algoritmo Genético" data-en="Genetic Algorithm">Algoritmo Genético</h2>
+
+                    <p data-es="Se emplea un <strong>algoritmo genético (GA)</strong> para optimizar los <strong>coeficientes de acoplamiento de intercambio dependientes del sitio (ECCs)</strong> del Hamiltoniano de Heisenberg. Como el Hamiltoniano conmuta con la magnetización total en la dirección z, trabajamos en el <strong>subespacio de una excitación</strong>, lo que permite una evaluación numérica eficiente de la probabilidad de transmisión." data-en="We employ a <strong>genetic algorithm (GA)</strong> to optimize the <strong>site-dependent exchange coupling coefficients (ECCs)</strong> of the Heisenberg Hamiltonian. Since the Hamiltonian commutes with the total magnetization in the z-direction, we work in the <strong>single-excitation subspace</strong>, which allows an efficient numerical evaluation of the transmission probability.">Se emplea un <strong>algoritmo genético (GA)</strong> para optimizar los <strong>coeficientes de acoplamiento de intercambio dependientes del sitio (ECCs)</strong> del Hamiltoniano de Heisenberg. Como el Hamiltoniano conmuta con la magnetización total en la dirección z, trabajamos en el <strong>subespacio de una excitación</strong>, lo que permite una evaluación numérica eficiente de la probabilidad de transmisión.</p>
+
+                    <p data-es="En el framework del GA:" data-en="In the GA framework:">En el framework del GA:</p>
+                    <ul>
+                        <li data-es="Una cadena de espín centrosimétrica se trata como un cromosoma" data-en="A centrosymmetric spin chain is treated as a chromosome">Una cadena de espín centrosimétrica se trata como un cromosoma</li>
+                        <li data-es="Los ECCs juegan el papel de genes" data-en="The ECCs play the role of genes">Los ECCs juegan el papel de genes</li>
+                        <li data-es="La <strong>función de fitness</strong> se basa en la probabilidad de transmisión del sitio 1 al sitio N" data-en="The <strong>fitness function</strong> is based on the probability of transmission from site 1 to site N">La <strong>función de fitness</strong> se basa en la probabilidad de transmisión del sitio 1 al sitio N</li>
+                    </ul>
+
+                    <div style="background: rgba(233, 69, 96, 0.1); padding: 10px; border-radius: 8px; text-align: center; margin: 15px 0;">
+                        <img src="../Genetic-Algorithm/ga_schematic.png" alt="Diagrama de flujo del algoritmo genético" style="max-width: 100%; height: auto; border-radius: 8px; background: white; padding: 8px;">
+                        <p style="font-style: italic; font-size: 0.85em; margin: 8px 0 0 0; text-align: left;" data-es="(a) Una cadena de espín centrosimétrica con 4 ECCs se trata como un cromosoma con 4 genes. (b) Los genes se inicializan aleatoriamente y se calcula el fitness para cada uno de ellos. (c) Los cromosomas más aptos se seleccionan como padres y se genera una nueva generación mediante cruzamiento. Algunos de ellos se seleccionan aleatoriamente para mutación." data-en="(a) A centrosymmetric spin chain with 4 ECCs is treated as a chromosome with 4 genes. (b) Genes are initialized randomly and fitness is calculated for each of them. (c) Fittest chromosomes are selected as parents and a new generation is generated via crossover. Some of them are randomly selected for mutation.">(a) Una cadena de espín centrosimétrica con 4 ECCs se trata como un cromosoma con 4 genes. (b) Los genes se inicializan aleatoriamente y se calcula el fitness para cada uno de ellos. (c) Los cromosomas más aptos se seleccionan como padres y se genera una nueva generación mediante cruzamiento. Algunos de ellos se seleccionan aleatoriamente para mutación.</p>
+                    </div>
+
+                    <h2 data-es="Funciones de Fitness" data-en="Fitness Functions">Funciones de Fitness</h2>
+
+                    <p data-es="Se emplearon dos funciones de fitness diferentes:" data-en="Two different fitness functions were employed:">Se emplearon dos funciones de fitness diferentes:</p>
+
+                    <ul>
+                        <li data-es="<strong>Fit1:</strong> es igual a P₁,ₙ (probabilidad de transmisión). Esta optimización sin restricciones típicamente produce <strong>perfiles de ECCs ásperos</strong>, con fuertes variaciones sitio a sitio." data-en="<strong>Fit1:</strong> is equal to P₁,ₙ (transmission probability). This unconstrained optimization typically yields <strong>rough ECC profiles</strong>, with strong site-to-site variations."><strong>Fit1:</strong> es igual a P₁,ₙ (probabilidad de transmisión). Esta optimización sin restricciones típicamente produce <strong>perfiles de ECCs ásperos</strong>, con fuertes variaciones sitio a sitio.</li>
+                        <li data-es="<strong>Fit2:</strong> es proporcional a P₁,ₙ y agrega un factor de suavidad para obtener ECCs que varían suavemente de sitio a sitio. Esto produce <strong>perfiles de interacción suaves</strong>, más atractivos para implementación experimental." data-en="<strong>Fit2:</strong> is proportional to P₁,ₙ and adds a smoothness factor to obtain ECCs that vary smoothly from site to site. This produces <strong>smooth interaction profiles</strong>, more appealing for experimental implementation."><strong>Fit2:</strong> es proporcional a P₁,ₙ y agrega un factor de suavidad para obtener ECCs que varían suavemente de sitio a sitio. Esto produce <strong>perfiles de interacción suaves</strong>, más atractivos para implementación experimental.</li>
+                    </ul>
+
+                    <p data-es="Nuestros resultados muestran que los Hamiltonianos suavizados tienen la misma, o menos, habilidad de transmisión que los ásperos, y <strong>ambos tipos muestran robustez similar frente al desorden estático</strong>." data-en="Our results show that smoothed Hamiltonians have the same, or less, transfer ability than the rough ones, and <strong>both kinds show similar robustness against static disorder</strong>.">Nuestros resultados muestran que los Hamiltonianos suavizados tienen la misma, o menos, habilidad de transmisión que los ásperos, y <strong>ambos tipos muestran robustez similar frente al desorden estático</strong>.</p>
+
+                    <h2 data-es="Comparación de Cadenas Optimizadas" data-en="Comparison of Optimized Chains">Comparación de Cadenas Optimizadas</h2>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0;">
+                        <div style="background: rgba(233, 69, 96, 0.1); padding: 10px; border-radius: 8px; display: flex; flex-direction: column; align-items: center;">
+                            <h3 data-es="Fit1: Desempeño Máximo" data-en="Fit1: Maximum Performance" style="margin: 0 0 8px 0;">Fit1: Desempeño Máximo</h3>
+                            <img src="../Genetic-Algorithm/fit1_results.png" alt="Resultados Fit1" style="max-width: 100%; height: auto; border-radius: 8px;">
+                            <p style="font-style: italic; font-size: 0.9em; text-align: center; margin: 6px 0 0 0;" data-es="Distribuciones de ECC ásperas con excelente probabilidad de transferencia." data-en="Rough ECC distributions with excellent transfer probability.">Distribuciones de ECC ásperas con excelente probabilidad de transferencia.</p>
+                        </div>
+                        <div style="background: rgba(233, 69, 96, 0.1); padding: 10px; border-radius: 8px; display: flex; flex-direction: column; align-items: center;">
+                            <h3 data-es="Fit2: Desempeño + Suavidad" data-en="Fit2: Performance + Smoothness" style="margin: 0 0 8px 0;">Fit2: Desempeño + Suavidad</h3>
+                            <img src="../Genetic-Algorithm/fit2_results.png" alt="Resultados Fit2" style="max-width: 100%; height: auto; border-radius: 8px;">
+                            <p style="font-style: italic; font-size: 0.9em; text-align: center; margin: 6px 0 0 0;" data-es="Distribuciones de ECC suaves con probabilidad de transferencia similar." data-en="Smooth ECC distributions with similar transfer probability.">Distribuciones de ECC suaves con probabilidad de transferencia similar.</p>
+                        </div>
+                    </div>
+
+                    <h2 data-es="Robustez ante Desorden Estático" data-en="Robustness Against Static Disorder">Robustez ante Desorden Estático</h2>
+
+                    <p data-es="Se aplica un modelo estándar de desorden donde cada ECC es afectado por J<sub>i</sub> → J<sub>i</sub>(1+ξ<sub>i</sub>), donde ξ<sub>i</sub> es una variable gaussiana aleatoria con media nula y desviación estándar σ. Las cadenas diseñadas son robustas para todas las longitudes simuladas: <strong>transmitirán con 98% de eficiencia para una fuerza de desorden del 5%</strong>." data-en="We apply a standard disorder model where each ECC is affected by J<sub>i</sub> → J<sub>i</sub>(1+ξ<sub>i</sub>), where ξ<sub>i</sub> is a random Gaussian variable with null mean and standard deviation σ. Designed chains are robust for all simulated lengths: <strong>they will transmit at 98% efficiency for a disorder strength of 5%</strong>.">Se aplica un modelo estándar de desorden donde cada ECC es afectado por J<sub>i</sub> → J<sub>i</sub>(1+ξ<sub>i</sub>), donde ξ<sub>i</sub> es una variable gaussiana aleatoria con media nula y desviación estándar σ. Las cadenas diseñadas son robustas para todas las longitudes simuladas: <strong>transmitirán con 98% de eficiencia para una fuerza de desorden del 5%</strong>.</p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0;">
+                        <div style="background: rgba(233, 69, 96, 0.1); padding: 10px; border-radius: 8px; display: flex; flex-direction: column; align-items: center;">
+                            <h3 data-es="Robustez ante Desorden (Fit1)" data-en="Disorder Robustness (Fit1)" style="margin: 0 0 8px 0;">Robustez ante Desorden (Fit1)</h3>
+                            <img src="../Genetic-Algorithm/disorder_fit1.png" alt="Robustez Fit1" style="max-width: 100%; height: auto; border-radius: 8px;">
+                            <p style="font-style: italic; font-size: 0.9em; text-align: center; margin: 6px 0 0 0;" data-es="Probabilidad de transmisión media vs fuerza de desorden para ECCs ásperos." data-en="Mean transmission probability vs disorder strength for rough ECCs.">Probabilidad de transmisión media vs fuerza de desorden para ECCs ásperos.</p>
+                        </div>
+                        <div style="background: rgba(233, 69, 96, 0.1); padding: 10px; border-radius: 8px; display: flex; flex-direction: column; align-items: center;">
+                            <h3 data-es="Robustez ante Desorden (Fit2)" data-en="Disorder Robustness (Fit2)" style="margin: 0 0 8px 0;">Robustez ante Desorden (Fit2)</h3>
+                            <img src="../Genetic-Algorithm/disorder_fit2.png" alt="Robustez Fit2" style="max-width: 100%; height: auto; border-radius: 8px;">
+                            <p style="font-style: italic; font-size: 0.9em; text-align: center; margin: 6px 0 0 0;" data-es="Probabilidad de transmisión media vs fuerza de desorden para ECCs suaves." data-en="Mean transmission probability vs disorder strength for smooth ECCs.">Probabilidad de transmisión media vs fuerza de desorden para ECCs suaves.</p>
+                        </div>
+                    </div>
+
+                    <h2 data-es="Conclusiones" data-en="Conclusions">Conclusiones</h2>
+
+                    <ul>
+                        <li data-es="Los <strong>algoritmos genéticos son una herramienta altamente eficiente</strong> para diseñar configuraciones de ECCs que logren transmisión de estados cuánticos de alta calidad en cadenas de espín Heisenberg." data-en="<strong>GAs are a highly efficient tool</strong> to design ECC configurations to achieve high quality quantum state transfer in Heisenberg spin chains.">Los <strong>algoritmos genéticos son una herramienta altamente eficiente</strong> para diseñar configuraciones de ECCs que logren transmisión de estados cuánticos de alta calidad en cadenas de espín Heisenberg.</li>
+                        <li data-es="Se pueden encontrar diferentes soluciones imponiendo restricciones en las funciones de fitness. Sin embargo, las propiedades físicas parecen ser independientes de la distribución de ECCs, por lo que no hay ventaja teórica. <strong>Las cadenas suavizadas podrían ser más prácticas para implementación experimental</strong>." data-en="Different solutions can be found by imposing constraints on the fitness functions. Nevertheless, physical properties seem to be independent of the distribution of ECCs so there is no theoretical advantage. <strong>Softened chains could be more practical for experimental implementation</strong>.">Se pueden encontrar diferentes soluciones imponiendo restricciones en las funciones de fitness. Sin embargo, las propiedades físicas parecen ser independientes de la distribución de ECCs, por lo que no hay ventaja teórica. <strong>Las cadenas suavizadas podrían ser más prácticas para implementación experimental</strong>.</li>
+                        <li data-es="Las cadenas diseñadas son robustas para todas las longitudes simuladas. <strong>Transmitirán con 98% de eficiencia para una fuerza de desorden del 5%</strong>." data-en="Designed chains are robust for all simulated lengths. <strong>They will transmit at 98% efficiency for a disorder strength of 5%</strong>.">Las cadenas diseñadas son robustas para todas las longitudes simuladas. <strong>Transmitirán con 98% de eficiencia para una fuerza de desorden del 5%</strong>.</li>
+                    </ul>
+
+                    <h2 data-es="Links" data-en="Links">Links</h2>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
+                        <a href="https://iopscience.iop.org/article/10.1088/1402-4896/adc76f" target="_blank" class="contact-link" data-es="📄 Paper Publicado" data-en="📄 Published Paper">📄 Paper Publicado</a>
+                        <a href="https://arxiv.org/pdf/2403.15909" target="_blank" class="contact-link" data-es="📚 arXiv" data-en="📚 arXiv">📚 arXiv</a>
+                        <a href="https://github.com/sofips/gen_alg_xxz" target="_blank" class="contact-link" data-es="💻 Repositorio" data-en="💻 Repository">💻 Repositorio</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 My Portfolio. Made with ♥</p>
+        </footer>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

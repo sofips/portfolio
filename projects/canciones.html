@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lectura Distante de Canciones Argentinas</title>
     <link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
     <canvas id="ripple-grid" class="ripple-grid-background"></canvas>
     <div class="language-switcher">
@@ -17,12 +15,8 @@
     <div class="container">
         <header class="header">
             <div class="header-content">
-                <h1 data-es="Lectura Distante de Canciones Argentinas" data-en="Distant Reading of Argentine Songs">
-                    Lectura Distante de Canciones Argentinas</h1>
-                <p class="subtitle"
-                    data-es="Clasificación de estilos musicales a partir del análisis textual de ~30,000 letras"
-                    data-en="Music style classification from textual analysis of ~30,000 lyrics">Clasificación de
-                    estilos musicales a partir del análisis textual de ~30,000 letras</p>
+                <h1 data-es="Lectura Distante de Canciones Argentinas" data-en="Distant Reading of Argentine Songs">Lectura Distante de Canciones Argentinas</h1>
+                <p class="subtitle" data-es="Clasificación de estilos musicales a partir del análisis textual de ~30,000 letras" data-en="Music style classification from textual analysis of ~30,000 lyrics">Clasificación de estilos musicales a partir del análisis textual de ~30,000 letras</p>
             </div>
         </header>
 
@@ -34,182 +28,57 @@
             <section class="section project-detail">
                 <div class="project-content">
 
-                    <!-- Introducción -->
-                    <h2 data-es="Introducción" data-en="Introduction">Introducción</h2>
-                    <p data-es="Este proyecto analiza un dataset de aproximadamente 30,000 letras de canciones argentinas extraídas del sitio La Cuerda, enriquecidas con metadatos de la API de Spotify. El objetivo es caracterizar y predecir estilos musicales a partir del análisis textual de las letras, utilizando técnicas de Procesamiento de Lenguaje Natural (NLP)."
-                        data-en="This project analyzes a dataset of approximately 30,000 Argentine song lyrics extracted from La Cuerda website, enriched with metadata from Spotify's API. The goal is to characterize and predict musical styles from textual analysis of lyrics using Natural Language Processing (NLP) techniques.">
-                        Este proyecto analiza un dataset de aproximadamente 30,000 letras de canciones argentinas
-                        extraídas del sitio <a href="https://lacuerda.net/" target="_blank">La Cuerda</a>, enriquecidas
-                        con metadatos de la API de Spotify. El objetivo es caracterizar y predecir estilos musicales a
-                        partir del análisis textual de las letras, utilizando técnicas de Procesamiento de Lenguaje
-                        Natural (NLP).
-                    </p>
-                    <p data-es="Este enfoque, conocido como Lectura Distante, permite descubrir patrones que serían imposibles de detectar mediante la lectura tradicional, revelando conexiones entre vocabulario, temática y género musical."
-                        data-en="This approach, known as Distant Reading, allows discovering patterns that would be impossible to detect through traditional reading, revealing connections between vocabulary, themes, and musical genre.">
-                        Este enfoque, conocido como <em>Lectura Distante</em>, permite descubrir patrones que serían
-                        imposibles de detectar mediante la lectura tradicional, revelando conexiones entre vocabulario,
-                        temática y género musical.
-                    </p>
+                    <p data-es="Este proyecto analiza un dataset de aproximadamente 30,000 letras de canciones argentinas extraídas del sitio <a href='https://lacuerda.net/' target='_blank'>La Cuerda</a>, enriquecidas con metadatos de la API de Spotify. El objetivo es caracterizar y predecir estilos musicales a partir del análisis textual de las letras, utilizando técnicas de <strong>Procesamiento de Lenguaje Natural (NLP)</strong>." data-en="This project analyzes a dataset of approximately 30,000 Argentine song lyrics extracted from <a href='https://lacuerda.net/' target='_blank'>La Cuerda</a> website, enriched with metadata from Spotify's API. The goal is to characterize and predict musical styles from textual analysis of lyrics using <strong>Natural Language Processing (NLP)</strong> techniques.">Este proyecto analiza un dataset de aproximadamente 30,000 letras de canciones argentinas extraídas del sitio <a href="https://lacuerda.net/" target="_blank">La Cuerda</a>, enriquecidas con metadatos de la API de Spotify. El objetivo es caracterizar y predecir estilos musicales a partir del análisis textual de las letras, utilizando técnicas de <strong>Procesamiento de Lenguaje Natural (NLP)</strong>.</p>
 
-                    <!-- Metodología -->
+                    <p data-es="Este enfoque, conocido como <em>Lectura Distante</em>, permite descubrir patrones que serían imposibles de detectar mediante la lectura tradicional, revelando conexiones entre vocabulario, temática y género musical." data-en="This approach, known as <em>Distant Reading</em>, allows discovering patterns that would be impossible to detect through traditional reading, revealing connections between vocabulary, themes, and musical genre.">Este enfoque, conocido como <em>Lectura Distante</em>, permite descubrir patrones que serían imposibles de detectar mediante la lectura tradicional, revelando conexiones entre vocabulario, temática y género musical.</p>
+
                     <h2 data-es="Metodología" data-en="Methodology">Metodología</h2>
 
-                    <h3 data-es="1. Recolección y preparación de datos" data-en="1. Data collection and preparation">1.
-                        Recolección y preparación de datos</h3>
-                    <p data-es="El primer paso consistió en obtener las letras de canciones desde La Cuerda, un repositorio colaborativo de acordes y letras. Posteriormente, se enriqueció el dataset con información de Spotify (popularidad, duración, artista) mediante su API."
-                        data-en="The first step was to obtain song lyrics from La Cuerda, a collaborative repository of chords and lyrics. Subsequently, the dataset was enriched with Spotify information (popularity, duration, artist) through its API.">
-                        El primer paso consistió en obtener las letras de canciones desde La Cuerda, un repositorio
-                        colaborativo de acordes y letras. Posteriormente, se enriqueció el dataset con información de
-                        Spotify (popularidad, duración, artista) mediante su API.
-                    </p>
-                    <p data-es="El preprocesamiento incluyó:" data-en="Preprocessing included:">El preprocesamiento
-                        incluyó:</p>
+                    <h3 data-es="Recolección y Preparación de Datos" data-en="Data Collection and Preparation">Recolección y Preparación de Datos</h3>
+                    <p data-es="El primer paso consistió en obtener las letras de canciones desde La Cuerda, un repositorio colaborativo de acordes y letras. Posteriormente, se enriqueció el dataset con información de Spotify (popularidad, duración, artista) mediante su API." data-en="The first step was to obtain song lyrics from La Cuerda, a collaborative repository of chords and lyrics. Subsequently, the dataset was enriched with Spotify information (popularity, duration, artist) through its API.">El primer paso consistió en obtener las letras de canciones desde La Cuerda, un repositorio colaborativo de acordes y letras. Posteriormente, se enriqueció el dataset con información de Spotify (popularidad, duración, artista) mediante su API.</p>
+                    
+                    <p data-es="El preprocesamiento incluyó:" data-en="Preprocessing included:">El preprocesamiento incluyó:</p>
                     <ul>
-                        <li data-es="Limpieza de texto (eliminación de caracteres especiales y normalización)"
-                            data-en="Text cleaning (removal of special characters and normalization)">Limpieza de texto
-                            (eliminación de caracteres especiales y normalización)</li>
-                        <li data-es="Lematización con spaCy para reducir palabras a su forma base"
-                            data-en="Lemmatization with spaCy to reduce words to their base form">Lematización con spaCy
-                            para reducir palabras a su forma base</li>
-                        <li data-es="Cálculo de métricas como TTR (Type-Token Ratio) para medir riqueza léxica"
-                            data-en="Calculation of metrics like TTR (Type-Token Ratio) to measure lexical richness">
-                            Cálculo de métricas como TTR (Type-Token Ratio) para medir riqueza léxica</li>
+                        <li data-es="Limpieza de texto (eliminación de caracteres especiales y normalización)" data-en="Text cleaning (removal of special characters and normalization)">Limpieza de texto (eliminación de caracteres especiales y normalización)</li>
+                        <li data-es="Lematización con <strong>spaCy</strong> para reducir palabras a su forma base" data-en="Lemmatization with <strong>spaCy</strong> to reduce words to their base form">Lematización con <strong>spaCy</strong> para reducir palabras a su forma base</li>
+                        <li data-es="Cálculo de métricas como TTR (Type-Token Ratio) para medir riqueza léxica" data-en="Calculation of metrics like TTR (Type-Token Ratio) to measure lexical richness">Cálculo de métricas como TTR (Type-Token Ratio) para medir riqueza léxica</li>
                     </ul>
 
-                    <h3 data-es="2. Análisis exploratorio y modelado de tópicos"
-                        data-en="2. Exploratory analysis and topic modeling">2. Análisis exploratorio y modelado de
-                        tópicos</h3>
-                    <p data-es="Se aplicó LDA (Latent Dirichlet Allocation) para descubrir tópicos latentes en el corpus. Identificamos cinco tópicos principales: religioso, existencial, naturista, desamor y folklórico. Cada canción fue etiquetada con el tópico de mayor probabilidad."
-                        data-en="LDA (Latent Dirichlet Allocation) was applied to discover latent topics in the corpus. We identified five main topics: religious, existential, naturist, heartbreak, and folkloric. Each song was labeled with its most probable topic.">
-                        Se aplicó <strong>LDA (Latent Dirichlet Allocation)</strong> para descubrir tópicos latentes en
-                        el corpus. Identificamos cinco tópicos principales: <em>religioso</em>, <em>existencial</em>,
-                        <em>naturista</em>, <em>desamor</em> y <em>folklórico</em>. Cada canción fue etiquetada con el
-                        tópico de mayor probabilidad.
-                    </p>
+                    <h3 data-es="Análisis Exploratorio y Modelado de Tópicos" data-en="Exploratory Analysis and Topic Modeling">Análisis Exploratorio y Modelado de Tópicos</h3>
+                    <p data-es="Se aplicó <strong>LDA (Latent Dirichlet Allocation)</strong> para descubrir tópicos latentes en el corpus. Identificamos cinco tópicos principales: <em>religioso</em>, <em>existencial</em>, <em>naturista</em>, <em>desamor</em> y <em>folklórico</em>. Cada canción fue etiquetada con el tópico de mayor probabilidad." data-en="<strong>LDA (Latent Dirichlet Allocation)</strong> was applied to discover latent topics in the corpus. We identified five main topics: <em>religious</em>, <em>existential</em>, <em>naturist</em>, <em>heartbreak</em>, and <em>folkloric</em>. Each song was labeled with its most probable topic.">Se aplicó <strong>LDA (Latent Dirichlet Allocation)</strong> para descubrir tópicos latentes en el corpus. Identificamos cinco tópicos principales: <em>religioso</em>, <em>existencial</em>, <em>naturista</em>, <em>desamor</em> y <em>folklórico</em>. Cada canción fue etiquetada con el tópico de mayor probabilidad.</p>
 
-                    <h3 data-es="3. Feature Engineering" data-en="3. Feature Engineering">3. Feature Engineering</h3>
-                    <p data-es="Además de la vectorización del texto, diseñamos features adicionales:"
-                        data-en="In addition to text vectorization, we designed additional features:">Además de la
-                        vectorización del texto, diseñamos features adicionales:</p>
+                    <h3 data-es="Feature Engineering" data-en="Feature Engineering">Feature Engineering</h3>
+                    <p data-es="Además de la vectorización del texto, diseñamos features adicionales:" data-en="In addition to text vectorization, we designed additional features:">Además de la vectorización del texto, diseñamos features adicionales:</p>
                     <ul>
-                        <li data-es="Proporción de stopwords: indicador de complejidad léxica"
-                            data-en="Proportion of stopwords: indicator of lexical complexity"><strong
-                                data-es="Proporción de stopwords" data-en="Proportion of stopwords">Proporción de
-                                stopwords</strong>: indicador de complejidad léxica</li>
-                        <li data-es="Proporción de palabras en inglés: relevante para ciertos géneros como pop o rock"
-                            data-en="Proportion of English words: relevant for certain genres like pop or rock"><strong
-                                data-es="Proporción de palabras en inglés"
-                                data-en="Proportion of English words">Proporción de palabras en inglés</strong>:
-                            relevante para ciertos géneros como pop o rock</li>
-                        <li data-es="Longitud media de palabra: asociada a estilos más tradicionales"
-                            data-en="Average word length: associated with more traditional styles"><strong
-                                data-es="Longitud media de palabra" data-en="Average word length">Longitud media de
-                                palabra</strong>: asociada a estilos más tradicionales</li>
-                        <li data-es="Repeticiones: frecuencia de palabras repetidas"
-                            data-en="Repetitions: frequency of repeated words"><strong data-es="Repeticiones"
-                                data-en="Repetitions">Repeticiones</strong>: frecuencia de palabras repetidas</li>
-                        <li data-es="Polaridad de sentimiento: calculada con TextBlob"
-                            data-en="Sentiment polarity: calculated with TextBlob"><strong
-                                data-es="Polaridad de sentimiento" data-en="Sentiment polarity">Polaridad de
-                                sentimiento</strong>: calculada con TextBlob</li>
+                        <li data-es="<strong>Proporción de stopwords</strong>: indicador de complejidad léxica" data-en="<strong>Proportion of stopwords</strong>: indicator of lexical complexity"><strong>Proporción de stopwords</strong>: indicador de complejidad léxica</li>
+                        <li data-es="<strong>Proporción de palabras en inglés</strong>: relevante para ciertos géneros como pop o rock" data-en="<strong>Proportion of English words</strong>: relevant for certain genres like pop or rock"><strong>Proporción de palabras en inglés</strong>: relevante para ciertos géneros como pop o rock</li>
+                        <li data-es="<strong>Longitud media de palabra</strong>: asociada a estilos más tradicionales" data-en="<strong>Average word length</strong>: associated with more traditional styles"><strong>Longitud media de palabra</strong>: asociada a estilos más tradicionales</li>
+                        <li data-es="<strong>Repeticiones</strong>: frecuencia de palabras repetidas" data-en="<strong>Repetitions</strong>: frequency of repeated words"><strong>Repeticiones</strong>: frecuencia de palabras repetidas</li>
+                        <li data-es="<strong>Polaridad de sentimiento</strong>: calculada con TextBlob" data-en="<strong>Sentiment polarity</strong>: calculated with TextBlob"><strong>Polaridad de sentimiento</strong>: calculada con TextBlob</li>
                     </ul>
 
-                    <h3 data-es="4. Vectorización del texto" data-en="4. Text vectorization">4. Vectorización del texto
-                    </h3>
-                    <p data-es="Probamos múltiples técnicas de representación numérica:"
-                        data-en="We tested multiple numerical representation techniques:">Probamos múltiples técnicas de
-                        representación numérica:</p>
+                    <h3 data-es="Vectorización del Texto" data-en="Text Vectorization">Vectorización del Texto</h3>
+                    <p data-es="Probamos múltiples técnicas de representación numérica:" data-en="We tested multiple numerical representation techniques:">Probamos múltiples técnicas de representación numérica:</p>
                     <ul>
-                        <li><strong>TF-IDF:</strong> <span
-                                data-es="pondera frecuencia de términos penalizando palabras muy comunes"
-                                data-en="weights term frequency penalizing very common words">pondera frecuencia de
-                                términos penalizando palabras muy comunes</span></li>
-                        <li><strong>Word2Vec:</strong> <span
-                                data-es="embeddings que capturan relaciones semánticas (modelo propio y preentrenado)"
-                                data-en="embeddings that capture semantic relationships (custom and pretrained model)">embeddings
-                                que capturan relaciones semánticas (modelo propio y preentrenado)</span></li>
-                        <li><strong>BERT:</strong> <span
-                                data-es="embeddings contextuales usando un modelo preentrenado en español"
-                                data-en="contextual embeddings using a Spanish pretrained model">embeddings contextuales
-                                usando un modelo preentrenado en español</span></li>
+                        <li><strong>TF-IDF:</strong> <span data-es="pondera frecuencia de términos penalizando palabras muy comunes" data-en="weights term frequency penalizing very common words">pondera frecuencia de términos penalizando palabras muy comunes</span></li>
+                        <li><strong>Word2Vec:</strong> <span data-es="embeddings que capturan relaciones semánticas (modelo propio y preentrenado)" data-en="embeddings that capture semantic relationships (custom and pretrained model)">embeddings que capturan relaciones semánticas (modelo propio y preentrenado)</span></li>
+                        <li><strong>BERT:</strong> <span data-es="embeddings contextuales usando un modelo preentrenado en español" data-en="contextual embeddings using a Spanish pretrained model">embeddings contextuales usando un modelo preentrenado en español</span></li>
                     </ul>
 
-                    <h3 data-es="5. Clasificación" data-en="5. Classification">5. Clasificación</h3>
-                    <p data-es="Entrenamos clasificadores para predecir el estilo musical:"
-                        data-en="We trained classifiers to predict musical style:">Entrenamos clasificadores para
-                        predecir el estilo musical:</p>
-                    <ul>
-                        <li><strong data-es="Regresión Logística" data-en="Logistic Regression">Regresión
-                                Logística</strong> (multinomial)</li>
-                        <li><strong>Support Vector Machines</strong> (LinearSVC)</li>
-                    </ul>
-                    <p data-es="Cada combinación vectorización + clasificador fue evaluada usando F1-score macro para considerar el desbalance de clases."
-                        data-en="Each vectorization + classifier combination was evaluated using F1-macro score to account for class imbalance.">
-                        Cada combinación vectorización + clasificador fue evaluada usando F1-score macro para considerar
-                        el desbalance de clases.
-                    </p>
+                    <h3 data-es="Clasificación" data-en="Classification">Clasificación</h3>
+                    <p data-es="Entrenamos clasificadores para predecir el estilo musical: <strong>Regresión Logística</strong> (multinomial) y <strong>Support Vector Machines</strong> (LinearSVC). Cada combinación vectorización + clasificador fue evaluada usando F1-score macro para considerar el desbalance de clases." data-en="We trained classifiers to predict musical style: <strong>Logistic Regression</strong> (multinomial) and <strong>Support Vector Machines</strong> (LinearSVC). Each vectorization + classifier combination was evaluated using F1-macro score to account for class imbalance.">Entrenamos clasificadores para predecir el estilo musical: <strong>Regresión Logística</strong> (multinomial) y <strong>Support Vector Machines</strong> (LinearSVC). Cada combinación vectorización + clasificador fue evaluada usando F1-score macro para considerar el desbalance de clases.</p>
 
-                    <!-- Problemas y soluciones -->
                     <h2 data-es="Problemas y Soluciones" data-en="Problems and Solutions">Problemas y Soluciones</h2>
 
-                    <h3 data-es="Desbalance de clases" data-en="Class imbalance">Desbalance de clases</h3>
-                    <p data-es="El dataset presenta una fuerte predominancia del rock sobre otros estilos. Esto generaba un sesgo sistemático hacia esa categoría."
-                        data-en="The dataset shows a strong predominance of rock over other styles. This caused a systematic bias towards that category.">
-                        El dataset presenta una fuerte predominancia del rock sobre otros estilos. Esto generaba un
-                        sesgo sistemático hacia esa categoría.
-                    </p>
-                    <p data-es="Solución: Utilizamos el parámetro class_weight='balanced' en los clasificadores y priorizamos métricas como F1-macro que penalizan el sesgo hacia clases mayoritarias."
-                        data-en="Solution: We used the class_weight='balanced' parameter in classifiers and prioritized metrics like F1-macro that penalize bias towards majority classes.">
-                        <strong data-es="Solución" data-en="Solution">Solución</strong>: Utilizamos el parámetro
-                        <code>class_weight='balanced'</code> en los clasificadores y priorizamos métricas como F1-macro
-                        que penalizan el sesgo hacia clases mayoritarias.
-                    </p>
+                    <p data-es="<strong>Desbalance de clases:</strong> El dataset presenta una fuerte predominancia del rock sobre otros estilos. Utilizamos el parámetro <code>class_weight='balanced'</code> en los clasificadores y priorizamos métricas como F1-macro." data-en="<strong>Class imbalance:</strong> The dataset shows a strong predominance of rock over other styles. We used the <code>class_weight='balanced'</code> parameter in classifiers and prioritized metrics like F1-macro."><strong>Desbalance de clases:</strong> El dataset presenta una fuerte predominancia del rock sobre otros estilos. Utilizamos el parámetro <code>class_weight='balanced'</code> en los clasificadores y priorizamos métricas como F1-macro.</p>
 
-                    <h3 data-es="Ambigüedad en la definición de 'estilo'" data-en="Ambiguity in 'style' definition">
-                        Ambigüedad en la definición de "estilo"</h3>
-                    <p data-es="Las etiquetas de estilo en La Cuerda mezclan criterios instrumentales, temáticos y de formación del grupo, generando categorías que no son mutuamente excluyentes."
-                        data-en="Style labels in La Cuerda mix instrumental, thematic, and group formation criteria, generating categories that are not mutually exclusive.">
-                        Las etiquetas de estilo en La Cuerda mezclan criterios instrumentales, temáticos y de formación
-                        del grupo, generando categorías que no son mutuamente excluyentes.
-                    </p>
-                    <p data-es="Solución: Aceptamos esta limitación como parte del problema y complementamos el análisis con clustering no supervisado para descubrir agrupaciones naturales."
-                        data-en="Solution: We accepted this limitation as part of the problem and complemented the analysis with unsupervised clustering to discover natural groupings.">
-                        <strong data-es="Solución" data-en="Solution">Solución</strong>: Aceptamos esta limitación como
-                        parte del problema y complementamos el análisis con clustering no supervisado para descubrir
-                        agrupaciones naturales.
-                    </p>
+                    <p data-es="<strong>Ambigüedad en la definición de 'estilo':</strong> Las etiquetas de estilo en La Cuerda mezclan criterios instrumentales, temáticos y de formación del grupo. Complementamos el análisis con clustering no supervisado para descubrir agrupaciones naturales." data-en="<strong>Ambiguity in 'style' definition:</strong> Style labels in La Cuerda mix instrumental, thematic, and group formation criteria. We complemented the analysis with unsupervised clustering to discover natural groupings."><strong>Ambigüedad en la definición de 'estilo':</strong> Las etiquetas de estilo en La Cuerda mezclan criterios instrumentales, temáticos y de formación del grupo. Complementamos el análisis con clustering no supervisado para descubrir agrupaciones naturales.</p>
 
-                    <h3 data-es="Limitaciones de Word2Vec preentrenado" data-en="Pretrained Word2Vec limitations">
-                        Limitaciones de Word2Vec preentrenado</h3>
-                    <p data-es="El modelo preentrenado en Wikipedia española tuvo peor desempeño que uno entrenado sobre nuestro corpus específico de canciones."
-                        data-en="The model pretrained on Spanish Wikipedia performed worse than one trained on our specific song corpus.">
-                        El modelo preentrenado en Wikipedia española tuvo peor desempeño que uno entrenado sobre nuestro
-                        corpus específico de canciones.
-                    </p>
-                    <p data-es="Solución: Entrenamos un modelo Word2Vec propio que captura mejor el vocabulario coloquial y poético de las letras argentinas."
-                        data-en="Solution: We trained our own Word2Vec model that better captures the colloquial and poetic vocabulary of Argentine lyrics.">
-                        <strong data-es="Solución" data-en="Solution">Solución</strong>: Entrenamos un modelo Word2Vec
-                        propio que captura mejor el vocabulario coloquial y poético de las letras argentinas.
-                    </p>
+                    <p data-es="<strong>Limitaciones de Word2Vec preentrenado:</strong> El modelo preentrenado en Wikipedia española tuvo peor desempeño que uno entrenado sobre nuestro corpus específico de canciones, que captura mejor el vocabulario coloquial y poético de las letras argentinas." data-en="<strong>Pretrained Word2Vec limitations:</strong> The model pretrained on Spanish Wikipedia performed worse than one trained on our specific song corpus, which better captures the colloquial and poetic vocabulary of Argentine lyrics."><strong>Limitaciones de Word2Vec preentrenado:</strong> El modelo preentrenado en Wikipedia española tuvo peor desempeño que uno entrenado sobre nuestro corpus específico de canciones, que captura mejor el vocabulario coloquial y poético de las letras argentinas.</p>
 
-                    <h3 data-es="Letras ambiguas" data-en="Ambiguous lyrics">Letras ambiguas</h3>
-                    <p data-es="Algunas canciones tienen letras que no reflejan claramente su estilo. Por ejemplo, canciones religiosas que nunca mencionan a Dios pero le hablan al oyente."
-                        data-en="Some songs have lyrics that don't clearly reflect their style. For example, religious songs that never mention God but speak to the listener.">
-                        Algunas canciones tienen letras que no reflejan claramente su estilo. Por ejemplo, canciones
-                        religiosas que nunca mencionan a Dios pero le hablan al oyente.
-                    </p>
-                    <p data-es="Solución: Documentamos estos casos como análisis de errores, reconociendo que el texto por sí solo no siempre determina el género musical."
-                        data-en="Solution: We documented these cases as error analysis, recognizing that text alone doesn't always determine musical genre.">
-                        <strong data-es="Solución" data-en="Solution">Solución</strong>: Documentamos estos casos como
-                        análisis de errores, reconociendo que el texto por sí solo no siempre determina el género
-                        musical.
-                    </p>
+                    <h2 data-es="Resultados" data-en="Results">Resultados</h2>
 
-                    <!-- Resultados y conclusiones -->
-                    <h2 data-es="Resultados y Conclusiones" data-en="Results and Conclusions">Resultados y Conclusiones
-                    </h2>
-
-                    <h3 data-es="Desempeño de los modelos" data-en="Model performance">Desempeño de los modelos</h3>
+                    <h3 data-es="Desempeño de los Modelos" data-en="Model Performance">Desempeño de los Modelos</h3>
                     <table class="results-table">
                         <thead>
                             <tr>
@@ -246,143 +115,37 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p data-es="El modelo baseline (TF-IDF + Regresión Logística) obtuvo el mejor resultado. Técnicas más sofisticadas como BERT no mejoraron significativamente el desempeño, lo que sugiere que el cuello de botella está en la calidad de las etiquetas y el desbalance, no en la representación del texto."
-                        data-en="The baseline model (TF-IDF + Logistic Regression) achieved the best result. More sophisticated techniques like BERT did not significantly improve performance, suggesting the bottleneck is in label quality and class imbalance, not in text representation.">
-                        El modelo baseline (TF-IDF + Regresión Logística) obtuvo el mejor resultado. Técnicas más
-                        sofisticadas como BERT no mejoraron significativamente el desempeño, lo que sugiere que el
-                        cuello de botella está en la calidad de las etiquetas y el desbalance, no en la representación
-                        del texto.
-                    </p>
+                    <p data-es="El modelo baseline (TF-IDF + Regresión Logística) obtuvo el mejor resultado. Técnicas más sofisticadas como BERT no mejoraron significativamente el desempeño, lo que sugiere que el cuello de botella está en la calidad de las etiquetas y el desbalance, no en la representación del texto." data-en="The baseline model (TF-IDF + Logistic Regression) achieved the best result. More sophisticated techniques like BERT did not significantly improve performance, suggesting the bottleneck is in label quality and class imbalance, not in text representation.">El modelo baseline (TF-IDF + Regresión Logística) obtuvo el mejor resultado. Técnicas más sofisticadas como BERT no mejoraron significativamente el desempeño, lo que sugiere que el cuello de botella está en la calidad de las etiquetas y el desbalance, no en la representación del texto.</p>
 
-                    <h3 data-es="Precisión por estilo" data-en="Precision by style">Precisión por estilo</h3>
-                    <div class="project-image">
-                        <img src="../lectura_distante/precission_plot.png"
-                            alt="Precisión por estilo del modelo TF-IDF + Regresión Logística"
-                            data-es-alt="Precisión por estilo del modelo TF-IDF + Regresión Logística"
-                            data-en-alt="Precision by style for TF-IDF + Logistic Regression model">
+                    <h3 data-es="Precisión por Estilo" data-en="Precision by Style">Precisión por Estilo</h3>
+
+                    <div style="background: rgba(233, 69, 96, 0.1); padding: 10px; border-radius: 8px; text-align: center; margin: 15px 0;">
+                        <img src="../lectura_distante/precission_plot.png" alt="Precisión por estilo del modelo TF-IDF + Regresión Logística" style="max-width: 80%; height: auto; border-radius: 8px;">
+                        <p style="font-style: italic; font-size: 0.85em; margin: 8px 0 0 0;" data-es="Precisión del mejor modelo (TF-IDF + Regresión Logística) para cada estilo musical. Se observa una clara influencia del número de muestras y la naturaleza del estilo en la capacidad predictiva." data-en="Precision of the best model (TF-IDF + Logistic Regression) for each musical style. There is a clear influence of sample size and style nature on predictive capacity.">Precisión del mejor modelo (TF-IDF + Regresión Logística) para cada estilo musical. Se observa una clara influencia del número de muestras y la naturaleza del estilo en la capacidad predictiva.</p>
                     </div>
-                    <p data-es="El gráfico muestra la precisión del mejor modelo (TF-IDF + Regresión Logística) para cada estilo musical. Se observa una clara influencia del número de muestras y la naturaleza del estilo en la capacidad predictiva."
-                        data-en="The chart shows the precision of the best model (TF-IDF + Logistic Regression) for each musical style. There is a clear influence of sample size and style nature on predictive capacity.">
-                        El gráfico muestra la precisión del mejor modelo (TF-IDF + Regresión Logística) para cada estilo
-                        musical. Se observa una clara influencia del <strong data-es="número de muestras"
-                            data-en="sample size">número de muestras</strong> y la <strong
-                            data-es="naturaleza del estilo" data-en="style nature">naturaleza del estilo</strong> en la
-                        capacidad predictiva.
-                    </p>
-                    <p data-es="Este análisis refuerza la conclusión de que algunos estilos están intrínsecamente ligados a sus letras, mientras que otros dependen de factores musicales o contextuales que el texto no puede capturar."
-                        data-en="This analysis reinforces the conclusion that some styles are intrinsically linked to their lyrics, while others depend on musical or contextual factors that text cannot capture.">
-                        Este análisis refuerza la conclusión de que algunos estilos están intrínsecamente ligados a sus
-                        letras, mientras que otros dependen de factores musicales o contextuales que el texto no puede
-                        capturar.
-                    </p>
 
-                    <h3 data-es="Hallazgos del análisis de coeficientes" data-en="Coefficient analysis findings">
-                        Hallazgos del análisis de coeficientes</h3>
-                    <p data-es="El modelo de regresión logística reveló palabras discriminativas por estilo:"
-                        data-en="The logistic regression model revealed discriminative words by style:">El modelo de
-                        regresión logística reveló palabras discriminativas por estilo:</p>
+                    <h3 data-es="Hallazgos del Análisis de Coeficientes" data-en="Coefficient Analysis Findings">Hallazgos del Análisis de Coeficientes</h3>
+                    <p data-es="El modelo de regresión logística reveló palabras discriminativas por estilo:" data-en="The logistic regression model revealed discriminative words by style:">El modelo de regresión logística reveló palabras discriminativas por estilo:</p>
                     <ul>
-                        <li><strong>Rock:</strong> <em>punk, mierda, aguante</em> <span
-                                data-es="(vocabulario directo y agresivo)"
-                                data-en="(direct and aggressive vocabulary)">(vocabulario directo y agresivo)</span>
-                        </li>
-                        <li><strong data-es="Religioso" data-en="Religious">Religioso:</strong> <em>jesús, espíritu,
-                                dios</em> <span data-es="(léxico espiritual explícito)"
-                                data-en="(explicit spiritual lexicon)">(léxico espiritual explícito)</span></li>
-                        <li><strong>Tropical:</strong> <em>cumbia, cuerpo, cariño</em> <span
-                                data-es="(referencias al baile y romance)"
-                                data-en="(references to dance and romance)">(referencias al baile y romance)</span></li>
-                        <li><strong data-es="Tradicional" data-en="Traditional">Tradicional:</strong> <em>cantor, monte,
-                                andar</em> <span data-es="(imaginario folklórico)"
-                                data-en="(folkloric imagery)">(imaginario folklórico)</span></li>
+                        <li><strong>Rock:</strong> <em>punk, mierda, aguante</em> <span data-es="(vocabulario directo y agresivo)" data-en="(direct and aggressive vocabulary)">(vocabulario directo y agresivo)</span></li>
+                        <li><strong data-es="Religioso" data-en="Religious">Religioso:</strong> <em>jesús, espíritu, dios</em> <span data-es="(léxico espiritual explícito)" data-en="(explicit spiritual lexicon)">(léxico espiritual explícito)</span></li>
+                        <li><strong>Tropical:</strong> <em>cumbia, cuerpo, cariño</em> <span data-es="(referencias al baile y romance)" data-en="(references to dance and romance)">(referencias al baile y romance)</span></li>
+                        <li><strong data-es="Tradicional" data-en="Traditional">Tradicional:</strong> <em>cantor, monte, andar</em> <span data-es="(imaginario folklórico)" data-en="(folkloric imagery)">(imaginario folklórico)</span></li>
                     </ul>
 
-                    <h3 data-es="Clustering" data-en="Clustering">Clustering</h3>
-                    <p data-es="Al aplicar K-means sobre las vectorizaciones, los clusters resultantes se alinearon más con los tópicos de LDA que con los estilos predefinidos. Esto sugiere que la estructura semántica de las letras no coincide perfectamente con las categorías de género asignadas externamente."
-                        data-en="When applying K-means on vectorizations, the resulting clusters aligned more with LDA topics than with predefined styles. This suggests that the semantic structure of lyrics doesn't perfectly match externally assigned genre categories.">
-                        Al aplicar K-means sobre las vectorizaciones, los clusters resultantes se alinearon más con los
-                        tópicos de LDA que con los estilos predefinidos. Esto sugiere que la estructura semántica de las
-                        letras no coincide perfectamente con las categorías de género asignadas externamente.
-                    </p>
+                    <h2 data-es="Conclusiones" data-en="Conclusions">Conclusiones</h2>
 
-                    <h3 data-es="Conclusiones" data-en="Conclusions">Conclusiones</h3>
-                    <ol>
-                        <li data-es="Existe una relación entre texto y estilo, pero es parcial. Las letras aportan información valiosa, especialmente para géneros definidos temáticamente (religioso, folklórico)."
-                            data-en="There is a relationship between text and style, but it's partial. Lyrics provide valuable information, especially for thematically defined genres (religious, folkloric).">
-                            <strong data-es="Existe una relación entre texto y estilo"
-                                data-en="There is a relationship between text and style">Existe una relación entre texto
-                                y estilo</strong>, pero es parcial. Las letras aportan información valiosa,
-                            especialmente para géneros definidos temáticamente (religioso, folklórico).
-                        </li>
-                        <li data-es="El desbalance y la ambigüedad de etiquetas son los principales limitantes, más que la técnica de vectorización elegida."
-                            data-en="Class imbalance and label ambiguity are the main limitations, more than the chosen vectorization technique.">
-                            <strong data-es="El desbalance y la ambigüedad de etiquetas"
-                                data-en="Imbalance and label ambiguity">El desbalance y la ambigüedad de
-                                etiquetas</strong> son los principales limitantes, más que la técnica de vectorización
-                            elegida.
-                        </li>
-                        <li data-es="El artista es un predictor fuerte: al incluir información del artista, el desempeño mejora significativamente, lo cual tiene sentido dado que las bandas suelen mantenerse dentro de un estilo."
-                            data-en="The artist is a strong predictor: including artist information significantly improves performance, which makes sense since bands tend to stay within a style.">
-                            <strong data-es="El artista es un predictor fuerte"
-                                data-en="The artist is a strong predictor">El artista es un predictor fuerte</strong>:
-                            al incluir información del artista, el desempeño mejora significativamente, lo cual tiene
-                            sentido dado que las bandas suelen mantenerse dentro de un estilo.
-                        </li>
-                        <li data-es="La lectura distante complementa, no reemplaza, el análisis tradicional. Permite identificar patrones a escala, pero requiere interpretación humana para validar los hallazgos."
-                            data-en="Distant reading complements, not replaces, traditional analysis. It allows identifying patterns at scale, but requires human interpretation to validate findings.">
-                            <strong data-es="La lectura distante complementa, no reemplaza"
-                                data-en="Distant reading complements, not replaces">La lectura distante complementa, no
-                                reemplaza</strong>, el análisis tradicional. Permite identificar patrones a escala, pero
-                            requiere interpretación humana para validar los hallazgos.
-                        </li>
-                    </ol>
-                    <p data-es="Este proyecto demuestra el potencial del NLP para analizar corpus culturales masivos, revelando la compleja relación entre palabras, música e identidad en la canción popular argentina."
-                        data-en="This project demonstrates the potential of NLP to analyze massive cultural corpora, revealing the complex relationship between words, music, and identity in Argentine popular song.">
-                        Este proyecto demuestra el potencial del NLP para analizar corpus culturales masivos, revelando
-                        la compleja relación entre palabras, música e identidad en la canción popular argentina.
-                    </p>
+                    <ul>
+                        <li data-es="<strong>Existe una relación entre texto y estilo</strong>, pero es parcial. Las letras aportan información valiosa, especialmente para géneros definidos temáticamente (religioso, folklórico)." data-en="<strong>There is a relationship between text and style</strong>, but it's partial. Lyrics provide valuable information, especially for thematically defined genres (religious, folkloric)."><strong>Existe una relación entre texto y estilo</strong>, pero es parcial. Las letras aportan información valiosa, especialmente para géneros definidos temáticamente (religioso, folklórico).</li>
+                        <li data-es="<strong>El desbalance y la ambigüedad de etiquetas</strong> son los principales limitantes, más que la técnica de vectorización elegida." data-en="<strong>Class imbalance and label ambiguity</strong> are the main limitations, more than the chosen vectorization technique."><strong>El desbalance y la ambigüedad de etiquetas</strong> son los principales limitantes, más que la técnica de vectorización elegida.</li>
+                        <li data-es="<strong>El artista es un predictor fuerte</strong>: al incluir información del artista, el desempeño mejora significativamente." data-en="<strong>The artist is a strong predictor</strong>: including artist information significantly improves performance."><strong>El artista es un predictor fuerte</strong>: al incluir información del artista, el desempeño mejora significativamente.</li>
+                        <li data-es="<strong>La lectura distante complementa, no reemplaza</strong>, el análisis tradicional. Permite identificar patrones a escala, pero requiere interpretación humana para validar los hallazgos." data-en="<strong>Distant reading complements, not replaces</strong>, traditional analysis. It allows identifying patterns at scale, but requires human interpretation to validate findings."><strong>La lectura distante complementa, no reemplaza</strong>, el análisis tradicional. Permite identificar patrones a escala, pero requiere interpretación humana para validar los hallazgos.</li>
+                    </ul>
 
-                    <!-- Tecnologías -->
-                    <h2 data-es="Tecnologías Utilizadas" data-en="Technologies Used">Tecnologías Utilizadas</h2>
-                    <div class="tech-grid">
-                        <div class="tech-item">
-                            <h4>Pandas & NumPy</h4>
-                            <p data-es="Manipulación y análisis de datos" data-en="Data manipulation and analysis">
-                                Manipulación y análisis de datos</p>
-                        </div>
-                        <div class="tech-item">
-                            <h4>spaCy & NLTK</h4>
-                            <p data-es="Preprocesamiento y lematización" data-en="Preprocessing and lemmatization">
-                                Preprocesamiento y lematización</p>
-                        </div>
-                        <div class="tech-item">
-                            <h4>Gensim</h4>
-                            <p data-es="LDA y Word2Vec" data-en="LDA and Word2Vec">LDA y Word2Vec</p>
-                        </div>
-                        <div class="tech-item">
-                            <h4>Scikit-learn</h4>
-                            <p data-es="TF-IDF, clasificadores y métricas" data-en="TF-IDF, classifiers and metrics">
-                                TF-IDF, clasificadores y métricas</p>
-                        </div>
-                        <div class="tech-item">
-                            <h4>Transformers (HuggingFace)</h4>
-                            <p data-es="BERT en español" data-en="Spanish BERT">BERT en español</p>
-                        </div>
-                        <div class="tech-item">
-                            <h4>Matplotlib & Seaborn</h4>
-                            <p data-es="Visualización de resultados" data-en="Results visualization">Visualización de
-                                resultados</p>
-                        </div>
-                    </div>
+                    <p data-es="Este proyecto demuestra el potencial del NLP para analizar corpus culturales masivos, revelando la compleja relación entre palabras, música e identidad en la canción popular argentina." data-en="This project demonstrates the potential of NLP to analyze massive cultural corpora, revealing the complex relationship between words, music, and identity in Argentine popular song.">Este proyecto demuestra el potencial del NLP para analizar corpus culturales masivos, revelando la compleja relación entre palabras, música e identidad en la canción popular argentina.</p>
 
-                    <!-- Agradecimientos -->
                     <h2 data-es="Agradecimientos" data-en="Acknowledgments">Agradecimientos</h2>
-                    <p data-es="Este trabajo fue producto de la mentoría en el contexto de la Diplomatura en Ciencia de Datos, Aprendizaje Automático y sus Aplicaciones (FAMAF) y fue realizado en conjunto con Lautaro Puican e Iván Kwist. ¡A ellos muchas gracias!"
-                        data-en="This work was the result of mentorship in the context of the Diploma in Data Science, Machine Learning and Applications (FAMAF) and was carried out together with Lautaro Puican and Iván Kwist. Many thanks to them!">
-                        Este trabajo fue producto de la mentoría en el contexto de la Diplomatura en Ciencia de Datos,
-                        Aprendizaje Automático y sus Aplicaciones (FAMAF) y fue realizado en conjunto con Lautaro Puican
-                        e Iván Kwist. ¡A ellos muchas gracias!
-                    </p>
+                    <p data-es="Este trabajo fue producto de la mentoría en el contexto de la Diplomatura en Ciencia de Datos, Aprendizaje Automático y sus Aplicaciones (FAMAF) y fue realizado en conjunto con Lautaro Puican e Iván Kwist. ¡A ellos muchas gracias!" data-en="This work was the result of mentorship in the context of the Diploma in Data Science, Machine Learning and Applications (FAMAF) and was carried out together with Lautaro Puican and Iván Kwist. Many thanks to them!">Este trabajo fue producto de la mentoría en el contexto de la Diplomatura en Ciencia de Datos, Aprendizaje Automático y sus Aplicaciones (FAMAF) y fue realizado en conjunto con Lautaro Puican e Iván Kwist. ¡A ellos muchas gracias!</p>
 
                 </div>
             </section>
@@ -395,5 +158,4 @@
 
     <script src="../script.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genetic Algorithm vs Deep Reinforcement Learning for Quantum State Transfer</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <canvas id="ripple-grid" class="ripple-grid-background"></canvas>
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 data-es="Optimización de la Transmisión de Estados Cuánticos en Cadenas de Qubits usando Deep Reinforcement Learning y Algoritmos Genéticos" data-en="Optimizing Quantum State Transfer in Qubit Chains using Deep Reinforcement Learning and Genetic Algorithms">Optimización de la Transmisión de Estados Cuánticos en Cadenas de Qubits usando Deep Reinforcement Learning y Algoritmos Genéticos</h1>
+                <p class="subtitle" data-es="Comparación de estrategias de control dinámico para transferencia cuántica" data-en="Comparison of dynamic control strategies for quantum transfer">Comparación de estrategias de control dinámico para transferencia cuántica</p>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <a href="../index.html" class="nav-link" data-es="← Volver" data-en="← Back">← Volver</a>
+        </nav>
+
+        <main class="main">
+            <section class="section project-detail">
+                <div class="project-content">
+                    
+                    <p data-es="La transferencia de estado cuántico (QST) a través de cadenas de espín homogéneas desempeña un papel crucial en la construcción de hardware cuántico escalable. Un protocolo básico de transmisión de estados cuánticos prepara un estado en un qubit y lo transfiere a otro a través de un canal, buscando minimizar el tiempo y evitar pérdida de información. La <strong>fidelidad</strong> del proceso se mide mediante funciones proporcionales a la probabilidad de transición entre ambos estados." data-en="Quantum state transfer (QST) through homogeneous spin chains plays a crucial role in building scalable quantum hardware. A basic quantum state transmission protocol prepares a state on one qubit and transfers it to another through a channel, seeking to minimize time and avoid information loss. The <strong>fidelity</strong> of the process is measured by functions proportional to the transition probability between both states.">La transferencia de estado cuántico (QST) a través de cadenas de espín homogéneas desempeña un papel crucial en la construcción de hardware cuántico escalable. Un protocolo básico de transmisión de estados cuánticos prepara un estado en un qubit y lo transfiere a otro a través de un canal, buscando minimizar el tiempo y evitar pérdida de información. La <strong>fidelidad</strong> del proceso se mide mediante funciones proporcionales a la probabilidad de transición entre ambos estados.</p>
+
+                    <p data-es="Abordamos este problema de optimización mediante <strong>pulsos magnéticos constantes</strong> y dos estrategias complementarias: <strong>aprendizaje por refuerzo profundo (DRL)</strong>, donde un agente aprende secuencias de pulsos mediante recompensas, y <strong>algoritmos genéticos (GA)</strong>, que desarrollan soluciones candidatas mediante selección y mutación. Analizamos la eficiencia de ambos métodos y su capacidad para incorporar restricciones físicas." data-en="We address this optimization problem using <strong>constant magnetic pulses</strong> and two complementary strategies: <strong>deep reinforcement learning (DRL)</strong>, where an agent learns pulse sequences through rewards, and <strong>genetic algorithms (GA)</strong>, which develop candidate solutions through selection and mutation. We analyze the efficiency of both methods and their ability to incorporate physical constraints.">Abordamos este problema de optimización mediante <strong>pulsos magnéticos constantes</strong> y dos estrategias complementarias: <strong>aprendizaje por refuerzo profundo (DRL)</strong>, donde un agente aprende secuencias de pulsos mediante recompensas, y <strong>algoritmos genéticos (GA)</strong>, que desarrollan soluciones candidatas mediante selección y mutación. Analizamos la eficiencia de ambos métodos y su capacidad para incorporar restricciones físicas.</p>
+
+                    <h2 data-es="Control Dinámico" data-en="Dynamic Control">Control Dinámico</h2>
+
+                    <p data-es="El sistema consiste en una cadena de N qubits que evoluciona bajo Hamiltonianos independientes del tiempo por intervalos. El control se implementa mediante <strong>pulsos de campo magnético</strong> aplicados en subintervalos de tiempo discretos:" data-en="The system consists of a chain of N qubits evolving under piecewise time-independent Hamiltonians. Control is implemented through <strong>magnetic field pulses</strong> applied in discrete time subintervals:">El sistema consiste en una cadena de N qubits que evoluciona bajo Hamiltonianos independientes del tiempo por intervalos. El control se implementa mediante <strong>pulsos de campo magnético</strong> aplicados en subintervalos de tiempo discretos:</p>
+
+                    <ul>
+                        <li data-es="En cada subintervalo se aplica una configuración B<sub>k,j</sub> de campos elegida de un conjunto de configuraciones posibles" data-en="At each subinterval, a field configuration B<sub>k,j</sub> is applied, chosen from a set of possible configurations">En cada subintervalo se aplica una configuración B<sub>k,j</sub> de campos elegida de un conjunto de configuraciones posibles</li>
+                        <li data-es="Se busca encontrar una <strong>secuencia óptima de 5N compuertas de un qubit</strong> que transmitan el estado desde el primer al último qubit" data-en="The goal is to find an <strong>optimal sequence of 5N single-qubit gates</strong> that transmit the state from the first to the last qubit">Se busca encontrar una <strong>secuencia óptima de 5N compuertas de un qubit</strong> que transmitan el estado desde el primer al último qubit</li>
+                        <li data-es="Las configuraciones posibles de campos definen el <strong>espacio de acciones</strong>" data-en="The possible field configurations define the <strong>action space</strong>">Las configuraciones posibles de campos definen el <strong>espacio de acciones</strong></li>
+                    </ul>
+
+                    <h2 data-es="Estrategias de Control" data-en="Control Strategies">Estrategias de Control</h2>
+
+                    <h3 data-es="Algoritmos Genéticos (GA)" data-en="Genetic Algorithms (GA)">Algoritmos Genéticos (GA)</h3>
+
+                    <p data-es="El algoritmo genético se implementó usando <strong>PyGAD</strong> con evaluación paralela de poblaciones mediante <strong>PyTorch</strong>:" data-en="The genetic algorithm was implemented using <strong>PyGAD</strong> with parallel population evaluation via <strong>PyTorch</strong>:">El algoritmo genético se implementó usando <strong>PyGAD</strong> con evaluación paralela de poblaciones mediante <strong>PyTorch</strong>:</p>
+                    <ul>
+                        <li data-es="La <strong>población inicial</strong> consiste en secuencias aleatorias de 5N acciones" data-en="The <strong>initial population</strong> consists of random sequences of 5N actions">La <strong>población inicial</strong> consiste en secuencias aleatorias de 5N acciones</li>
+                        <li data-es="Se simula la aplicación de cada secuencia y se les asigna una <strong>fitness proporcional a la calidad de transmisión</strong>" data-en="The application of each sequence is simulated and assigned a <strong>fitness proportional to transmission quality</strong>">Se simula la aplicación de cada secuencia y se les asigna una <strong>fitness proporcional a la calidad de transmisión</strong></li>
+                        <li data-es="Se seleccionan las secuencias de mayor fidelidad como padres y se genera una nueva población mediante <strong>cruzamiento y mutación</strong>" data-en="The highest fidelity sequences are selected as parents and a new population is generated through <strong>crossover and mutation</strong>">Se seleccionan las secuencias de mayor fidelidad como padres y se genera una nueva población mediante <strong>cruzamiento y mutación</strong></li>
+                        <li data-es="La <strong>estructura y simpleza</strong> del algoritmo genético permiten que sea fácil de paralelizar en GPU" data-en="The <strong>structure and simplicity</strong> of the genetic algorithm make it easy to parallelize on GPU">La <strong>estructura y simpleza</strong> del algoritmo genético permiten que sea fácil de paralelizar en GPU</li>
+                    </ul>
+
+                    <h3 data-es="Deep Reinforcement Learning (DRL)" data-en="Deep Reinforcement Learning (DRL)">Deep Reinforcement Learning (DRL)</h3>
+
+                    <p data-es="El agente DRL se implementó como una <strong>Deep Q-Network (DQN)</strong> con replay de experiencia priorizado usando <strong>TensorFlow</strong>, adaptado de la implementación de Zhang et al.:" data-en="The DRL agent was implemented as a <strong>Deep Q-Network (DQN)</strong> with prioritized experience replay using <strong>TensorFlow</strong>, adapted from Zhang et al.'s implementation:">El agente DRL se implementó como una <strong>Deep Q-Network (DQN)</strong> con replay de experiencia priorizado usando <strong>TensorFlow</strong>, adaptado de la implementación de Zhang et al.:</p>
+                    <ul>
+                        <li data-es="El <strong>espacio de estados</strong> codifica la distribución de excitación a lo largo de la cadena: s(t) = (c₁,c₂,...,c<sub>N</sub>)" data-en="The <strong>state space</strong> encodes the excitation distribution along the chain: s(t) = (c₁,c₂,...,c<sub>N</sub>)">El <strong>espacio de estados</strong> codifica la distribución de excitación a lo largo de la cadena: s(t) = (c₁,c₂,...,c<sub>N</sub>)</li>
+                        <li data-es="Se entrena un modelo que con <strong>prueba y error</strong> encuentra el valor de cada acción para un estado dado, clasificándolas con una recompensa" data-en="A model is trained that through <strong>trial and error</strong> finds the value of each action for a given state, classifying them with a reward">Se entrena un modelo que con <strong>prueba y error</strong> encuentra el valor de cada acción para un estado dado, clasificándolas con una recompensa</li>
+                        <li data-es="<strong>Inyección de ruido</strong> durante el entrenamiento episódico para mejorar la robustez (domain randomization)" data-en="<strong>Noise injection</strong> during episodic training for improved robustness (domain randomization)"><strong>Inyección de ruido</strong> durante el entrenamiento episódico para mejorar la robustez (domain randomization)</li>
+                        <li data-es="El desempeño de DRL depende fuertemente de la elección de <strong>hiperparámetros</strong> y condiciones de entrenamiento" data-en="DRL performance depends strongly on the choice of <strong>hyperparameters</strong> and training conditions">El desempeño de DRL depende fuertemente de la elección de <strong>hiperparámetros</strong> y condiciones de entrenamiento</li>
+                    </ul>
+
+                    <h2 data-es="Comparación de Desempeño" data-en="Performance Comparison">Comparación de Desempeño</h2>
+
+                    <p data-es="Ambos métodos se evaluaron en términos de <strong>fidelidad máxima</strong>, <strong>desempeño promedio</strong> y <strong>costo computacional</strong>." data-en="Both methods were evaluated in terms of <strong>maximum fidelity</strong>, <strong>average performance</strong>, and <strong>computational cost</strong>.">Ambos métodos se evaluaron en términos de <strong>fidelidad máxima</strong>, <strong>desempeño promedio</strong> y <strong>costo computacional</strong>.</p>
+
+                    <div style="background: rgba(233, 69, 96, 0.1); padding: 10px; border-radius: 8px; text-align: center; margin: 15px 0;">
+                        <h3 data-es="Fidelidad: GA vs DRL" data-en="Fidelity: GA vs DRL" style="margin: 0 0 8px 0;">Fidelidad: GA vs DRL</h3>
+                        <img src="../Dynamic-Control/genetic_vs_drl_n32.png" alt="Comparación GA vs DRL" style="max-width: 80%; height: auto; border-radius: 8px;">
+                        <p style="font-style: italic; font-size: 0.85em; margin: 8px 0 0 0;" data-es="Fidelidades medias (--) y máximas (—) usando DRL con parámetros originales (azul), GA con acciones originales (negro) y con una acción por sitio (rojo)." data-en="Average (--) and maximum (—) fidelities using DRL with original parameters (blue), GA with original actions (black) and with one action per site (red).">Fidelidades medias (--) y máximas (—) usando DRL con parámetros originales (azul), GA con acciones originales (negro) y con una acción por sitio (rojo).</p>
+                    </div>
+
+                    <div style="background: rgba(233, 69, 96, 0.1); padding: 10px; border-radius: 8px; text-align: center; margin: 15px 0;">
+                        <h3 data-es="Tiempos de CPU" data-en="CPU Times" style="margin: 0 0 8px 0;">Tiempos de CPU</h3>
+                        <img src="../Dynamic-Control/zhang_drl_ga_cpu_times_ls.png" alt="Tiempos de CPU" style="max-width: 80%; height: auto; border-radius: 8px;">
+                        <p style="font-style: italic; font-size: 0.85em; margin: 8px 0 0 0;" data-es="Tiempos de ejecución requeridos por GA (negro) y DQN (rojo) para alcanzar sus criterios de convergencia." data-en="Running times required by GA (black) and DQN (red) to reach their convergence criteria.">Tiempos de ejecución requeridos por GA (negro) y DQN (rojo) para alcanzar sus criterios de convergencia.</p>
+                    </div>
+
+                    <p data-es="Observaciones clave:" data-en="Key observations:">Observaciones clave:</p>
+                    <ul>
+                        <li data-es="El <strong>algoritmo genético permite obtener secuencias que alcanzan fidelidades más altas</strong> que el algoritmo de DRL original" data-en="The <strong>genetic algorithm produces sequences that achieve higher fidelities</strong> than the original DRL algorithm">El <strong>algoritmo genético permite obtener secuencias que alcanzan fidelidades más altas</strong> que el algoritmo de DRL original</li>
+                        <li data-es="Para cadenas de más qubits es conveniente cambiar el conjunto de acciones y agregar sitios de control" data-en="For longer chains it is convenient to change the action set and add control sites">Para cadenas de más qubits es conveniente cambiar el conjunto de acciones y agregar sitios de control</li>
+                        <li data-es="El algoritmo DQN emplea tiempos de ejecución entre <strong>2 y 3 órdenes de magnitud mayores</strong> que los requeridos por el GA" data-en="The DQN algorithm requires running times <strong>2 to 3 orders of magnitude larger</strong> than those required by the GA">El algoritmo DQN emplea tiempos de ejecución entre <strong>2 y 3 órdenes de magnitud mayores</strong> que los requeridos por el GA</li>
+                    </ul>
+
+                    <h2 data-es="Robustez frente al Ruido" data-en="Robustness to Noise">Robustez frente al Ruido</h2>
+
+                    <p data-es="Los protocolos de control se probaron bajo un <strong>modelo de ruido dinámico</strong>, donde con probabilidad p en cada paso se multiplican los coeficientes c<sub>j</sub> por fases aleatorias e<sup>iθ<sub>j</sub></sup> (θ ∈ [-a, a])." data-en="Control protocols were tested under a <strong>dynamic noise model</strong>, where with probability p at each step the coefficients c<sub>j</sub> are multiplied by random phases e<sup>iθ<sub>j</sub></sup> (θ ∈ [-a, a]).">Los protocolos de control se probaron bajo un <strong>modelo de ruido dinámico</strong>, donde con probabilidad p en cada paso se multiplican los coeficientes c<sub>j</sub> por fases aleatorias e<sup>iθ<sub>j</sub></sup> (θ ∈ [-a, a]).</p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0;">
+                        <div style="background: rgba(233, 69, 96, 0.1); padding: 10px; border-radius: 8px; display: flex; flex-direction: column; align-items: center;">
+                            <h3 data-es="N=16: Amplitud fija" data-en="N=16: Fixed amplitude" style="margin: 0 0 8px 0;">N=16: Amplitud fija</h3>
+                            <img src="../Dynamic-Control/method_comparison_n16_a0.25.png" alt="N=16 amplitud fija" style="max-width: 100%; height: auto; border-radius: 8px;">
+                            <p style="font-style: italic; font-size: 0.85em; text-align: center; margin: 6px 0 0 0;" data-es="Probabilidad de transmisión vs probabilidad de ruido (amplitud fija a=0.25)." data-en="Transmission probability vs noise probability (fixed amplitude a=0.25).">Probabilidad de transmisión vs probabilidad de ruido (amplitud fija a=0.25).</p>
+                        </div>
+                        <div style="background: rgba(233, 69, 96, 0.1); padding: 10px; border-radius: 8px; display: flex; flex-direction: column; align-items: center;">
+                            <h3 data-es="N=16: Probabilidad fija" data-en="N=16: Fixed probability" style="margin: 0 0 8px 0;">N=16: Probabilidad fija</h3>
+                            <img src="../Dynamic-Control/method_comparison_n16_p0.25.png" alt="N=16 probabilidad fija" style="max-width: 100%; height: auto; border-radius: 8px;">
+                            <p style="font-style: italic; font-size: 0.85em; text-align: center; margin: 6px 0 0 0;" data-es="Probabilidad de transmisión vs amplitud de ruido (probabilidad fija p=0.25)." data-en="Transmission probability vs noise amplitude (fixed probability p=0.25).">Probabilidad de transmisión vs amplitud de ruido (probabilidad fija p=0.25).</p>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0;">
+                        <div style="background: rgba(233, 69, 96, 0.1); padding: 10px; border-radius: 8px; display: flex; flex-direction: column; align-items: center;">
+                            <h3 data-es="N=24: Amplitud fija" data-en="N=24: Fixed amplitude" style="margin: 0 0 8px 0;">N=24: Amplitud fija</h3>
+                            <img src="../Dynamic-Control/method_comparison_n24_a0.25.png" alt="N=24 amplitud fija" style="max-width: 100%; height: auto; border-radius: 8px;">
+                            <p style="font-style: italic; font-size: 0.85em; text-align: center; margin: 6px 0 0 0;" data-es="Probabilidad de transmisión vs probabilidad de ruido (amplitud fija a=0.25)." data-en="Transmission probability vs noise probability (fixed amplitude a=0.25).">Probabilidad de transmisión vs probabilidad de ruido (amplitud fija a=0.25).</p>
+                        </div>
+                        <div style="background: rgba(233, 69, 96, 0.1); padding: 10px; border-radius: 8px; display: flex; flex-direction: column; align-items: center;">
+                            <h3 data-es="N=24: Probabilidad fija" data-en="N=24: Fixed probability" style="margin: 0 0 8px 0;">N=24: Probabilidad fija</h3>
+                            <img src="../Dynamic-Control/method_comparison_n24_p0.25.png" alt="N=24 probabilidad fija" style="max-width: 100%; height: auto; border-radius: 8px;">
+                            <p style="font-style: italic; font-size: 0.85em; text-align: center; margin: 6px 0 0 0;" data-es="Probabilidad de transmisión vs amplitud de ruido (probabilidad fija p=0.25)." data-en="Transmission probability vs noise amplitude (fixed probability p=0.25).">Probabilidad de transmisión vs amplitud de ruido (probabilidad fija p=0.25).</p>
+                        </div>
+                    </div>
+
+                    <p data-es="Resultados principales:" data-en="Main results:">Resultados principales:</p>
+                    <ul>
+                        <li data-es="Para cadenas más largas, las secuencias generadas por el GA exhiben <strong>mayor resiliencia al ruido dinámico</strong> con amplitudes pequeñas y probabilidades de ocurrencia bajas" data-en="For longer chains, sequences generated by the GA exhibit <strong>greater resilience to dynamic noise</strong> with small amplitudes and low occurrence probabilities">Para cadenas más largas, las secuencias generadas por el GA exhiben <strong>mayor resiliencia al ruido dinámico</strong> con amplitudes pequeñas y probabilidades de ocurrencia bajas</li>
+                        <li data-es="A medida que la intensidad del ruido aumenta, la probabilidad de transmisión promedio del método DQN <strong>eventualmente supera</strong> la del GA" data-en="As noise strength increases, the average transmission probability of the DQN method <strong>eventually surpasses</strong> that of the GA">A medida que la intensidad del ruido aumenta, la probabilidad de transmisión promedio del método DQN <strong>eventualmente supera</strong> la del GA</li>
+                        <li data-es="Los modelos de DRL pueden adaptarse al ruido cuando se <strong>entrenan explícitamente bajo condiciones ruidosas</strong> (domain randomization)" data-en="DRL models can adapt to noise when <strong>explicitly trained under noisy conditions</strong> (domain randomization)">Los modelos de DRL pueden adaptarse al ruido cuando se <strong>entrenan explícitamente bajo condiciones ruidosas</strong> (domain randomization)</li>
+                    </ul>
+
+                    <h2 data-es="Sensibilidad a Hiperparámetros" data-en="Hyperparameter Sensitivity">Sensibilidad a Hiperparámetros</h2>
+
+                    <p data-es="Un análisis sistemático revela que el desempeño de DRL depende críticamente de la elección de tasa de aprendizaje, factor de descuento y escalado de recompensa. En contraste, el comportamiento del GA está gobernado por un conjunto más pequeño de parámetros intuitivos. La optimización de hiperparámetros se realizó utilizando <strong>Optuna</strong>." data-en="A systematic analysis reveals that DRL performance depends critically on the choice of learning rate, discount factor, and reward scaling. In contrast, GA behavior is governed by a smaller set of intuitive parameters. Hyperparameter optimization was performed using <strong>Optuna</strong>.">Un análisis sistemático revela que el desempeño de DRL depende críticamente de la elección de tasa de aprendizaje, factor de descuento y escalado de recompensa. En contraste, el comportamiento del GA está gobernado por un conjunto más pequeño de parámetros intuitivos. La optimización de hiperparámetros se realizó utilizando <strong>Optuna</strong>.</p>
+
+                    <div style="background: rgba(233, 69, 96, 0.1); padding: 10px; border-radius: 8px; text-align: center; margin: 15px 0;">
+                        <img src="../Dynamic-Control/hyper-parameter-opt.png" alt="Optimización de hiperparámetros" style="max-width: 80%; height: auto; border-radius: 8px;">
+                        <p style="font-style: italic; font-size: 0.85em; margin: 8px 0 0 0;" data-es="Recompensa en función de los episodios de entrenamiento para diferentes configuraciones de hiperparámetros optimizados con Optuna." data-en="Reward as a function of training episodes for different hyperparameter configurations optimized with Optuna.">Recompensa en función de los episodios de entrenamiento para diferentes configuraciones de hiperparámetros optimizados con Optuna.</p>
+                    </div>
+
+                    <h2 data-es="GA para Cadenas Largas" data-en="GA for Large Chains">GA para Cadenas Largas</h2>
+
+                    <div style="background: rgba(233, 69, 96, 0.1); padding: 10px; border-radius: 8px; text-align: center; margin: 15px 0;">
+                        <img src="../Dynamic-Control/genetic_for_large_dims.png" alt="GA para cadenas largas" style="max-width: 80%; height: auto; border-radius: 8px;">
+                        <p style="font-style: italic; font-size: 0.85em; margin: 8px 0 0 0;" data-es="Probabilidad de transmisión vs longitud de cadena. El GA mantiene probabilidades mayores a 0.97 incluso para cadenas de 128 qubits." data-en="Transmission probability vs chain length. The GA maintains probabilities greater than 0.97 even for chains of 128 qubits.">Probabilidad de transmisión vs longitud de cadena. El GA mantiene probabilidades mayores a 0.97 incluso para cadenas de 128 qubits.</p>
+                    </div>
+
+                    <h2 data-es="Conclusiones" data-en="Conclusions">Conclusiones</h2>
+
+                    <ul>
+                        <li data-es="Los <strong>algoritmos genéticos ofrecen simplicidad, robustez y alto desempeño</strong> con ajuste mínimo de parámetros." data-en="<strong>Genetic algorithms offer simplicity, robustness, and high performance</strong> with minimal parameter tuning.">Los <strong>algoritmos genéticos ofrecen simplicidad, robustez y alto desempeño</strong> con ajuste mínimo de parámetros.</li>
+                        <li data-es="El <strong>deep reinforcement learning proporciona flexibilidad y adaptabilidad</strong> pero requiere optimización cuidadosa de hiperparámetros y tiempos de entrenamiento más largos." data-en="<strong>Deep reinforcement learning provides flexibility and adaptability</strong> but requires careful hyperparameter optimization and longer training times.">El <strong>deep reinforcement learning proporciona flexibilidad y adaptabilidad</strong> pero requiere optimización cuidadosa de hiperparámetros y tiempos de entrenamiento más largos.</li>
+                        <li data-es="Controlar sistemas cuánticos ruidosos requiere un método que, en el límite de ruido cero, alcance un desempeño comparable al del GA, y que pueda entrenarse bajo condiciones ruidosas sin degradación sustancial." data-en="Controlling noisy quantum systems requires a method that, in the zero-noise limit, achieves performance comparable to that of the GA, and that can be trained under noisy conditions without substantial degradation.">Controlar sistemas cuánticos ruidosos requiere un método que, en el límite de ruido cero, alcance un desempeño comparable al del GA, y que pueda entrenarse bajo condiciones ruidosas sin degradación sustancial.</li>
+                        <li data-es="Estos resultados destacan los <strong>trade-offs entre enfoques basados en aprendizaje y evolutivos</strong> y proporcionan guía práctica para diseñar protocolos de control en dispositivos cuánticos realistas." data-en="These results highlight the <strong>trade-offs between learning-based and evolutionary approaches</strong> and provide practical guidance for designing control protocols in realistic quantum devices.">Estos resultados destacan los <strong>trade-offs entre enfoques basados en aprendizaje y evolutivos</strong> y proporcionan guía práctica para diseñar protocolos de control en dispositivos cuánticos realistas.</li>
+                    </ul>
+
+                    <h2 data-es="Links" data-en="Links">Links</h2>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
+                        <a href="https://arxiv.org/abs/2506.05291" target="_blank" class="contact-link" data-es="📚 arXiv" data-en="📚 arXiv">📚 arXiv</a>
+                        <a href="https://github.com/sofips/qst_control" target="_blank" class="contact-link" data-es="💻 GitHub" data-en="💻 GitHub">💻 GitHub</a>
+                        <a href="https://doi.org/10.5281/zenodo.18091212" target="_blank" class="contact-link" data-es="🔗 Zenodo DOI" data-en="🔗 Zenodo DOI">🔗 Zenodo DOI</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 My Portfolio. Made with ♥</p>
+        </footer>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>
