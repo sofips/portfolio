@@ -751,11 +751,11 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-content h1 {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 
     .section-title {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     .nav {
@@ -768,6 +768,41 @@ body {
 
     .contact-links {
         flex-direction: column;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        font-size: 1em;
+        gap: 20px;
+    }
+
+    .about-text {
+        text-align: justify;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .section {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .project-card p,
+    .project-card .project-description {
+        font-size: 1em;
+    }
+
+    .project-content p,
+    .project-content ul {
+        font-size: 1em;
     }
 }
 
