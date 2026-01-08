@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decision Transformers para Recomendaciones</title>
+    <title>Decision Transformers para Sistemas de Recomendación</title>
     <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
     <canvas id="ripple-grid" class="ripple-grid-background"></canvas>
     <div class="language-switcher">
@@ -15,8 +17,12 @@
     <div class="container">
         <header class="header">
             <div class="header-content">
-                <h1 data-es="Decision Transformers para Recomendaciones" data-en="Decision Transformers for Recommendations">Decision Transformers para Recomendaciones</h1>
-                <p class="subtitle" data-es="Sistemas de recomendación offline con Deep Reinforcement Learning" data-en="Offline recommendation systems with Deep Reinforcement Learning">Sistemas de recomendación offline con Deep Reinforcement Learning</p>
+                <h1 data-es="Decision Transformers para Sistemas de Recomendación"
+                    data-en="Decision Transformers for Recommendation Systems">Decision Transformers para Sistemas de
+                    Recomendación</h1>
+                <p class="subtitle" data-es="Aprendizaje por Refuerzo Offline aplicado a recomendación de películas"
+                    data-en="Offline Reinforcement Learning applied to movie recommendation">Aprendizaje por Refuerzo
+                    Offline aplicado a recomendación de películas</p>
             </div>
         </header>
 
@@ -27,50 +33,364 @@
         <main class="main">
             <section class="section project-detail">
                 <div class="project-content">
-                    <h2 data-es="Problema" data-en="Problem">Problema</h2>
-                    <p data-es="Los sistemas de recomendación tradicionales tienen limitaciones para trabajar en entornos offline. ¿Cómo pueden los Decision Transformers, una arquitectura moderna basada en Transformers, resolver el problema de recomendación de películas sin acceso a retroalimentación en tiempo real?" data-en="Traditional recommendation systems have limitations for offline environments. How can Decision Transformers, a modern Transformer-based architecture, solve the movie recommendation problem without access to real-time feedback?">Los sistemas de recomendación tradicionales tienen limitaciones para trabajar en entornos offline. ¿Cómo pueden los Decision Transformers, una arquitectura moderna basada en Transformers, resolver el problema de recomendación de películas sin acceso a retroalimentación en tiempo real?</p>
 
+                    <!-- Introducción -->
+                    <h2 data-es="Introducción" data-en="Introduction">Introducción</h2>
+                    <p data-es="Este proyecto explora la aplicación de Decision Transformers (DT) al dominio de sistemas de recomendación, utilizando un dataset de calificaciones de películas de Netflix. La idea central es reformular el problema de recomendación como un problema de Aprendizaje por Refuerzo Offline, donde cada sesión de interacción usuario-sistema se modela como una trayectoria de un Proceso de Decisión de Markov (MDP)."
+                        data-en="This project explores the application of Decision Transformers (DT) to the recommendation systems domain, using a Netflix movie ratings dataset. The central idea is to reformulate the recommendation problem as an Offline Reinforcement Learning problem, where each user-system interaction session is modeled as a Markov Decision Process (MDP) trajectory.">
+                        Este proyecto explora la aplicación de <strong>Decision Transformers</strong> (DT) al dominio de
+                        sistemas de recomendación, utilizando un dataset de calificaciones de películas de Netflix. La
+                        idea central es reformular el problema de recomendación como un problema de <strong>Aprendizaje
+                            por Refuerzo Offline</strong>, donde cada sesión de interacción usuario-sistema se modela
+                        como una trayectoria de un Proceso de Decisión de Markov (MDP).
+                    </p>
+                    <p data-es="Los Decision Transformers, originalmente diseñados para tareas de NLP, han demostrado ser efectivos en RL al modelar secuencias de estados, acciones y recompensas. En lugar de aprender una política mediante optimización tradicional de RL, el DT aprende a imitar comportamientos asociados a retornos altos mediante aprendizaje supervisado sobre trayectorias históricas."
+                        data-en="Decision Transformers, originally designed for NLP tasks, have proven effective in RL by modeling sequences of states, actions, and rewards. Instead of learning a policy through traditional RL optimization, the DT learns to imitate behaviors associated with high returns through supervised learning on historical trajectories.">
+                        Los Decision Transformers, originalmente diseñados para tareas de NLP, han demostrado ser
+                        efectivos en RL al modelar secuencias de estados, acciones y recompensas. En lugar de aprender
+                        una política mediante optimización tradicional de RL, el DT aprende a imitar comportamientos
+                        asociados a retornos altos mediante aprendizaje supervisado sobre trayectorias históricas.
+                    </p>
+                    <p data-es="El objetivo fue evaluar si esta arquitectura puede capturar patrones usuario-ítem de forma competitiva frente a métodos tradicionales de recomendación."
+                        data-en="The goal was to evaluate whether this architecture can capture user-item patterns competitively against traditional recommendation methods.">
+                        El objetivo fue evaluar si esta arquitectura puede capturar patrones usuario-ítem de forma
+                        competitiva frente a métodos tradicionales de recomendación.
+                    </p>
+
+                    <!-- Metodología -->
                     <h2 data-es="Metodología" data-en="Methodology">Metodología</h2>
-                    <p data-es="Implementación de Decision Transformers como arquitectura alternativa para sistemas de recomendación offline:" data-en="Implementation of Decision Transformers as an alternative architecture for offline recommendation systems:">Implementación de Decision Transformers como arquitectura alternativa para sistemas de recomendación offline:</p>
+
+                    <h3 data-es="1. Formulación del problema" data-en="1. Problem formulation">1. Formulación del
+                        problema</h3>
+                    <p data-es="Modelamos las interacciones como un MDP donde:"
+                        data-en="We modeled interactions as an MDP where:">Modelamos las interacciones como un MDP
+                        donde:</p>
                     <ul>
-                        <li data-es="Modelado de interacciones usuario-película como trayectorias de Markov Decision Process" data-en="Modeling user-movie interactions as Markov Decision Process trajectories">Modelado de interacciones usuario-película como trayectorias de Markov Decision Process</li>
-                        <li data-es="Arquitectura Transformer para procesar historiales de puntuaciones secuenciales" data-en="Transformer architecture to process sequential rating histories">Arquitectura Transformer para procesar historiales de puntuaciones secuenciales</li>
-                        <li data-es="Entrenamiento con aprendizaje por refuerzo offline (imitar políticas de alto retorno)" data-en="Training with offline reinforcement learning (imitating high-return policies)">Entrenamiento con aprendizaje por refuerzo offline (imitar políticas de alto retorno)</li>
-                        <li data-es="Comparación con métodos baseline: filtrado colaborativo y basado en contenido" data-en="Comparison with baseline methods: collaborative filtering and content-based">Comparación con métodos baseline: filtrado colaborativo y basado en contenido</li>
-                        <li data-es="Evaluación en dataset de Netflix con métricas de recall@k y ranking" data-en="Evaluation on Netflix dataset with recall@k and ranking metrics">Evaluación en dataset de Netflix con métricas de recall@k y ranking</li>
+                        <li><strong data-es="Estado" data-en="State">Estado</strong>: <span
+                                data-es="película actual que el usuario está evaluando"
+                                data-en="current movie the user is rating">película actual que el usuario está
+                                evaluando</span></li>
+                        <li><strong data-es="Acción" data-en="Action">Acción</strong>: <span
+                                data-es="siguiente película recomendada" data-en="next recommended movie">siguiente
+                                película recomendada</span></li>
+                        <li><strong data-es="Recompensa" data-en="Reward">Recompensa</strong>: <span
+                                data-es="calificación otorgada por el usuario (1-5 estrellas)"
+                                data-en="rating given by user (1-5 stars)">calificación otorgada por el usuario (1-5
+                                estrellas)</span></li>
+                        <li><strong>Return-to-Go (RTG)</strong>: <span data-es="suma de recompensas futuras esperadas"
+                                data-en="sum of expected future rewards">suma de recompensas futuras esperadas</span>
+                        </li>
+                    </ul>
+                    <p data-es="Esta formulación permite condicionar las predicciones del modelo en función del retorno deseado, una característica distintiva de los Decision Transformers."
+                        data-en="This formulation allows conditioning model predictions based on the desired return, a distinctive feature of Decision Transformers.">
+                        Esta formulación permite condicionar las predicciones del modelo en función del retorno deseado,
+                        una característica distintiva de los Decision Transformers.
+                    </p>
+
+                    <h3 data-es="2. Preprocesamiento de datos" data-en="2. Data preprocessing">2. Preprocesamiento de
+                        datos</h3>
+                    <p data-es="Partimos del dataset Netflix Prize, preprocesado para obtener:"
+                        data-en="We started from the Netflix Prize dataset, preprocessed to obtain:">Partimos del
+                        dataset Netflix Prize, preprocesado para obtener:</p>
+                    <ul>
+                        <li><strong data-es="752 películas" data-en="752 movies">752 películas</strong> <span
+                                data-es="únicas (ítems más frecuentes)" data-en="unique (most frequent items)">únicas
+                                (ítems más frecuentes)</span></li>
+                        <li><strong data-es="8 grupos de usuarios" data-en="8 user groups">8 grupos de usuarios</strong>
+                            <span data-es="mediante clustering (para capturar perfiles de preferencia)"
+                                data-en="through clustering (to capture preference profiles)">mediante clustering (para
+                                capturar perfiles de preferencia)</span></li>
+                        <li data-es="Trayectorias de interacción con secuencias de hasta 200 timesteps"
+                            data-en="Interaction trajectories with sequences up to 200 timesteps">Trayectorias de
+                            interacción con secuencias de hasta 200 timesteps</li>
+                    </ul>
+                    <p data-es="Cada trayectoria incluye: estados, acciones, recompensas, returns-to-go y el grupo del usuario."
+                        data-en="Each trajectory includes: states, actions, rewards, returns-to-go, and user group.">
+                        Cada trayectoria incluye: estados, acciones, recompensas, returns-to-go y el grupo del usuario.
+                    </p>
+
+                    <h3 data-es="3. Arquitectura del modelo" data-en="3. Model architecture">3. Arquitectura del modelo
+                    </h3>
+                    <p data-es="Implementamos un Decision Transformer con:"
+                        data-en="We implemented a Decision Transformer with:">Implementamos un Decision Transformer con:
+                    </p>
+                    <ul>
+                        <li><strong data-es="Embeddings separados" data-en="Separate embeddings">Embeddings
+                                separados</strong> <span data-es="para estados, acciones y RTG"
+                                data-en="for states, actions, and RTG">para estados, acciones y RTG</span></li>
+                        <li><strong>Token type embeddings</strong> <span
+                                data-es="para distinguir tipos de token (RTG, estado, acción)"
+                                data-en="to distinguish token types (RTG, state, action)">para distinguir tipos de token
+                                (RTG, estado, acción)</span></li>
+                        <li><strong data-es="Embeddings de timestep" data-en="Timestep embeddings">Embeddings de
+                                timestep</strong> <span data-es="para codificar posición temporal"
+                                data-en="to encode temporal position">para codificar posición temporal</span></li>
+                        <li><strong data-es="Embeddings de grupo de usuario" data-en="User group embeddings">Embeddings
+                                de grupo de usuario</strong> <span data-es="para personalización"
+                                data-en="for personalization">para personalización</span></li>
+                        <li><strong>Transformer Encoder</strong> <span
+                                data-es="con máscara causal que respeta el orden RTG→Estado→Acción"
+                                data-en="with causal mask respecting RTG→State→Action order">con máscara causal que
+                                respeta el orden RTG→Estado→Acción</span></li>
+                        <li><strong data-es="Cabeza de predicción" data-en="Prediction head">Cabeza de
+                                predicción</strong> <span data-es="lineal sobre las posiciones de estado"
+                                data-en="linear over state positions">lineal sobre las posiciones de estado</span></li>
+                    </ul>
+                    <p data-es="Hiperparámetros finales:" data-en="Final hyperparameters:">Hiperparámetros finales:</p>
+                    <ul>
+                        <li><code>hidden_dim=512</code>, <code>n_layers=2</code>, <code>n_heads=4</code></li>
+                        <li><code>context_length=20</code>, <code>dropout=0.05</code></li>
+                        <li><code>learning_rate=0.0001</code></li>
                     </ul>
 
-                    <h2 data-es="Resultados Principales" data-en="Main Results">Resultados Principales</h2>
+                    <h3 data-es="4. Entrenamiento" data-en="4. Training">4. Entrenamiento</h3>
+                    <p data-es="El modelo se entrenó para predecir la próxima acción (película) dado el contexto histórico y el return-to-go deseado. Utilizamos:"
+                        data-en="The model was trained to predict the next action (movie) given the historical context and desired return-to-go. We used:">
+                        El modelo se entrenó para predecir la próxima acción (película) dado el contexto histórico y el
+                        return-to-go deseado. Utilizamos:
+                    </p>
                     <ul>
-                        <li data-es="Decision Transformers logró capturar patrones de preferencia usuario de forma eficiente" data-en="Decision Transformers successfully captured user preference patterns efficiently">Decision Transformers logró capturar patrones de preferencia usuario de forma eficiente</li>
-                        <li data-es="Competitividad en entorno offline sin necesidad de retroalimentación en tiempo real" data-en="Competitive performance in offline setting without real-time feedback">Competitividad en entorno offline sin necesidad de retroalimentación en tiempo real</li>
-                        <li data-es="Arquitectura modular permitió experimentación con variantes de embeddings y design" data-en="Modular architecture allowed experimentation with embedding variants and design">Arquitectura modular permitió experimentación con variantes de embeddings y design</li>
-                        <li data-es="Comparación detallada con código de referencia y baselines establecidos" data-en="Detailed comparison with reference code and established baselines">Comparación detallada con código de referencia y baselines establecidos</li>
+                        <li><strong>Cross-entropy loss</strong> <span data-es="para clasificación multiclase"
+                                data-en="for multiclass classification">para clasificación multiclase</span></li>
+                        <li><strong>Adam optimizer</strong> <span data-es="con los parámetros mencionados"
+                                data-en="with the mentioned parameters">con los parámetros mencionados</span></li>
+                        <li data-es="Validación con 10% del dataset separado"
+                            data-en="Validation with 10% of dataset held out">Validación con 10% del dataset separado
+                        </li>
                     </ul>
 
+                    <h3 data-es="5. Evaluación" data-en="5. Evaluation">5. Evaluación</h3>
+                    <p data-es="Comparamos tres modelos usando métricas estándar de recomendación:"
+                        data-en="We compared three models using standard recommendation metrics:">Comparamos tres
+                        modelos usando métricas estándar de recomendación:</p>
+                    <ul>
+                        <li><strong>Hit Rate@K</strong> (HR@K): <span
+                                data-es="proporción de veces que el ítem correcto está en el top-K"
+                                data-en="proportion of times the correct item is in top-K">proporción de veces que el
+                                ítem correcto está en el top-K</span></li>
+                        <li><strong>NDCG@K</strong>: <span
+                                data-es="Normalized Discounted Cumulative Gain, que pondera la posición del hit"
+                                data-en="Normalized Discounted Cumulative Gain, which weights the hit position">Normalized
+                                Discounted Cumulative Gain, que pondera la posición del hit</span></li>
+                        <li><strong>MRR</strong>: <span data-es="Mean Reciprocal Rank"
+                                data-en="Mean Reciprocal Rank">Mean Reciprocal Rank</span></li>
+                    </ul>
+
+                    <!-- Problemas y soluciones -->
+                    <h2 data-es="Problemas y Soluciones" data-en="Problems and Solutions">Problemas y Soluciones</h2>
+
+                    <h3 data-es="Embeddings compartidos causaban confusión"
+                        data-en="Shared embeddings caused confusion">Embeddings compartidos causaban confusión</h3>
+                    <p data-es="En la implementación original, estados y acciones compartían el mismo embedding, lo cual es problemático porque representan conceptos diferentes en el contexto secuencial."
+                        data-en="In the original implementation, states and actions shared the same embedding, which is problematic because they represent different concepts in the sequential context.">
+                        En la implementación original, estados y acciones compartían el mismo embedding, lo cual es
+                        problemático porque representan conceptos diferentes en el contexto secuencial.
+                    </p>
+                    <p data-es="Solución: Implementamos embeddings separados para estados y acciones, además de token type embeddings explícitos para que el modelo distinga cada tipo de token."
+                        data-en="Solution: We implemented separate embeddings for states and actions, plus explicit token type embeddings so the model distinguishes each token type.">
+                        <strong data-es="Solución" data-en="Solution">Solución</strong>: Implementamos embeddings
+                        separados para estados y acciones, además de token type embeddings explícitos para que el modelo
+                        distinga cada tipo de token.
+                    </p>
+
+                    <h3 data-es="Máscara causal incorrecta" data-en="Incorrect causal mask">Máscara causal incorrecta
+                    </h3>
+                    <p data-es="La máscara de atención original no respetaba correctamente el orden causal dentro de cada timestep (RTG→Estado→Acción)."
+                        data-en="The original attention mask did not correctly respect the causal order within each timestep (RTG→State→Action).">
+                        La máscara de atención original no respetaba correctamente el orden causal dentro de cada
+                        timestep (RTG→Estado→Acción).
+                    </p>
+                    <p data-es="Solución: Diseñamos una máscara causal personalizada que permite atender a todos los timesteps anteriores y, dentro del mismo timestep, respetar el orden RTG → Estado → Acción."
+                        data-en="Solution: We designed a custom causal mask that allows attending to all previous timesteps and, within the same timestep, respects the RTG → State → Action order.">
+                        <strong data-es="Solución" data-en="Solution">Solución</strong>: Diseñamos una máscara causal
+                        personalizada que permite:
+                    </p>
+                    <ul>
+                        <li data-es="Atender a todos los timesteps anteriores"
+                            data-en="Attend to all previous timesteps">Atender a todos los timesteps anteriores</li>
+                        <li data-es="Dentro del mismo timestep, respetar el orden RTG → Estado → Acción"
+                            data-en="Within the same timestep, respect RTG → State → Action order">Dentro del mismo
+                            timestep, respetar el orden RTG → Estado → Acción</li>
+                    </ul>
+
+                    <h3 data-es="Sensibilidad al return conditioning" data-en="Sensitivity to return conditioning">
+                        Sensibilidad al return conditioning</h3>
+                    <p data-es="El rendimiento del modelo variaba significativamente según el valor de RTG usado en inferencia."
+                        data-en="Model performance varied significantly depending on the RTG value used during inference.">
+                        El rendimiento del modelo variaba significativamente según el valor de RTG usado en inferencia.
+                    </p>
+                    <p data-es="Solución: Realizamos experimentos sistemáticos con diferentes percentiles de RTG del conjunto de entrenamiento para encontrar el valor óptimo de condicionamiento."
+                        data-en="Solution: We performed systematic experiments with different RTG percentiles from the training set to find the optimal conditioning value.">
+                        <strong data-es="Solución" data-en="Solution">Solución</strong>: Realizamos experimentos
+                        sistemáticos con diferentes percentiles de RTG del conjunto de entrenamiento para encontrar el
+                        valor óptimo de condicionamiento.
+                    </p>
+
+                    <!-- Resultados y conclusiones -->
+                    <h2 data-es="Resultados y Conclusiones" data-en="Results and Conclusions">Resultados y Conclusiones
+                    </h2>
+
+                    <h3 data-es="Comparación de modelos" data-en="Model comparison">Comparación de modelos</h3>
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th data-es="Modelo" data-en="Model">Modelo</th>
+                                <th>HR@5</th>
+                                <th>NDCG@5</th>
+                                <th>HR@10</th>
+                                <th>NDCG@10</th>
+                                <th>HR@20</th>
+                                <th>NDCG@20</th>
+                                <th>MRR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-row">
+                                <td><strong>DT Refactorizado</strong></td>
+                                <td><strong>0.86%</strong></td>
+                                <td><strong>0.54%</strong></td>
+                                <td><strong>1.51%</strong></td>
+                                <td><strong>0.75%</strong></td>
+                                <td><strong>2.85%</strong></td>
+                                <td><strong>1.08%</strong></td>
+                                <td><strong>1.07%</strong></td>
+                            </tr>
+                            <tr>
+                                <td data-es="DT Referencia" data-en="DT Reference">DT Referencia</td>
+                                <td>0.68%</td>
+                                <td>0.40%</td>
+                                <td>1.37%</td>
+                                <td>0.62%</td>
+                                <td>2.73%</td>
+                                <td>0.96%</td>
+                                <td>0.97%</td>
+                            </tr>
+                            <tr>
+                                <td data-es="Baseline Popularidad" data-en="Popularity Baseline">Baseline Popularidad
+                                </td>
+                                <td>0.69%</td>
+                                <td>0.41%</td>
+                                <td>1.24%</td>
+                                <td>0.59%</td>
+                                <td>2.61%</td>
+                                <td>0.92%</td>
+                                <td>0.97%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p data-es="El modelo refactorizado supera tanto al código de referencia como al baseline de popularidad en todas las métricas."
+                        data-en="The refactored model outperforms both the reference code and the popularity baseline across all metrics.">
+                        El modelo refactorizado supera tanto al código de referencia como al baseline de popularidad en
+                        todas las métricas.
+                    </p>
+
+                    <h3 data-es="Hallazgos principales" data-en="Main findings">Hallazgos principales</h3>
+                    <ol>
+                        <li data-es="Los embeddings separados mejoran el rendimiento: La distinción explícita entre estados y acciones permite al modelo aprender representaciones más precisas."
+                            data-en="Separate embeddings improve performance: The explicit distinction between states and actions allows the model to learn more precise representations.">
+                            <strong data-es="Los embeddings separados mejoran el rendimiento"
+                                data-en="Separate embeddings improve performance">Los embeddings separados mejoran el
+                                rendimiento</strong>: La distinción explícita entre estados y acciones permite al modelo
+                            aprender representaciones más precisas.
+                        </li>
+                        <li data-es="La máscara causal correcta es crucial: Respetar el orden de información dentro de cada timestep mejora la capacidad predictiva."
+                            data-en="The correct causal mask is crucial: Respecting the information order within each timestep improves predictive capacity.">
+                            <strong data-es="La máscara causal correcta es crucial"
+                                data-en="The correct causal mask is crucial">La máscara causal correcta es
+                                crucial</strong>: Respetar el orden de información dentro de cada timestep mejora la
+                            capacidad predictiva.
+                        </li>
+                        <li data-es="El return conditioning funciona: Condicionar en RTGs altos durante inferencia produce mejores recomendaciones, validando la hipótesis central de los Decision Transformers."
+                            data-en="Return conditioning works: Conditioning on high RTGs during inference produces better recommendations, validating the central hypothesis of Decision Transformers.">
+                            <strong data-es="El return conditioning funciona" data-en="Return conditioning works">El
+                                return conditioning funciona</strong>: Condicionar en RTGs altos durante inferencia
+                            produce mejores recomendaciones, validando la hipótesis central de los Decision
+                            Transformers.
+                        </li>
+                        <li data-es="Los grupos de usuario aportan información: El embedding de grupo permite cierto grado de personalización sin requerir históricos extensos."
+                            data-en="User groups provide information: The group embedding allows some degree of personalization without requiring extensive histories.">
+                            <strong data-es="Los grupos de usuario aportan información"
+                                data-en="User groups provide information">Los grupos de usuario aportan
+                                información</strong>: El embedding de grupo permite cierto grado de personalización sin
+                            requerir históricos extensos.
+                        </li>
+                    </ol>
+
+                    <h3 data-es="Limitaciones" data-en="Limitations">Limitaciones</h3>
+                    <ul>
+                        <li data-es="Los valores absolutos de las métricas son bajos debido a la dificultad inherente del problema (espacio de 752 ítems posibles)"
+                            data-en="Absolute metric values are low due to the inherent difficulty of the problem (752 possible items space)">
+                            Los valores absolutos de las métricas son bajos debido a la dificultad inherente del
+                            problema (espacio de 752 ítems posibles)
+                        </li>
+                        <li data-es="El modelo no supera drásticamente al baseline, sugiriendo que para recomendación offline existen métodos más especializados"
+                            data-en="The model doesn't drastically outperform the baseline, suggesting more specialized methods exist for offline recommendation">
+                            El modelo no supera drásticamente al baseline, sugiriendo que para recomendación offline
+                            existen métodos más especializados
+                        </li>
+                        <li data-es="El entrenamiento requiere GPU y tiempos considerables"
+                            data-en="Training requires GPU and considerable time">
+                            El entrenamiento requiere GPU y tiempos considerables
+                        </li>
+                    </ul>
+
+                    <h3 data-es="Conclusiones" data-en="Conclusions">Conclusiones</h3>
+                    <p data-es="Este proyecto demuestra que los Decision Transformers pueden aplicarse al dominio de recomendación, aunque con resultados modestos. La principal contribución fue la refactorización y mejora arquitectónica del modelo, logrando superar la implementación de referencia."
+                        data-en="This project demonstrates that Decision Transformers can be applied to the recommendation domain, albeit with modest results. The main contribution was the refactoring and architectural improvement of the model, managing to outperform the reference implementation.">
+                        Este proyecto demuestra que los Decision Transformers pueden aplicarse al dominio de
+                        recomendación, aunque con resultados modestos. La principal contribución fue la refactorización
+                        y mejora arquitectónica del modelo, logrando superar la implementación de referencia.
+                    </p>
+                    <p data-es="La experiencia resalta la importancia de entender profundamente la arquitectura Transformer y adaptar correctamente los componentes (embeddings, máscaras, predicción) al dominio específico. Aunque los DTs no reemplazan a métodos especializados de recomendación, ofrecen un framework unificado interesante que conecta RL y sequence modeling."
+                        data-en="The experience highlights the importance of deeply understanding the Transformer architecture and correctly adapting components (embeddings, masks, prediction) to the specific domain. Although DTs don't replace specialized recommendation methods, they offer an interesting unified framework that connects RL and sequence modeling.">
+                        La experiencia resalta la importancia de entender profundamente la arquitectura Transformer y
+                        adaptar correctamente los componentes (embeddings, máscaras, predicción) al dominio específico.
+                        Aunque los DTs no reemplazan a métodos especializados de recomendación, ofrecen un framework
+                        unificado interesante que conecta RL y sequence modeling.
+                    </p>
+
+                    <!-- Tecnologías -->
                     <h2 data-es="Tecnologías Utilizadas" data-en="Technologies Used">Tecnologías Utilizadas</h2>
                     <div class="tech-grid">
                         <div class="tech-item">
                             <h4>PyTorch</h4>
-                            <p data-es="Framework para construcción de modelos deep learning" data-en="Framework for deep learning model construction">Framework para construcción de modelos deep learning</p>
+                            <p data-es="Framework para construcción del Decision Transformer"
+                                data-en="Framework for Decision Transformer construction">Framework para construcción
+                                del Decision Transformer</p>
                         </div>
                         <div class="tech-item">
                             <h4>Transformers</h4>
-                            <p data-es="Arquitectura de atención para secuencias" data-en="Attention architecture for sequences">Arquitectura de atención para secuencias</p>
+                            <p data-es="Arquitectura de atención con máscara causal personalizada"
+                                data-en="Attention architecture with custom causal mask">Arquitectura de atención con
+                                máscara causal personalizada</p>
                         </div>
                         <div class="tech-item">
                             <h4>Pandas & NumPy</h4>
-                            <p data-es="Procesamiento y análisis de datos" data-en="Data processing and analysis">Procesamiento y análisis de datos</p>
+                            <p data-es="Procesamiento de trayectorias y datos" data-en="Trajectory and data processing">
+                                Procesamiento de trayectorias y datos</p>
                         </div>
                         <div class="tech-item">
                             <h4>Scikit-learn</h4>
-                            <p data-es="Baselines y métricas de evaluación" data-en="Baselines and evaluation metrics">Baselines y métricas de evaluación</p>
+                            <p data-es="Clustering de usuarios y métricas" data-en="User clustering and metrics">
+                                Clustering de usuarios y métricas</p>
                         </div>
                         <div class="tech-item">
-                            <h4>Matplotlib & Seaborn</h4>
-                            <p data-es="Visualización de resultados" data-en="Results visualization">Visualización de resultados</p>
+                            <h4>Matplotlib</h4>
+                            <p data-es="Visualización de resultados y curvas de entrenamiento"
+                                data-en="Visualization of results and training curves">Visualización de resultados y
+                                curvas de entrenamiento</p>
                         </div>
                     </div>
+
+                    <!-- Agradecimientos -->
+                    <h2 data-es="Agradecimientos" data-en="Acknowledgments">Agradecimientos</h2>
+                    <p data-es="Este trabajo fue desarrollado para la materia Aprendizaje por Refuerzos en el marco de la Diplomatura en Ciencia de Datos (FAMAF, 2025). Realizado en conjunto con Felipe Ávila. ¡Gracias por el trabajo en equipo!"
+                        data-en="This work was developed for the Reinforcement Learning course as part of the Data Science Diploma (FAMAF, 2025). Carried out together with Felipe Ávila. Thanks for the teamwork!">
+                        Este trabajo fue desarrollado para la materia <strong>Aprendizaje por Refuerzos</strong> en el
+                        marco de la Diplomatura en Ciencia de Datos (FAMAF, 2025). Realizado en conjunto con Felipe
+                        Ávila. ¡Gracias por el trabajo en equipo!
+                    </p>
+
                 </div>
             </section>
         </main>
@@ -82,4 +402,5 @@
 
     <script src="../script.js"></script>
 </body>
+
 </html>
