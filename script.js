@@ -150,7 +150,13 @@ function switchLanguage(lang) {
             element.innerHTML = text;
         }
     });
-    
+
+    // Update href for elements with data-href-es / data-href-en
+    document.querySelectorAll('[data-href-es][data-href-en]').forEach(element => {
+        const href = element.getAttribute(`data-href-${lang}`);
+        if (href) element.href = href;
+    });
+
     // Update active button
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');

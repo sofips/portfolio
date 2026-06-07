@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lectura Distante de Canciones Argentinas</title>
+    <title>Lectura Distante de Canciones Argentinas | NLP · Sofía Perón Santana</title>
+    <meta name="description" content="NLP analysis of ~30,000 Argentine song lyrics: LDA topic modeling, musical genre classification, and sentiment analysis using Python, spaCy, and the Spotify API.">
+    <link rel="canonical" href="https://sofips.dev.ar/data-science-projects/canciones.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sofips.dev.ar/data-science-projects/canciones.html">
+    <meta property="og:title" content="Lectura Distante de Canciones Argentinas | Sofía Perón Santana">
+    <meta property="og:description" content="NLP analysis of ~30,000 Argentine song lyrics: LDA topic modeling, musical genre classification, and sentiment analysis using Python, spaCy, and the Spotify API.">
+    <meta property="og:image" content="https://sofips.dev.ar/me.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Lectura Distante de Canciones Argentinas | Sofía Perón Santana">
+    <meta name="twitter:description" content="NLP analysis of ~30,000 Argentine song lyrics: LDA topic modeling, musical genre classification, and sentiment analysis using Python, spaCy, and the Spotify API.">
+    <meta name="twitter:image" content="https://sofips.dev.ar/me.jpg">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -27,6 +38,10 @@
         <main class="main">
             <section class="section project-detail">
                 <div class="project-content">
+
+                    <div style="background: rgba(83, 52, 131, 0.3); border-left: 4px solid #e94560; padding: 15px 20px; border-radius: 8px; margin-bottom: 25px;">
+                        <p style="margin: 0; font-size: 1.1em;" data-es="Análisis NLP de ~30.000 letras de canciones argentinas extraídas de La Cuerda, enriquecidas con metadatos de la API de Spotify. Aplicamos LDA topic modeling para descubrir cinco temas latentes en el corpus, y entrenamos clasificadores de estilo musical comparando TF-IDF, Word2Vec y BERT. El hallazgo más interesante: un modelo Word2Vec entrenado sobre el corpus propio supera al preentrenado en Wikipedia, capturando mejor el vocabulario coloquial y poético de las letras argentinas." data-en="NLP analysis of ~30,000 Argentine song lyrics scraped from La Cuerda, enriched with Spotify API metadata. We applied LDA topic modeling to uncover five latent themes in the corpus and trained musical style classifiers comparing TF-IDF, Word2Vec, and BERT. The most interesting finding: a Word2Vec model trained on the song corpus outperforms one pretrained on Wikipedia, better capturing the colloquial and poetic vocabulary of Argentine lyrics.">Análisis NLP de ~30.000 letras de canciones argentinas extraídas de La Cuerda, enriquecidas con metadatos de la API de Spotify. Aplicamos LDA topic modeling para descubrir cinco temas latentes en el corpus, y entrenamos clasificadores de estilo musical comparando TF-IDF, Word2Vec y BERT. El hallazgo más interesante: un modelo Word2Vec entrenado sobre el corpus propio supera al preentrenado en Wikipedia, capturando mejor el vocabulario coloquial y poético de las letras argentinas.</p>
+                    </div>
 
                     <p data-es="Este proyecto analiza un dataset de aproximadamente 30,000 letras de canciones argentinas extraídas del sitio <a href='https://lacuerda.net/' target='_blank'>La Cuerda</a>, enriquecidas con metadatos de la API de Spotify. El objetivo es caracterizar y predecir estilos musicales a partir del análisis textual de las letras, utilizando técnicas de <strong>Procesamiento de Lenguaje Natural (NLP)</strong>." data-en="This project analyzes a dataset of approximately 30,000 Argentine song lyrics extracted from <a href='https://lacuerda.net/' target='_blank'>La Cuerda</a> website, enriched with metadata from Spotify's API. The goal is to characterize and predict musical styles from textual analysis of lyrics using <strong>Natural Language Processing (NLP)</strong> techniques.">Este proyecto analiza un dataset de aproximadamente 30,000 letras de canciones argentinas extraídas del sitio <a href="https://lacuerda.net/" target="_blank">La Cuerda</a>, enriquecidas con metadatos de la API de Spotify. El objetivo es caracterizar y predecir estilos musicales a partir del análisis textual de las letras, utilizando técnicas de <strong>Procesamiento de Lenguaje Natural (NLP)</strong>.</p>
 
@@ -151,6 +166,18 @@
                             </svg>
                             <span data-es="Ver Video Resumen" data-en="Watch Summary Video (in Spanish)">Ver Video Resumen</span>
                         </a>
+                    </div>
+
+                    <h2 data-es="Tecnologías" data-en="Technologies">Tecnologías</h2>
+                    <div class="tech-grid">
+                        <div class="tech-item">Python</div>
+                        <div class="tech-item">spaCy</div>
+                        <div class="tech-item">Gensim (LDA / Word2Vec)</div>
+                        <div class="tech-item">scikit-learn</div>
+                        <div class="tech-item">BERT (español)</div>
+                        <div class="tech-item">TextBlob</div>
+                        <div class="tech-item">Spotify API</div>
+                        <div class="tech-item">Pandas / Seaborn</div>
                     </div>
 
                     <h2 data-es="Agradecimientos" data-en="Acknowledgments">Agradecimientos</h2>

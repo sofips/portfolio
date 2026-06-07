@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum State Transfer with Genetic Algorithms</title>
+    <title>Quantum State Transfer with Genetic Algorithms | Sofía Perón Santana</title>
+    <meta name="description" content="Optimization of Heisenberg spin chains using genetic algorithms for high-fidelity quantum state transfer. Published in Physica Scripta. Doctoral research at CONICET.">
+    <link rel="canonical" href="https://sofips.dev.ar/machine-learning-in-physics/quantum-state-transfer-ga.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sofips.dev.ar/machine-learning-in-physics/quantum-state-transfer-ga.html">
+    <meta property="og:title" content="Quantum State Transfer with Genetic Algorithms | Sofía Perón Santana">
+    <meta property="og:description" content="Optimization of Heisenberg spin chains using genetic algorithms for high-fidelity quantum state transfer. Published in Physica Scripta. Doctoral research at CONICET.">
+    <meta property="og:image" content="https://sofips.dev.ar/me.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Quantum State Transfer with Genetic Algorithms | Sofía Perón Santana">
+    <meta name="twitter:description" content="Optimization of Heisenberg spin chains using genetic algorithms for high-fidelity quantum state transfer. Published in Physica Scripta. Doctoral research at CONICET.">
+    <meta name="twitter:image" content="https://sofips.dev.ar/me.jpg">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -27,7 +38,11 @@
         <main class="main">
             <section class="section project-detail">
                 <div class="project-content">
-                    
+
+                    <div style="background: rgba(83, 52, 131, 0.3); border-left: 4px solid #e94560; padding: 15px 20px; border-radius: 8px; margin-bottom: 25px;">
+                        <p style="margin: 0; font-size: 1.1em;" data-es="¿Cómo diseñar un canal de comunicación cuántica que transmita información con alta fidelidad? Este trabajo usa <strong>algoritmos genéticos</strong> para optimizar los coeficientes de acoplamiento de cadenas de espín Heisenberg, logrando probabilidades de transmisión superiores al 99%. Las cadenas diseñadas mantienen una eficiencia del 98% incluso ante un 5% de desorden estático, mostrando robustez relevante para implementaciones experimentales reales." data-en="How do you design a quantum communication channel that transmits information with high fidelity? This work uses <strong>genetic algorithms</strong> to optimize the coupling coefficients of Heisenberg spin chains, achieving transmission probabilities above 99%. The designed chains maintain 98% efficiency even under 5% static disorder — robustness that matters for real experimental implementations.">¿Cómo diseñar un canal de comunicación cuántica que transmita información con alta fidelidad? Este trabajo usa <strong>algoritmos genéticos</strong> para optimizar los coeficientes de acoplamiento de cadenas de espín Heisenberg, logrando probabilidades de transmisión superiores al 99%. Las cadenas diseñadas mantienen una eficiencia del 98% incluso ante un 5% de desorden estático, mostrando robustez relevante para implementaciones experimentales reales.</p>
+                    </div>
+
                     <p data-es="Diseñar buenos canales de transmisión para estados cuánticos arbitrarios en cadenas de espín implica optimizar una función costo. Generalmente, esa función es la <strong>fidelidad promedio de transmisión</strong>, que mide qué tan similar es el estado transmitido al estado que se preparó al principio del protocolo de transmisión. Cuando se promedia sobre todos los estados iniciales posibles, es una figura de mérito que cuantifica la calidad del protocolo." data-en="Designing a good transfer channel for arbitrary quantum states in spin chains implies optimizing a cost function. Usually, this function is the <strong>averaged fidelity of transmission</strong>, which measures how much the transferred state resembles the state prepared at the beginning of the transfer protocol. When averaged over all the possible initial states, this figure of merit quantifies the quality of the protocol.">Diseñar buenos canales de transmisión para estados cuánticos arbitrarios en cadenas de espín implica optimizar una función costo. Generalmente, esa función es la <strong>fidelidad promedio de transmisión</strong>, que mide qué tan similar es el estado transmitido al estado que se preparó al principio del protocolo de transmisión. Cuando se promedia sobre todos los estados iniciales posibles, es una figura de mérito que cuantifica la calidad del protocolo.</p>
 
                     <p data-es="En particular, se considera el diseño de <strong>cadenas de espín de tipo Heisenberg</strong> usando <strong>algoritmos genéticos</strong>. Este algoritmo altamente eficiente permite estudiar distintas propiedades de Hamiltonianos con buena capacidad de transmisión. Una de las desventajas aparentes de usar un método basado en aleatoriedad es que la intensidad de los coeficientes puede variar abruptamente entre los sitios. Modificando la función costo, se obtienen Hamiltonianos con coeficientes de intercambio que varían suavemente de sitio a sitio." data-en="In particular, we consider the design of <strong>Heisenberg spin chains</strong> using <strong>genetic algorithms</strong>. This highly efficient algorithm allows us to study different properties of Hamiltonians with good transfer ability. One apparent drawback of using randomness-based methods is that exchange coefficient strengths change abruptly from site to site. By modifying the cost function, we obtain Hamiltonians with exchange coefficients varying smoothly along the chain length.">En particular, se considera el diseño de <strong>cadenas de espín de tipo Heisenberg</strong> usando <strong>algoritmos genéticos</strong>. Este algoritmo altamente eficiente permite estudiar distintas propiedades de Hamiltonianos con buena capacidad de transmisión. Una de las desventajas aparentes de usar un método basado en aleatoriedad es que la intensidad de los coeficientes puede variar abruptamente entre los sitios. Modificando la función costo, se obtienen Hamiltonianos con coeficientes de intercambio que varían suavemente de sitio a sitio.</p>
@@ -98,6 +113,15 @@
                         <li data-es="Se pueden encontrar diferentes soluciones imponiendo restricciones en las funciones de fitness. Sin embargo, las propiedades físicas parecen ser independientes de la distribución de ECCs, por lo que no hay ventaja teórica. <strong>Las cadenas suavizadas podrían ser más prácticas para implementación experimental</strong>." data-en="Different solutions can be found by imposing constraints on the fitness functions. Nevertheless, physical properties seem to be independent of the distribution of ECCs so there is no theoretical advantage. <strong>Softened chains could be more practical for experimental implementation</strong>.">Se pueden encontrar diferentes soluciones imponiendo restricciones en las funciones de fitness. Sin embargo, las propiedades físicas parecen ser independientes de la distribución de ECCs, por lo que no hay ventaja teórica. <strong>Las cadenas suavizadas podrían ser más prácticas para implementación experimental</strong>.</li>
                         <li data-es="Las cadenas diseñadas son robustas para todas las longitudes simuladas. <strong>Transmitirán con 98% de eficiencia para una fuerza de desorden del 5%</strong>." data-en="Designed chains are robust for all simulated lengths. <strong>They will transmit at 98% efficiency for a disorder strength of 5%</strong>.">Las cadenas diseñadas son robustas para todas las longitudes simuladas. <strong>Transmitirán con 98% de eficiencia para una fuerza de desorden del 5%</strong>.</li>
                     </ul>
+
+                    <h2 data-es="Tecnologías" data-en="Technologies">Tecnologías</h2>
+                    <div class="tech-grid">
+                        <div class="tech-item">Python</div>
+                        <div class="tech-item">NumPy / SciPy</div>
+                        <div class="tech-item" data-es="Algoritmos Genéticos" data-en="Genetic Algorithms">Algoritmos Genéticos</div>
+                        <div class="tech-item">Matplotlib</div>
+                        <div class="tech-item" data-es="Álgebra Lineal Numérica" data-en="Numerical Linear Algebra">Álgebra Lineal Numérica</div>
+                    </div>
 
                     <h2 data-es="Links" data-en="Links">Links</h2>
                     <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
