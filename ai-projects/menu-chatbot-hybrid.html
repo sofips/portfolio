@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Híbrido de Menú (RAG) | Sofía Perón Santana</title>
+    <meta name="description" content="Chatbot that answers natural-language questions about a restaurant menu, combining RAG vector search over ChromaDB with deterministic lookups for exact prices and calories, built with Python and Ollama.">
+    <link rel="canonical" href="https://sofips.dev.ar/ai-projects/menu-chatbot-hybrid.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sofips.dev.ar/ai-projects/menu-chatbot-hybrid.html">
+    <meta property="og:title" content="Chatbot Híbrido de Menú (RAG) | Sofía Perón Santana">
+    <meta property="og:description" content="Chatbot that answers natural-language questions about a restaurant menu, combining RAG vector search over ChromaDB with deterministic lookups for exact prices and calories, built with Python and Ollama.">
+    <meta property="og:image" content="https://sofips.dev.ar/me.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Chatbot Híbrido de Menú (RAG) | Sofía Perón Santana">
+    <meta name="twitter:description" content="Chatbot that answers natural-language questions about a restaurant menu, combining RAG vector search over ChromaDB with deterministic lookups for exact prices and calories, built with Python and Ollama.">
+    <meta name="twitter:image" content="https://sofips.dev.ar/me.jpg">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <canvas id="ripple-grid" class="ripple-grid-background"></canvas>
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 data-es="Chatbot Híbrido de Menú (RAG)" data-en="Hybrid Menu Chatbot (RAG)">Chatbot Híbrido de Menú (RAG)</h1>
+                <p class="subtitle" data-es="RAG semántico + lookups determinísticos para responder preguntas sobre un menú sin que el LLM invente números" data-en="Semantic RAG + deterministic lookups to answer menu questions without letting the LLM make up numbers">RAG semántico + lookups determinísticos para responder preguntas sobre un menú sin que el LLM invente números</p>
+            </div>
+        </header>
+
+        <nav class="nav back-nav">
+            <a href="../index.html" class="nav-link" data-es="← Volver" data-en="← Back">← Volver</a>
+        </nav>
+
+        <main class="main">
+            <section class="section project-detail">
+                <div class="project-content">
+
+                    <div class="project-summary">
+                        <p data-es="Chatbot que responde en lenguaje natural preguntas sobre el menú de un restaurante: precios, calorías, categorías, descuentos y cupones. Combina <strong>RAG</strong> (retrieval-augmented generation) sobre una base vectorial en ChromaDB con <strong>lookups determinísticos</strong> para los datos que necesitan ser exactos —como precios y calorías—, evitando que el LLM invente o redondee números. Las preguntas más abiertas (qué dispara un descuento, qué cupones hay) se resuelven recuperando los chunks relevantes y dejando que el LLM sintetice la respuesta con ese contexto." data-en="Chatbot that answers natural-language questions about a restaurant menu: prices, calories, categories, discounts, and coupons. It combines <strong>RAG</strong> (retrieval-augmented generation) over a ChromaDB vector store with <strong>deterministic lookups</strong> for data that needs to be exact — like prices and calories — keeping the LLM from inventing or rounding numbers. More open-ended questions (what triggers a discount, which coupons exist) are resolved by retrieving the relevant chunks and letting the LLM synthesize the answer from that context.">Chatbot que responde en lenguaje natural preguntas sobre el menú de un restaurante: precios, calorías, categorías, descuentos y cupones. Combina <strong>RAG</strong> (retrieval-augmented generation) sobre una base vectorial en ChromaDB con <strong>lookups determinísticos</strong> para los datos que necesitan ser exactos —como precios y calorías—, evitando que el LLM invente o redondee números. Las preguntas más abiertas (qué dispara un descuento, qué cupones hay) se resuelven recuperando los chunks relevantes y dejando que el LLM sintetice la respuesta con ese contexto.</p>
+                    </div>
+
+                    <p data-es="Un problema frecuente al construir asistentes conversacionales sobre datos estructurados es que los LLMs son excelentes generando lenguaje natural fluido, pero poco confiables reproduciendo números exactos: pueden redondear un precio, confundir una cifra de calorías o directamente inventar un valor plausible. Para un caso de uso real —un chatbot de menú que un cliente podría usar antes de pagar— eso es inaceptable. Este proyecto explora una arquitectura <strong>híbrida</strong> que separa el problema en dos: preguntas con respuesta exacta y verificable, y preguntas abiertas que requieren síntesis de lenguaje natural." data-en="A common problem when building conversational assistants over structured data is that LLMs are excellent at producing fluent natural language, but unreliable at reproducing exact numbers: they can round a price, mix up a calorie count, or outright invent a plausible-looking value. For a real use case — a menu chatbot a customer might use before paying — that's unacceptable. This project explores a <strong>hybrid</strong> architecture that splits the problem in two: questions with an exact, verifiable answer, and open-ended questions that require natural-language synthesis.">Un problema frecuente al construir asistentes conversacionales sobre datos estructurados es que los LLMs son excelentes generando lenguaje natural fluido, pero poco confiables reproduciendo números exactos: pueden redondear un precio, confundir una cifra de calorías o directamente inventar un valor plausible. Para un caso de uso real —un chatbot de menú que un cliente podría usar antes de pagar— eso es inaceptable. Este proyecto explora una arquitectura <strong>híbrida</strong> que separa el problema en dos: preguntas con respuesta exacta y verificable, y preguntas abiertas que requieren síntesis de lenguaje natural.</p>
+
+                    <h2 data-es="Cómo funciona" data-en="How it works">Cómo funciona</h2>
+
+                    <h3 data-es="Indexación del menú" data-en="Indexing the menu">Indexación del menú</h3>
+                    <p data-es="El menú (un archivo JSON) se parsea en estructuras de datos y se divide en chunks de texto especializados mediante <strong>cuatro chunkers</strong>, cada uno enfocado en un tipo de contenido distinto:" data-en="The menu (a JSON file) is parsed into data structures and split into specialized text chunks by <strong>four chunkers</strong>, each focused on a different type of content:">El menú (un archivo JSON) se parsea en estructuras de datos y se divide en chunks de texto especializados mediante <strong>cuatro chunkers</strong>, cada uno enfocado en un tipo de contenido distinto:</p>
+                    <ul>
+                        <li><code>ItemChunker</code>: <span data-es="un chunk por ítem individual del menú, con nombre, categoría y precios por tamaño" data-en="one chunk per individual menu item, with name, category, and per-size prices">un chunk por ítem individual del menú, con nombre, categoría y precios por tamaño</span></li>
+                        <li><code>CategoryChunker</code>: <span data-es="chunks a nivel de categoría, para preguntas del tipo &quot;¿qué ensaladas hay?&quot;" data-en="category-level chunks, for questions like &quot;which salads do you have?&quot;">chunks a nivel de categoría, para preguntas del tipo "¿qué ensaladas hay?"</span></li>
+                        <li><code>NutritionChunker</code>: <span data-es="información nutricional (calorías, notas dietéticas) por ítem" data-en="nutritional information (calories, dietary notes) per item">información nutricional (calorías, notas dietéticas) por ítem</span></li>
+                        <li><code>DiscountChunker</code>: <span data-es="descuentos activos, tipo de descuento (porcentaje, monto fijo, BOGO) y si requieren un código de cupón" data-en="active discounts, discount type (percentage, fixed amount, BOGO), and whether they require a coupon code">descuentos activos, tipo de descuento (porcentaje, monto fijo, BOGO) y si requieren un código de cupón</span></li>
+                    </ul>
+                    <p data-es="Cada chunk se embebe con un modelo de embeddings y se guarda en <strong>ChromaDB</strong>, la base de datos vectorial que sirve como índice de búsqueda semántica." data-en="Each chunk is embedded with an embedding model and stored in <strong>ChromaDB</strong>, the vector database that serves as the semantic search index.">Cada chunk se embebe con un modelo de embeddings y se guarda en <strong>ChromaDB</strong>, la base de datos vectorial que sirve como índice de búsqueda semántica.</p>
+
+                    <h3 data-es="Resolución de preguntas" data-en="Answering a question">Resolución de preguntas</h3>
+                    <p data-es="Cuando llega una pregunta, el <code>RAGEngine</code> decide primero si tiene forma de consulta estructurada (contiene palabras como &quot;price&quot;, &quot;cost&quot;, &quot;how much&quot;, &quot;calorie&quot;, &quot;coupon&quot;, &quot;today&quot;). Si es así, intenta resolverla con el <code>QueryExecutor</code>: un módulo determinístico que hace un lookup directo sobre los datos parseados del menú (con fuzzy matching sobre el nombre del ítem para tolerar errores de tipeo). Si el lookup determinístico no encuentra el dato, o la pregunta es más abierta, el sistema cae al camino RAG: genera el embedding de la consulta, recupera los chunks más relevantes de ChromaDB (filtrando por tipo cuando es posible) y arma un prompt con ese contexto para que el LLM sintetice la respuesta en lenguaje natural." data-en="When a question comes in, the <code>RAGEngine</code> first checks whether it looks like a structured query (it contains words like &quot;price&quot;, &quot;cost&quot;, &quot;how much&quot;, &quot;calorie&quot;, &quot;coupon&quot;, &quot;today&quot;). If so, it tries to resolve it with the <code>QueryExecutor</code>: a deterministic module that does a direct lookup over the parsed menu data (with fuzzy matching on the item name to tolerate typos). If the deterministic lookup can't find the data, or the question is more open-ended, the system falls back to the RAG path: it embeds the query, retrieves the most relevant chunks from ChromaDB (filtering by type when possible), and builds a prompt with that context for the LLM to synthesize a natural-language answer.">Cuando llega una pregunta, el <code>RAGEngine</code> decide primero si tiene forma de consulta estructurada (contiene palabras como "price", "cost", "how much", "calorie", "coupon", "today"). Si es así, intenta resolverla con el <code>QueryExecutor</code>: un módulo determinístico que hace un lookup directo sobre los datos parseados del menú (con fuzzy matching sobre el nombre del ítem para tolerar errores de tipeo). Si el lookup determinístico no encuentra el dato, o la pregunta es más abierta, el sistema cae al camino RAG: genera el embedding de la consulta, recupera los chunks más relevantes de ChromaDB (filtrando por tipo cuando es posible) y arma un prompt con ese contexto para que el LLM sintetice la respuesta en lenguaje natural.</p>
+                    <p data-es="La inferencia del LLM corre localmente vía <strong>Ollama</strong>, y el prompt incluye instrucciones explícitas para que el modelo parafrasee el contexto en vez de copiar etiquetas de chunk textualmente, no invente ingredientes ni datos ausentes, y avise si un dato falta en vez de inferirlo." data-en="LLM inference runs locally via <strong>Ollama</strong>, and the prompt includes explicit instructions for the model to paraphrase the retrieved context instead of copying raw chunk labels, avoid inventing ingredients or missing data, and flag when information is unavailable instead of guessing it.">La inferencia del LLM corre localmente vía <strong>Ollama</strong>, y el prompt incluye instrucciones explícitas para que el modelo parafrasee el contexto en vez de copiar etiquetas de chunk textualmente, no invente ingredientes ni datos ausentes, y avise si un dato falta en vez de inferirlo.</p>
+
+                    <h2 data-es="Por qué &quot;híbrido&quot;" data-en="Why &quot;hybrid&quot;">Por qué "híbrido"</h2>
+                    <p data-es="El sistema combina dos estrategias distintas según el tipo de pregunta, en lugar de forzar todo a través de un único enfoque:" data-en="The system combines two different strategies depending on the type of question, instead of forcing everything through a single approach:">El sistema combina dos estrategias distintas según el tipo de pregunta, en lugar de forzar todo a través de un único enfoque:</p>
+                    <ul>
+                        <li data-es="<strong>Lookup exacto (QueryExecutor)</strong> para datos numéricos donde una alucinación tiene costo real: precio, calorías. La respuesta sale directo de los datos parseados, no del LLM." data-en="<strong>Exact lookup (QueryExecutor)</strong> for numeric data where a hallucination has real cost: price, calories. The answer comes straight from the parsed data, not from the LLM."><strong>Lookup exacto (QueryExecutor)</strong> para datos numéricos donde una alucinación tiene costo real: precio, calorías. La respuesta sale directo de los datos parseados, no del LLM.</li>
+                        <li data-es="<strong>RAG semántico</strong> para preguntas abiertas o semi-estructuradas —qué descuentos hay, qué dispara un BOGO, qué cupones existen— donde hace falta flexibilidad para interpretar la pregunta y componer una respuesta en lenguaje natural a partir de varios fragmentos de contexto." data-en="<strong>Semantic RAG</strong> for open-ended or semi-structured questions — what discounts exist, what triggers a BOGO, which coupons are available — where flexibility is needed to interpret the question and compose a natural-language answer from several pieces of context."><strong>RAG semántico</strong> para preguntas abiertas o semi-estructuradas —qué descuentos hay, qué dispara un BOGO, qué cupones existen— donde hace falta flexibilidad para interpretar la pregunta y componer una respuesta en lenguaje natural a partir de varios fragmentos de contexto.</li>
+                    </ul>
+                    <p data-es="Esta separación importa en cualquier caso de uso real de un chatbot sobre datos de negocio: forzar todo a RAG puro arriesga números incorrectos justo donde más importan (precios, cantidades); forzar todo a lookups estructurados rompe apenas la pregunta se sale del molde esperado. Combinar ambas estrategias —y decidir cuál usar según la forma de la pregunta, con fallback de una a la otra— da precisión donde se necesita sin sacrificar flexibilidad conversacional." data-en="This separation matters in any real-world chatbot use case over business data: forcing everything through pure RAG risks wrong numbers exactly where they matter most (prices, quantities); forcing everything through structured lookups breaks as soon as a question strays from the expected shape. Combining both strategies — deciding which to use based on the shape of the question, with fallback from one to the other — gives precision where it's needed without sacrificing conversational flexibility.">Esta separación importa en cualquier caso de uso real de un chatbot sobre datos de negocio: forzar todo a RAG puro arriesga números incorrectos justo donde más importan (precios, cantidades); forzar todo a lookups estructurados rompe apenas la pregunta se sale del molde esperado. Combinar ambas estrategias —y decidir cuál usar según la forma de la pregunta, con fallback de una a la otra— da precisión donde se necesita sin sacrificar flexibilidad conversacional.</p>
+
+                    <h2 data-es="Ejemplos de preguntas" data-en="Example questions">Ejemplos de preguntas</h2>
+                    <p data-es="El chatbot responde correctamente preguntas como:" data-en="The chatbot correctly answers questions like:">El chatbot responde correctamente preguntas como:</p>
+                    <ul>
+                        <li><code data-es="¿Cuál es el precio de un NUTTY BOWL chico?" data-en="What is the price of a small NUTTY BOWL?">What is the price of a small NUTTY BOWL?</code></li>
+                        <li><code data-es="¿Cuántas calorías tiene el smoothie GO GREEN?" data-en="How many calories does the GO GREEN smoothie have?">How many calories does the GO GREEN smoothie have?</code></li>
+                        <li><code data-es="¿Qué ensaladas tienen?" data-en="Which salads do you have?">Which salads do you have?</code></li>
+                        <li><code data-es="¿Qué descuentos hay disponibles hoy?" data-en="What discounts are available today?">What discounts are available today?</code></li>
+                        <li><code data-es="¿Qué descuentos incluyen cupones?" data-en="Which discounts include coupons?">Which discounts include coupons?</code></li>
+                        <li><code data-es="¿Qué ítems disparan un descuento BOGO?" data-en="What items trigger a BOGO discount?">What items trigger a BOGO discount?</code></li>
+                    </ul>
+                    <p data-es="Las tres primeras se resuelven vía lookup determinístico o recuperación por categoría; las tres últimas requieren que el LLM sintetice la respuesta a partir de los chunks de descuentos recuperados." data-en="The first three are resolved via deterministic lookup or category retrieval; the last three require the LLM to synthesize the answer from the retrieved discount chunks.">Las tres primeras se resuelven vía lookup determinístico o recuperación por categoría; las tres últimas requieren que el LLM sintetice la respuesta a partir de los chunks de descuentos recuperados.</p>
+
+                    <h2 data-es="Tecnologías" data-en="Technologies">Tecnologías</h2>
+                    <div class="tech-grid">
+                        <div class="tech-item">Python</div>
+                        <div class="tech-item">RAG</div>
+                        <div class="tech-item">ChromaDB</div>
+                        <div class="tech-item">Ollama</div>
+                        <div class="tech-item" data-es="Búsqueda por embeddings" data-en="Embedding search">Búsqueda por embeddings</div>
+                        <div class="tech-item" data-es="Lookups determinísticos" data-en="Deterministic lookups">Lookups determinísticos</div>
+                    </div>
+
+                    <h2 data-es="Estado del Trabajo" data-en="Work Status">Estado del Trabajo</h2>
+                    <p data-es="Proyecto personal en desarrollo activo, pensado como ejercicio de diseño de arquitecturas RAG confiables para datos de negocio. El código completo está disponible en el repositorio de GitHub." data-en="Personal project under active development, built as a design exercise for reliable RAG architectures over business data. The full code is available in the GitHub repository.">Proyecto personal en desarrollo activo, pensado como ejercicio de diseño de arquitecturas RAG confiables para datos de negocio. El código completo está disponible en el repositorio de GitHub.</p>
+
+                    <div class="links-row links-row--centered">
+                        <a href="https://github.com/sofips/menu-chatbot-hybrid" target="_blank" class="cta-btn cta-btn--github">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span data-es="Ver Repositorio en GitHub" data-en="View Repository on GitHub">Ver Repositorio en GitHub</span>
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Sofía Perón Santana. Made with ♥</p>
+        </footer>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

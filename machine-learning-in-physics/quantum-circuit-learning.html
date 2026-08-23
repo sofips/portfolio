@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Circuit Learning: Clasificación y Regresión | Sofía Perón Santana</title>
+    <meta name="description" content="Comparación de circuitos cuánticos variacionales de baja profundidad contra algoritmos clásicos de machine learning en problemas de clasificación y regresión. Investigación en Quantum Circuit Learning.">
+    <link rel="canonical" href="https://sofips.dev.ar/machine-learning-in-physics/quantum-circuit-learning.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sofips.dev.ar/machine-learning-in-physics/quantum-circuit-learning.html">
+    <meta property="og:title" content="Quantum Circuit Learning: Clasificación y Regresión | Sofía Perón Santana">
+    <meta property="og:description" content="Comparación de circuitos cuánticos variacionales de baja profundidad contra algoritmos clásicos de machine learning en problemas de clasificación y regresión.">
+    <meta property="og:image" content="https://sofips.dev.ar/me.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Quantum Circuit Learning: Clasificación y Regresión | Sofía Perón Santana">
+    <meta name="twitter:description" content="Comparación de circuitos cuánticos variacionales de baja profundidad contra algoritmos clásicos de machine learning en problemas de clasificación y regresión.">
+    <meta name="twitter:image" content="https://sofips.dev.ar/me.jpg">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Page-scoped: responsive 16:9 video embed wrapper, reusable pattern for any project page. */
+        .video-embed {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: var(--radius-md, 8px);
+            border: 2px solid var(--border-color);
+            margin: 12px 0;
+        }
+        .video-embed iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="ripple-grid" class="ripple-grid-background"></canvas>
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 data-es="Quantum Circuit Learning: Clasificación y Regresión con Circuitos de Baja Profundidad" data-en="Quantum Circuit Learning: Classification and Regression with Low-Depth Circuits">Quantum Circuit Learning: Clasificación y Regresión con Circuitos de Baja Profundidad</h1>
+                <p class="subtitle" data-es="Comparando circuitos cuánticos variacionales contra algoritmos clásicos de machine learning" data-en="Benchmarking variational quantum circuits against classical machine learning algorithms">Comparando circuitos cuánticos variacionales contra algoritmos clásicos de machine learning</p>
+            </div>
+        </header>
+
+        <nav class="nav back-nav">
+            <a href="../index.html" class="nav-link" data-es="← Volver" data-en="← Back">← Volver</a>
+        </nav>
+
+        <main class="main">
+            <section class="section project-detail">
+                <div class="project-content">
+
+                    <div class="project-summary">
+                        <p data-es="¿Cuánto rinde un circuito cuántico variacional con muy pocos recursos —pocos qubits, pocas capas— frente a los algoritmos clásicos que ya conocemos bien? Este trabajo explora el marco de <strong>Quantum Circuit Learning (QCL)</strong>: un circuito cuántico parametrizado que se entrena de forma híbrida con optimización clásica, tratado como un modelo de aprendizaje automático más. Se lo comparó contra regresión logística, gradient boosting y SVC en un problema de clasificación, y se extendió el estudio a un problema de regresión. Sin ningún ajuste especial del kernel u otros hiperparámetros, el circuito cuántico logra un desempeño comparable al de gradient boosting y muy superior al de regresión logística y SVC." data-en="How well does a variational quantum circuit with very few resources —few qubits, few layers— perform against the classical algorithms we already know well? This work explores the <strong>Quantum Circuit Learning (QCL)</strong> framework: a parametrized quantum circuit trained hybridly with classical optimization, treated as just another machine learning model. It was benchmarked against logistic regression, gradient boosting, and SVC on a classification problem, and the study was extended to a regression problem. Without any special kernel or hyperparameter tuning, the quantum circuit achieves performance comparable to gradient boosting and well above logistic regression and SVC.">¿Cuánto rinde un circuito cuántico variacional con muy pocos recursos —pocos qubits, pocas capas— frente a los algoritmos clásicos que ya conocemos bien? Este trabajo explora el marco de <strong>Quantum Circuit Learning (QCL)</strong>: un circuito cuántico parametrizado que se entrena de forma híbrida con optimización clásica, tratado como un modelo de aprendizaje automático más. Se lo comparó contra regresión logística, gradient boosting y SVC en un problema de clasificación, y se extendió el estudio a un problema de regresión. Sin ningún ajuste especial del kernel u otros hiperparámetros, el circuito cuántico logra un desempeño comparable al de gradient boosting y muy superior al de regresión logística y SVC.</p>
+                    </div>
+
+                    <h2 data-es="¿Qué es Quantum Circuit Learning?" data-en="What is Quantum Circuit Learning?">¿Qué es Quantum Circuit Learning?</h2>
+
+                    <p data-es="El <strong>Quantum Circuit Learning</strong> (Mitarai, Negoro, Kitagawa &amp; Fujii, 2018) es un marco de trabajo <strong>híbrido</strong> para hacer machine learning con circuitos cuánticos de baja profundidad: combina un circuito cuántico parametrizado con optimización clásica de sus parámetros. El foco en circuitos de baja profundidad (pocas compuertas por qubit) responde a una razón práctica: son los que tienen chances reales de implementarse en el hardware cuántico actual, a diferencia de otros algoritmos cuánticos que requieren muchos más recursos." data-en="<strong>Quantum Circuit Learning</strong> (Mitarai, Negoro, Kitagawa &amp; Fujii, 2018) is a <strong>hybrid</strong> framework for doing machine learning with low-depth quantum circuits: it combines a parametrized quantum circuit with classical optimization of its parameters. The focus on low-depth circuits (few gates per qubit) is a practical one: these are the circuits with real chances of being implemented on current quantum hardware, unlike other quantum algorithms that require far more resources.">El <strong>Quantum Circuit Learning</strong> (Mitarai, Negoro, Kitagawa &amp; Fujii, 2018) es un marco de trabajo <strong>híbrido</strong> para hacer machine learning con circuitos cuánticos de baja profundidad: combina un circuito cuántico parametrizado con optimización clásica de sus parámetros. El foco en circuitos de baja profundidad (pocas compuertas por qubit) responde a una razón práctica: son los que tienen chances reales de implementarse en el hardware cuántico actual, a diferencia de otros algoritmos cuánticos que requieren muchos más recursos.</p>
+
+                    <ul>
+                        <li data-es="Cada dato de entrada se codifica en un estado cuántico aplicando compuertas de rotación sobre qubits que parten todos del mismo estado inicial (|0⟩)" data-en="Each input data point is encoded into a quantum state by applying rotation gates to qubits that all start from the same initial state (|0⟩)">Cada dato de entrada se codifica en un estado cuántico aplicando compuertas de rotación sobre qubits que parten todos del mismo estado inicial (|0⟩)</li>
+                        <li data-es="Luego se aplica una <strong>compuerta parametrizada</strong> (una o varias capas de rotaciones + entrelazamiento) cuyos ángulos θ son los parámetros a entrenar —análogos a los pesos de una red neuronal, donde los qubits harían las veces de neuronas" data-en="Then a <strong>parametrized gate</strong> is applied (one or more layers of rotations + entanglement) whose angles θ are the parameters to train — analogous to the weights of a neural network, with qubits playing the role of neurons">Luego se aplica una <strong>compuerta parametrizada</strong> (una o varias capas de rotaciones + entrelazamiento) cuyos ángulos θ son los parámetros a entrenar —análogos a los pesos de una red neuronal, donde los qubits harían las veces de neuronas</li>
+                        <li data-es="Se miden valores de expectación (en la práctica, el promedio de repetir la medición del circuito muchas veces) y se optimizan los parámetros θ con un método clásico (en este trabajo, BFGS) para minimizar una función de costo, igual que se ajustan los pesos de una red neuronal" data-en="Expectation values are measured (in practice, the average of repeating the circuit's measurement many times) and the θ parameters are optimized with a classical method (BFGS, in this work) to minimize a cost function, the same way a neural network's weights are adjusted">Se miden valores de expectación (en la práctica, el promedio de repetir la medición del circuito muchas veces) y se optimizan los parámetros θ con un método clásico (en este trabajo, BFGS) para minimizar una función de costo, igual que se ajustan los pesos de una red neuronal</li>
+                    </ul>
+
+                    <h2 data-es="Clasificación: QCL vs. Clasificadores Clásicos" data-en="Classification: QCL vs. Classical Classifiers">Clasificación: QCL vs. Clasificadores Clásicos</h2>
+
+                    <p data-es="Presentado en la <strong>2ª Jornada de Inteligencia Artificial de la UNC</strong> (2024), este trabajo replica uno de los experimentos del paper fundacional de QCL: un problema clásico de clasificación binaria, con datos generados artificialmente y no linealmente separables (100 muestras de entrenamiento, 100 de testeo). Se simuló un circuito de <strong>6 qubits y profundidad 6</strong> (108 parámetros en total, usando la librería <strong>qulacs</strong>) y se lo comparó contra tres clasificadores clásicos estándar de scikit-learn, sin adaptar el tipo de kernel ni otros hiperparámetros a los datos." data-en="Presented at the <strong>2nd UNC Artificial Intelligence Workshop</strong> (2024), this work replicates one of the experiments from the foundational QCL paper: a classic binary classification problem, with artificially generated, non-linearly-separable data (100 training samples, 100 test samples). A <strong>6-qubit, depth-6 circuit</strong> was simulated (108 total parameters, using the <strong>qulacs</strong> library) and benchmarked against three standard scikit-learn classifiers, without adapting kernel type or other hyperparameters to the data.">Presentado en la <strong>2ª Jornada de Inteligencia Artificial de la UNC</strong> (2024), este trabajo replica uno de los experimentos del paper fundacional de QCL: un problema clásico de clasificación binaria, con datos generados artificialmente y no linealmente separables (100 muestras de entrenamiento, 100 de testeo). Se simuló un circuito de <strong>6 qubits y profundidad 6</strong> (108 parámetros en total, usando la librería <strong>qulacs</strong>) y se lo comparó contra tres clasificadores clásicos estándar de scikit-learn, sin adaptar el tipo de kernel ni otros hiperparámetros a los datos.</p>
+
+                    <p data-es="Las columnas de la tabla miden, cada una a su manera, qué tan bien distingue cada modelo las dos clases: <strong>ROC AUC</strong> evalúa esa capacidad de distinción a lo largo de todos los umbrales de decisión posibles, <strong>F1-score</strong> combina en un solo número la precisión y la exhaustividad del modelo, y <strong>accuracy</strong> es simplemente el porcentaje de aciertos. En los tres casos, 1.0 es el máximo (clasificación perfecta) y 0.5 equivale a tirar una moneda." data-en="Each column in the table measures, in its own way, how well a model distinguishes between the two classes: <strong>ROC AUC</strong> evaluates that ability across every possible decision threshold, <strong>F1-score</strong> combines the model's precision and recall into a single number, and <strong>accuracy</strong> is simply the percentage of correct predictions. In all three, 1.0 is the maximum (perfect classification) and 0.5 is equivalent to a coin flip.">Las columnas de la tabla miden, cada una a su manera, qué tan bien distingue cada modelo las dos clases: <strong>ROC AUC</strong> evalúa esa capacidad de distinción a lo largo de todos los umbrales de decisión posibles, <strong>F1-score</strong> combina en un solo número la precisión y la exhaustividad del modelo, y <strong>accuracy</strong> es simplemente el porcentaje de aciertos. En los tres casos, 1.0 es el máximo (clasificación perfecta) y 0.5 equivale a tirar una moneda.</p>
+
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th data-es="Clasificador" data-en="Classifier">Clasificador</th>
+                                <th data-es="ROC AUC" data-en="ROC AUC">ROC AUC</th>
+                                <th data-es="F1-score" data-en="F1-score">F1-score</th>
+                                <th data-es="Accuracy" data-en="Accuracy">Accuracy</th>
+                            </tr>
+                        </thead>
+                        <tbody class="highlight-row">
+                            <tr class="highlight-row"><td data-es="Quantum Circuit Learning" data-en="Quantum Circuit Learning">Quantum Circuit Learning</td><td>0.924</td><td>0.918</td><td>0.925</td></tr>
+                            <tr><td data-es="Gradient Boosting" data-en="Gradient Boosting">Gradient Boosting</td><td>0.970</td><td>0.970</td><td>0.970</td></tr>
+                            <tr><td data-es="Support Vector Classification" data-en="Support Vector Classification">Support Vector Classification</td><td>0.574</td><td>0.530</td><td>0.575</td></tr>
+                            <tr><td data-es="Regresión Logística" data-en="Logistic Regression">Regresión Logística</td><td>0.496</td><td>0.526</td><td>0.495</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="figure-caption" data-es="Tabla comparativa de métricas de clasificación. El circuito cuántico (fila resaltada) logra un desempeño comparable al de Gradient Boosting y muy superior al de SVC y regresión logística, ambos penalizados por la no linealidad de los datos." data-en="Comparison table of classification metrics. The quantum circuit (highlighted row) achieves performance comparable to Gradient Boosting and well above SVC and logistic regression, both penalized by the non-linearity of the data.">Tabla comparativa de métricas de clasificación. El circuito cuántico (fila resaltada) logra un desempeño comparable al de Gradient Boosting y muy superior al de SVC y regresión logística, ambos penalizados por la no linealidad de los datos.</p>
+
+                    <ul>
+                        <li data-es="El objetivo <strong>no fue mejorar el desempeño de los algoritmos clásicos</strong> optimizando su kernel o hiperparámetros, sino mostrar que el circuito cuántico, sin ningún ajuste especial y con pocos qubits y capas, logra un rendimiento similar" data-en="The goal was <strong>not to improve classical algorithm performance</strong> by tuning kernels or hyperparameters, but to show that the quantum circuit, without any special tuning and with few qubits and layers, achieves a similar performance">El objetivo <strong>no fue mejorar el desempeño de los algoritmos clásicos</strong> optimizando su kernel o hiperparámetros, sino mostrar que el circuito cuántico, sin ningún ajuste especial y con pocos qubits y capas, logra un rendimiento similar</li>
+                        <li data-es="Para este tipo particular de datos, una transformación no lineal (regresión logística) o un kernel polinomial (SVC) mejorarían esos resultados clásicos; un encoding distinto de los datos en el circuito cuántico podría, análogamente, mejorar los resultados de QCL" data-en="For this particular type of data, a non-linear transformation (logistic regression) or a polynomial kernel (SVC) would improve those classical results; a different data encoding in the quantum circuit could analogously improve QCL's results">Para este tipo particular de datos, una transformación no lineal (regresión logística) o un kernel polinomial (SVC) mejorarían esos resultados clásicos; un encoding distinto de los datos en el circuito cuántico podría, análogamente, mejorar los resultados de QCL</li>
+                        <li data-es="La principal dificultad actual para llevar este tipo de algoritmos a hardware real es la <strong>sensibilidad al ruido</strong> de las computadoras cuánticas disponibles hoy" data-en="The main current difficulty in taking this type of algorithm to real hardware is the <strong>noise sensitivity</strong> of today's available quantum computers">La principal dificultad actual para llevar este tipo de algoritmos a hardware real es la <strong>sensibilidad al ruido</strong> de las computadoras cuánticas disponibles hoy</li>
+                    </ul>
+
+                    <h2 data-es="Regresión: Circuitos de Baja Profundidad" data-en="Regression: Low-Depth Circuits">Regresión: Circuitos de Baja Profundidad</h2>
+
+                    <p data-es="Como continuación natural del trabajo de clasificación, se extendió el estudio a un <strong>problema de regresión</strong>, presentado como charla en la <strong>Reunión Anual de Física Argentina (RAFA) 2024</strong> bajo el título &quot;Performance de circuitos cuánticos de baja profundidad para problemas de regresión&quot;, en coautoría con Nicolás Legnazzi, Federico Ribetto y Omar Osenda." data-en="As a natural continuation of the classification work, the study was extended to a <strong>regression problem</strong>, presented as a talk at the <strong>2024 Annual Meeting of the Argentine Physical Association (RAFA)</strong> under the title &quot;Performance of low-depth quantum circuits for regression problems&quot;, co-authored with Nicolás Legnazzi, Federico Ribetto, and Omar Osenda.">Como continuación natural del trabajo de clasificación, se extendió el estudio a un <strong>problema de regresión</strong>, presentado como charla en la <strong>Reunión Anual de Física Argentina (RAFA) 2024</strong> bajo el título &quot;Performance de circuitos cuánticos de baja profundidad para problemas de regresión&quot;, en coautoría con Nicolás Legnazzi, Federico Ribetto y Omar Osenda.</p>
+
+                    <h2 data-es="Charla" data-en="Talk">Charla</h2>
+                    <p data-es="Charla sobre este trabajo, con más detalle sobre la implementación del circuito y los resultados obtenidos:" data-en="Talk about this work, with more detail on the circuit implementation and the results obtained:">Charla sobre este trabajo, con más detalle sobre la implementación del circuito y los resultados obtenidos:</p>
+                    <div class="video-embed">
+                        <iframe src="https://drive.google.com/file/d/1PWGb8sLb2SvHdUTgHpSsZ3x3Qu_cHl2I/preview" allow="autoplay" allowfullscreen title="Charla sobre Quantum Circuit Learning"></iframe>
+                    </div>
+
+                    <p data-es="Para una introducción general a la computación cuántica, mirá esta otra charla: &quot;<a href='https://www.youtube.com/watch?v=p1N8WCGdpPc' target='_blank'>Introducción a la Computación Cuántica</a>&quot; (CEIMAF, Mes de la Ciencia 2024)." data-en="For a general introduction to quantum computing, watch this other talk: &quot;<a href='https://www.youtube.com/watch?v=p1N8WCGdpPc' target='_blank'>Introduction to Quantum Computing</a>&quot; (CEIMAF, Mes de la Ciencia 2024).">Para una introducción general a la computación cuántica, mirá esta otra charla: &quot;<a href="https://www.youtube.com/watch?v=p1N8WCGdpPc" target="_blank">Introducción a la Computación Cuántica</a>&quot; (CEIMAF, Mes de la Ciencia 2024).</p>
+
+                    <h2 data-es="Tecnologías" data-en="Technologies">Tecnologías</h2>
+                    <div class="tech-grid">
+                        <div class="tech-item">Python</div>
+                        <div class="tech-item">qulacs</div>
+                        <div class="tech-item">scikit-learn</div>
+                        <div class="tech-item">NumPy</div>
+                    </div>
+
+                    <h2 data-es="Estado del Trabajo" data-en="Work Status">Estado del Trabajo</h2>
+                    <p data-es="El trabajo de clasificación fue presentado en la 2ª Jornada de Inteligencia Artificial de la UNC (2024) y el de regresión como charla en RAFA 2024. Ambos forman parte del proyecto SECyT-UNC &quot;Aplicación de técnicas de aprendizaje automático en física cuántica y sistemas complejos&quot;." data-en="The classification work was presented at the UNC's 2nd Artificial Intelligence Workshop (2024) and the regression study as a talk at RAFA 2024. Both are part of the SECyT-UNC project &quot;Application of machine learning techniques in quantum physics and complex systems&quot;.">El trabajo de clasificación fue presentado en la 2ª Jornada de Inteligencia Artificial de la UNC (2024) y el de regresión como charla en RAFA 2024. Ambos forman parte del proyecto SECyT-UNC &quot;Aplicación de técnicas de aprendizaje automático en física cuántica y sistemas complejos&quot;.</p>
+
+                    <h2 data-es="Referencias" data-en="References">Referencias</h2>
+                    <p data-es="[1] K. Mitarai, M. Negoro, M. Kitagawa y K. Fujii, &quot;Quantum Circuit Learning&quot;, <em>Physical Review A</em> <strong>98</strong>, 032309 (2018). <a href='https://doi.org/10.1103/PhysRevA.98.032309' target='_blank'>DOI: 10.1103/PhysRevA.98.032309</a>" data-en="[1] K. Mitarai, M. Negoro, M. Kitagawa, and K. Fujii, &quot;Quantum Circuit Learning&quot;, <em>Physical Review A</em> <strong>98</strong>, 032309 (2018). <a href='https://doi.org/10.1103/PhysRevA.98.032309' target='_blank'>DOI: 10.1103/PhysRevA.98.032309</a>">[1] K. Mitarai, M. Negoro, M. Kitagawa y K. Fujii, &quot;Quantum Circuit Learning&quot;, <em>Physical Review A</em> <strong>98</strong>, 032309 (2018). <a href='https://doi.org/10.1103/PhysRevA.98.032309' target='_blank'>DOI: 10.1103/PhysRevA.98.032309</a></p>
+                    <p data-es="[2] S. Perón Santana, N. Legnazzi y O. Osenda, &quot;Eficiencia comparativa entre algoritmos clásicos y cuánticos en un problema de clasificación&quot;, 2ª Jornada de Inteligencia Artificial, UNC (2024)." data-en="[2] S. Perón Santana, N. Legnazzi, and O. Osenda, &quot;Comparative efficiency between classical and quantum algorithms in a classification problem&quot;, 2nd Artificial Intelligence Workshop, UNC (2024).">[2] S. Perón Santana, N. Legnazzi y O. Osenda, &quot;Eficiencia comparativa entre algoritmos clásicos y cuánticos en un problema de clasificación&quot;, 2ª Jornada de Inteligencia Artificial, UNC (2024).</p>
+                    <p data-es="[3] S. Perón Santana, N. Legnazzi, F. Ribetto y O. Osenda, &quot;Performance de circuitos cuánticos de baja profundidad para problemas de regresión&quot;, charla, Reunión Anual de Física Argentina, RAFA (2024)." data-en="[3] S. Perón Santana, N. Legnazzi, F. Ribetto, and O. Osenda, &quot;Performance of low-depth quantum circuits for regression problems&quot;, talk, Annual Meeting of the Argentine Physical Association, RAFA (2024).">[3] S. Perón Santana, N. Legnazzi, F. Ribetto y O. Osenda, &quot;Performance de circuitos cuánticos de baja profundidad para problemas de regresión&quot;, charla, Reunión Anual de Física Argentina, RAFA (2024).</p>
+
+                    <h2 data-es="Links" data-en="Links">Links</h2>
+                    <div class="links-row">
+                        <a href="https://github.com/sofips/qcl/tree/master" target="_blank" class="nav-link" data-es="💻 GitHub" data-en="💻 GitHub">💻 GitHub</a>
+                        <a href="Quantum-Circuit-Learning/qcl-classification-2024.pdf" target="_blank" class="nav-link" data-es="📄 Paper de Clasificación" data-en="📄 Classification Paper">📄 Paper de Clasificación</a>
+                        <a href="Quantum-Circuit-Learning/qcl-regression-rafa2024.pdf" target="_blank" class="nav-link" data-es="📄 Slides charla RAFA 2024" data-en="📄 RAFA 2024 Talk Slides">📄 Slides charla RAFA 2024</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Sofía Perón Santana. Made with ♥</p>
+        </footer>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

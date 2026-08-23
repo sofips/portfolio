@@ -35,9 +35,9 @@ function drawRippleGrid() {
         width / 2, height / 2, 0,
         width / 2, height / 2, Math.max(width, height) / 2
     );
-    gradient.addColorStop(0, 'rgba(233, 69, 96, 0.8)');
-    gradient.addColorStop(0.5, 'rgba(83, 52, 131, 0.6)');
-    gradient.addColorStop(1, 'rgba(83, 52, 131, 0.2)');
+    gradient.addColorStop(0, 'rgba(255, 47, 110, 0.8)');
+    gradient.addColorStop(0.5, 'rgba(124, 77, 255, 0.6)');
+    gradient.addColorStop(1, 'rgba(124, 77, 255, 0.2)');
     
     ctx.strokeStyle = gradient;
     ctx.lineWidth = lineWidth;
@@ -183,97 +183,65 @@ if (savedLang) {
     switchLanguage(savedLang);
 }
 
-// Load projects from JSON file
-async function loadProjects() {
-    try {
-        const response = await fetch('projects.json');
-        const data = await response.json();
-        displayProjects(data.projects);
-    } catch (error) {
-        console.error('Error loading projects:', error);
-        // Display fallback message if projects.json doesn't load
-        displayFallbackMessage();
+// Collapsible sections for project detail pages
+function initCollapsibleSections() {
+    const content = document.querySelector('.project-content');
+    if (!content || content.dataset.collapsibleDone) return;
+    content.dataset.collapsibleDone = 'true';
+
+    // Snapshot children before any DOM manipulation
+    const children = Array.from(content.children);
+    let currentWrapper = null;
+
+    for (const child of children) {
+        if (child.tagName === 'H2') {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'project-section-body';
+            child.insertAdjacentElement('afterend', wrapper);
+            currentWrapper = wrapper;
+
+            child.classList.add('project-section-header');
+            child.addEventListener('click', () => {
+                child.classList.toggle('collapsed');
+                wrapper.classList.toggle('collapsed');
+            });
+        } else if (currentWrapper) {
+            currentWrapper.appendChild(child);
+        }
     }
 }
 
-// Display projects on the page
-function displayProjects(projects) {
-    const container = document.getElementById('projects-container');
-    
-    if (!projects || projects.length === 0) {
-        displayFallbackMessage();
-        return;
-    }
+// Collapsible main sections for index page
+function initCollapsibleMainSections() {
+    const titles = document.querySelectorAll('.section > .section-title');
+    titles.forEach(title => {
+        if (!title.nextElementSibling) return;
 
-    projects.forEach(project => {
-        const projectCard = createProjectCard(project);
-        container.appendChild(projectCard);
+        // Wrap ALL siblings after the title (not just the first one) so
+        // sections with more than one content block — e.g. About's bio +
+        // stats strip — collapse together instead of leaving later blocks
+        // stranded when the first one hides.
+        const wrapper = document.createElement('div');
+        wrapper.className = 'section-content-body';
+        title.insertAdjacentElement('afterend', wrapper);
+        while (wrapper.nextElementSibling) {
+            wrapper.appendChild(wrapper.nextElementSibling);
+        }
+
+        title.classList.add('section-header-collapsible');
+        title.addEventListener('click', () => {
+            title.classList.toggle('section-title-collapsed');
+            wrapper.classList.toggle('section-content-collapsed');
+        });
     });
 }
 
-// Create a project card element
-function createProjectCard(project) {
-    const card = document.createElement('div');
-    card.className = 'project-card';
-
-    const title = document.createElement('h3');
-    title.className = 'project-title';
-    title.textContent = project.title;
-
-    const description = document.createElement('p');
-    description.className = 'project-description';
-    description.textContent = project.description;
-
-    card.appendChild(title);
-    card.appendChild(description);
-
-    // Add tags if they exist
-    if (project.tags && project.tags.length > 0) {
-        const tagsContainer = document.createElement('div');
-        tagsContainer.className = 'project-tags';
-
-        project.tags.forEach(tag => {
-            const tagElement = document.createElement('span');
-            tagElement.className = 'project-tag';
-            tagElement.textContent = tag;
-            tagsContainer.appendChild(tagElement);
-        });
-
-        card.appendChild(tagsContainer);
-    }
-
-    // Add link if it exists and is not empty
-    if (project.link && project.link.trim()) {
-        const link = document.createElement('a');
-        link.className = 'project-link';
-        link.href = project.link;
-        link.textContent = 'View Project →';
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        card.appendChild(link);
-    }
-
-    return card;
-}
-
-// Display fallback message if no projects are available
-function displayFallbackMessage() {
-    const container = document.getElementById('projects-container');
-    container.innerHTML = `
-        <div class="project-card">
-            <h3 class="project-title">No projects yet</h3>
-            <p class="project-description">
-                Add your projects to the projects.json file to see them here!
-            </p>
-        </div>
-    `;
-}
+// Script is at end of body — DOM is ready, call directly
+initCollapsibleSections();
+initCollapsibleMainSections();
 
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', () => {
-    // Load projects when page loads
-    loadProjects();
-
     // Smooth scroll for navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -287,4 +255,47 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    initScrollReveal();
 });
+
+// Scroll-reveal: fades/slides content in as it enters the viewport.
+// The `.reveal` class (hidden state) is added here, at runtime, rather than
+// living in the HTML/CSS by default — so if this script fails to run for
+// any reason, every page still renders fully visible instead of stuck at
+// opacity: 0. See the `.reveal` rules in style.css.
+function initScrollReveal() {
+    // .project-detail is excluded deliberately: on detail pages it's a single
+    // section wrapping the entire page's content, thousands of pixels tall.
+    // The observer's 12% area threshold effectively never fires for
+    // something that large, which left whole pages stuck invisible.
+    const targets = document.querySelectorAll(
+        '.section:not(.project-detail), .entry, .talk'
+    );
+    if (!targets.length) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!('IntersectionObserver' in window) || prefersReducedMotion) {
+        // No observer support, or the user asked for reduced motion:
+        // leave everything in its normal, fully visible state.
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    targets.forEach((el, i) => {
+        el.classList.add('reveal');
+        // Gentle stagger within each cluster of cards, capped so long grids
+        // don't end up with a multi-second reveal tail.
+        el.style.transitionDelay = `${Math.min(i % 6, 5) * 0.08}s`;
+        observer.observe(el);
+    });
+}
