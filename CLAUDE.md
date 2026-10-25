@@ -49,7 +49,8 @@ machine-learning-in-physics/
 
 ai-projects/
   menu-chatbot-hybrid.html          ← chatbot RAG (menú de restaurante), linkea a github.com/sofips/menu-chatbot-hybrid. Vive en la sección #nlp del home (id histórico, cubre tanto NLP como RAG/LLM)
-  (dos assets sin usar todavía: un SVG de diagrama RAG y un .webp de Shutterstock — probablemente pensados para reemplazar el placeholder plano "RAG" de la card. Si se usa el de Shutterstock, confirmar licencia antes de publicarlo.)
+  rag-pipeline-diagram.jpeg         ← miniatura de la card RAG en el home (octubre 2026, reemplaza el placeholder plano "RAG"): diagrama propio de la arquitectura híbrida (ruta determinística de lookup SQL vs. ruta RAG con ChromaDB, combinadas en la síntesis de respuesta del LLM)
+  (dos assets sin usar: un SVG de diagrama RAG y un .webp de Shutterstock — quedaron sin usar porque `rag-pipeline-diagram.jpeg` los reemplazó como miniatura de la card. Decidir si se borran o se guardan para otro uso; si en algún momento se usa el de Shutterstock, confirmar licencia antes de publicarlo.)
 
 data-science-projects/
   canciones.html                    ← NLP + LDA sobre ~30k letras argentinas
@@ -87,12 +88,13 @@ Trabajo actual en la rama `redesign-retro-arcade` (commit `dd7e0ac`, "redesign: 
   - `dynamic-control-noise-robustness.html` (nueva) quedó con: Optimización de Hiperparámetros con Optuna (Tabla II — esa sección en realidad ya estaba optimizada *bajo ruido al 25%*, no era parte del caso ideal como parecía a primera vista), Robustez frente al Ruido Dinámico, Recompensa Densa vs. Dispersa, WCN vs SSN, Entrenamiento con Desorden Estático, Conclusiones (ítems de ruido), Tecnologías, Estado del Trabajo (colaborativo, sin afirmar dónde se presentó), Referencias, Links.
   - Una figura vieja (`hyper-parameter-opt.png`) mezclaba panel (a) ruido + panel (b) sin ruido en una sola imagen — se partió en dos PNGs nuevos, uno para cada página (ver nota en Estructura de archivos).
   - Cada página linkea a la otra ("trabajo complementario") desde el resumen, las conclusiones y Estado del Trabajo.
+- **Miniatura de la card RAG (octubre 2026).** El placeholder plano "RAG" de `#nlp` en el home se reemplazó por `ai-projects/rag-pipeline-diagram.jpeg`, un diagrama propio de la arquitectura del chatbot (no el SVG ni el `.webp` de Shutterstock que estaban sin usar — esos quedaron descartados para este uso, ver Estructura de archivos). Verificado renderizando a desktop y ~390px: la imagen queda bien enmarcada con `object-fit: contain` y no rompe el grid.
 
 ### Pendiente
 
 - [ ] **Video para el tercer talk de QCL:** sigue siendo un placeholder de texto ("QCL", sin el bug de superposición) en vez de una miniatura real — falta el link al video cuando esté disponible.
 - [ ] **Figuras faltantes en `dynamic-control-noise-robustness.html`:** 4 comentarios `<!-- TODO -->` en el HTML marcan dónde van (dense vs sparse reward, WCN vs SSN, robustez ante desorden estático x2) — se movieron ahí junto con el resto de esa sección, ver split arriba.
-- [ ] **Assets sin usar en `ai-projects/`:** el SVG de diagrama RAG y el `.webp` de Shutterstock — decidir si reemplazan el placeholder "RAG" de la card (y confirmar licencia de la imagen de stock antes de publicarla).
+- [ ] **Assets huérfanos en `ai-projects/`:** el SVG de diagrama RAG y el `.webp` de Shutterstock quedaron sin usar una vez que `rag-pipeline-diagram.jpeg` cubrió la miniatura de la card — decidir si se borran del repo o se guardan para otra pieza de contenido.
 - [ ] **Normalizar paths:** la carpeta `Diplomatura/` tiene mayúscula, el resto no. Puede dar problemas en servidores case-sensitive.
 - [ ] **Reescribir historial de git** para bajar el peso real de `.git` (quedó ~220MB después del saneamiento de agosto) — opcional, requiere coordinar un force-push.
 - [ ] **Mergear `redesign-retro-arcade` a `main`** cuando el contenido/diseño esté cerrado — por ahora el trabajo vive solo en la rama.
