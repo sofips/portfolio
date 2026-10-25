@@ -183,10 +183,12 @@ body {
    class, so their title/subtitle stay simply stacked in .header-content. */
 .hero-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    gap: 36px;
+    gap: 24px;
     flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .header-text {
@@ -204,9 +206,9 @@ body {
 }
 
 .header-photo {
-    flex: 0 0 200px;
-    width: 200px;
-    height: 200px;
+    flex: 0 0 240px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 0 0 3px var(--primary-bg), 0 0 0 5px var(--highlight), 0 0 40px rgba(255, 47, 110, 0.35);
@@ -251,12 +253,23 @@ body {
 @media (max-width: 700px) {
     .hero-row {
         flex-direction: column-reverse;
-        align-items: flex-start;
+        align-items: stretch;
     }
     .header-photo {
         width: 130px;
         height: 130px;
         flex-basis: auto;
+    }
+    /* Smaller + tighter padding so the fixed switcher covers less of
+       whatever content happens to scroll underneath it. */
+    .language-switcher {
+        top: 12px;
+        right: 12px;
+        padding: 3px;
+    }
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 0.8em;
     }
 }
 
@@ -271,12 +284,14 @@ body {
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
 }
 
-/* Home page name — the one deliberate use of the pixel display face. */
+/* Home page name — the one deliberate use of the pixel display face.
+   Sized to stay on one line next to the (larger) photo at typical
+   desktop widths instead of wrapping. */
 h1.glitch {
     font-family: var(--font-display);
-    font-size: clamp(1.5em, 5.4vw, 3.1em);
+    font-size: clamp(1.2em, 2.6vw, 1.9em);
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.5;
     letter-spacing: 0.01em;
     text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
 }
@@ -536,6 +551,10 @@ h1.glitch {
     letter-spacing: 0.08em;
 }
 
+.talk-media.placeholder::after {
+    content: none;
+}
+
 .talk-media::after {
     content: '▶';
     position: absolute;
@@ -611,10 +630,21 @@ h1.glitch {
     background: linear-gradient(155deg, var(--card-bg), var(--bg-elevated-2));
 }
 
+/* Cards mostly show white-background figures (papers, plots, YouTube
+   thumbnails). With object-fit:contain, a source wider than 16:9 (e.g.
+   circuit.png at ~2.1:1) leaves visible top/bottom margin — on a dark
+   background that read as "this image is smaller than its neighbor".
+   White background makes that margin blend into the figure's own white
+   canvas instead, so every card in a row looks like a uniform white card
+   regardless of how much of the frame its figure happens to fill. */
+.entry .media:not(.placeholder) {
+    background: #ffffff;
+}
+
 .entry .media img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
     transition: transform 0.4s ease, filter 0.3s ease;
 }
@@ -656,7 +686,7 @@ h1.glitch {
 
 .entry-title,
 .project-title {
-    font-size: 1.25em;
+    font-size: 1.35em;
     font-weight: bold;
     color: var(--text-primary);
     line-height: 1.4;
@@ -672,7 +702,7 @@ h1.glitch {
 .project-description {
     color: var(--text-secondary);
     line-height: 1.65;
-    font-size: 1em;
+    font-size: 1.08em;
     margin-bottom: 14px;
 }
 
@@ -692,42 +722,6 @@ h1.glitch {
     border-radius: var(--radius-pill);
     font-size: 0.82em;
     border: 1px solid rgba(255, 47, 110, 0.35);
-}
-
-/* Featured entry — Dynamic Control, the published paper. Spans the full
-   grid width, media beside the text rather than above it. */
-.entry--featured {
-    grid-column: 1 / -1;
-    flex-direction: row;
-    align-items: center;
-    gap: 32px;
-    padding-top: 30px;
-    border-top: 2px solid var(--highlight-bright);
-}
-
-.entry--featured .media {
-    flex: 0 0 300px;
-    aspect-ratio: 16 / 9;
-    margin-bottom: 0;
-}
-
-.entry--featured .entry-body {
-    flex: 1;
-    min-width: 0;
-}
-
-.entry--featured .entry-title {
-    font-size: 1.5em;
-}
-
-@media (max-width: 760px) {
-    .entry--featured {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    .entry--featured .media {
-        flex-basis: auto;
-    }
 }
 
 /* Project Detail Pages */
@@ -1207,6 +1201,12 @@ code {
     max-width: 80%;
 }
 
+/* For figures closer to square than landscape — "wide"'s 80% still reads
+   huge on those, since there's no aspect ratio taming the height. */
+.figure-block.compact img {
+    max-width: 45%;
+}
+
 .figure-block h3 {
     color: var(--text-primary);
     font-size: 1.1em;
@@ -1314,6 +1314,13 @@ code {
 @media (max-width: 768px) {
     .nav {
         flex-direction: column;
+        width: 100%;
+        border-radius: var(--radius-md);
+    }
+
+    .nav-link {
+        white-space: normal;
+        text-align: center;
     }
 
     .entries-grid {
