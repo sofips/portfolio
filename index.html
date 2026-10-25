@@ -32,6 +32,7 @@
       "knowsAbout": ["Machine Learning", "LLMs", "RAG", "Agentic AI", "Data Science", "Deep Reinforcement Learning", "Python", "Quantum Physics", "Scientific Computing"]
     }
     </script>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -42,144 +43,211 @@
         <button class="lang-btn" data-lang="en">EN</button>
     </div>
     <div class="container">
-        <header class="header">
-            <div class="header-content">
-                <h1 class="glitch" data-text="Sofía Perón Santana">Sofía Perón Santana</h1>
-                <!-- <p class="subtitle" data-es="Cosas que hice, cosas que estoy haciendo y cosas que me gustaría hacer"
-                    data-en="Things I've done, things I'm doing, and things I'd like to do">Cosas que hice, cosas que
-                    estoy haciendo y cosas que me gustaría hacer</p> -->
-            </div>
-        </header>
-
-        <nav class="nav">
-            <a href="#about" class="nav-link" data-es="Sobre mí" data-en="About me">Sobre mí</a>
-            <a href="#publications" class="nav-link" data-es="Machine Learning en Física"
-                data-en="Machine Learning in Physics">Machine Learning en Física</a>
-            <a href="#datascience" class="nav-link" data-es="Data Science" data-en="Data Science">Data Science</a>
-            <a href="#contact" class="nav-link" data-es="Contacto" data-en="Contact">Contacto</a>
-        </nav>
-
-        <main class="main">
-            <section id="about" class="section about-section">
-                <h2 class="section-title" data-es="Sobre mí" data-en="About me">Sobre mí</h2>
-                <div class="about-content">
-                    <div class="about-photo">
-                        <a href="https://linkedin.com/in/sofiaperonsantana" target="_blank">
-                            <img src="me.jpg" alt="Foto de Sofía Perón" class="profile-photo">
-                        </a>
-                    </div>
-                    <div class="about-text">
+        <header class="header" id="about">
+            <div class="hero-row">
+                <div class="header-text">
+                    <span class="header-eyebrow" data-es="// AI Developer &amp; Investigadora" data-en="// AI Developer &amp; Researcher">// AI Developer &amp; Investigadora</span>
+                    <h1 class="glitch" data-text="SOFIA PERON SANTANA">SOFIA PERON SANTANA</h1>
+                    <div class="header-bio">
                         <p data-es="¡Hola! Soy Sofi Perón, licenciada en física, nostálgica de internet y entusiasta de las pelis noventeras. Hoy trabajo como AI developer, construyendo soluciones basadas en LLMs y pipelines RAG."
                             data-en="Hi! I'm Sofi Perón, a physics graduate, internet nostalgic, and nineties movie enthusiast. These days I work as an AI developer, building LLM-based solutions and RAG pipelines.">
                             ¡Hola! Soy Sofi Perón, licenciada en física, nostálgica de internet y entusiasta de las pelis noventeras. Hoy trabajo como AI developer, construyendo soluciones basadas en LLMs y pipelines RAG.</p>
                         <p data-es="Vengo de varios años como becaria doctoral en CONICET 🇦🇷, investigando aplicaciones de Machine Learning a la mecánica cuántica. Esa formación me dio una base sólida en Reinforcement Learning, sistemas cuánticos, y pensamiento algorítmico de la que estoy muy orgullosa."
                             data-en="I spent several years as a doctoral fellow at CONICET 🇦🇷 researching Machine Learning applications to quantum mechanics. That training gave me a solid foundation in Reinforcement Learning, scientific computing, and algorithmic thinking — something I'm very proud of.">
                             Vengo de varios años como becaria doctoral en CONICET 🇦🇷, investigando aplicaciones de Machine Learning a la mecánica cuántica. Esa formación me dio una base sólida en Reinforcement Learning, sistemas cuánticos, y pensamiento algorítmico de la que estoy muy orgullosa.</p>
-                        <p data-es="En la <a href='#publications'>sección de Machine Learning en Física</a> podés encontrar esos trabajos: diseño de cadenas de espín con algoritmos genéticos y comparación de estrategias de control cuántico con Deep RL."
-                            data-en="In the <a href='#publications'>Machine Learning in Physics section</a> you'll find that work: spin chain design with genetic algorithms and a comparison of quantum control strategies using Deep RL.">
-                            En la <a href="#publications">sección de Machine Learning en Física</a> podés encontrar esos trabajos: diseño de cadenas de espín con algoritmos genéticos y comparación de estrategias de control cuántico con Deep RL.</p>
-                        <p data-es="En 2025 completé una Diplomatura en Ciencia de Datos, Aprendizaje Automático y sus Aplicaciones para formalizar aspectos más aplicados de estas tecnologías. Los proyectos de esa etapa están en la <a href='#datascience'>sección Data Science</a>."
-                            data-en="In 2025 I completed a Diploma in Data Science, Machine Learning and Applications to formalize more applied aspects of these technologies. Projects from that period are in the <a href='#datascience'>Data Science section</a>.">
-                            En 2025 completé una Diplomatura en Ciencia de Datos, Aprendizaje Automático y sus Aplicaciones para formalizar aspectos más aplicados de estas tecnologías. Los proyectos de esa etapa están en la <a href="#datascience">sección Data Science</a>.</p>
-                        <p data-es="También vas a encontrar mi <a href='#contact'>info de contacto</a>. Charlemos :)"
-                            data-en="You'll also find my <a href='#contact'>contact information</a>. Let's get in touch :)">
-                            También vas a encontrar mi <a href="#contact">info de contacto</a>. Charlemos :)</p>
                     </div>
                 </div>
-            </section>
-
-            <section id="publications" class="section publications-section">
-                <h2 class="section-title" data-es="Machine Learning en Física" data-en="Machine Learning in Physics">
-                    Machine Learning en Física</h2>
-                <div class="projects-grid">
-                    <a href="machine-learning-in-physics/quantum-state-transfer-ga.html" class="project-card">
-                        <h3 class="project-title" data-es="Diseño de Cadenas de Espín con Algoritmos Genéticos"
-                            data-en="Spin Chains Design with Genetic Algorithms">
-                            Diseño de Cadenas de Espín con Algoritmos Genéticos</h3>
-                        <p class="project-description"
-                            data-es="Optimización de cadenas de espín Heisenberg para lograr alta probabilidad de transmisión de excitaciones cuánticas usando algoritmos genéticos, con análisis de robustez ante desorden estático."
-                            data-en="Optimization of Heisenberg spin chains to achieve high transmission probability of quantum excitations using genetic algorithms, with robustness analysis against static disorder.">
-                            Optimización de cadenas de espín Heisenberg para lograr alta probabilidad de transmisión de
-                            excitaciones cuánticas usando algoritmos genéticos, con análisis de robustez ante desorden
-                            estático.</p>
-                        <div class="project-tags">
-                            <span class="project-tag" data-es="Computación Cuántica" data-en="Quantum Computing">Computación Cuántica</span>
-                            <span class="project-tag" data-es="Algoritmos Genéticos" data-en="Genetic Algorithms">Algoritmos Genéticos</span>
-                            <span class="project-tag" data-es="Optimización" data-en="Optimization">Optimización</span>
-                        </div>
-                    </a>
-                    <a href="machine-learning-in-physics/dynamic-control-comparison.html" class="project-card">
-                        <h3 class="project-title" data-es="Control Dinámico de Cadenas de Qubits"
-                            data-en="Dynamic Control of Qubit Chains">Control Dinámico de Cadenas de Qubits</h3>
-                        <p class="project-description"
-                            data-es="Comparación de algoritmos genéticos y deep reinforcement learning para optimizar la transmisión de estados cuánticos mediante pulsos magnéticos."
-                            data-en="Comparison of genetic algorithms and deep reinforcement learning to optimize quantum state transfer using magnetic pulses.">
-                            Comparación de algoritmos genéticos y deep reinforcement learning para optimizar la
-                            transmisión de estados cuánticos mediante pulsos magnéticos.</p>
-                        <div class="project-tags">
-                            <span class="project-tag" data-es="Computación Cuántica" data-en="Quantum Computing">Computación Cuántica</span>
-                            <span class="project-tag" data-es="Algoritmos Genéticos" data-en="Genetic Algorithms">Algoritmos Genéticos</span>
-                            <span class="project-tag">Reinforcement Learning</span>
-                        </div>
-                    </a>
-                    <a href="https://github.com/sofips/qcl/tree/master" target="_blank" class="project-card">
-                        <h3 class="project-title" data-es="Quantum Circuit Learning" data-en="Quantum Circuit Learning">
-                            Quantum Circuit Learning</h3>
-                        <p class="project-description"
-                            data-es="Diseño y comparación de performance entre circuitos cuánticos variacionales y algoritmos de machine learning aplicados a problemas de clasificación y regresión."
-                            data-en="Design and performance comparison between variational quantum circuits and machine learning algorithms applied to classification and regression problems.">
-                            Diseño y comparación de performance entre circuitos cuánticos variacionales y algoritmos de
-                            machine learning aplicados a problemas de clasificación y regresión.</p>
-                        <div class="project-tags">
-                            <span class="project-tag" data-es="Computación Cuántica" data-en="Quantum Computing">Computación Cuántica</span>
-                            <span class="project-tag" data-es="Aprendizaje Supervisado" data-en="Supervised Learning">Aprendizaje Supervisado</span>
-                        </div>
+                <div class="header-photo">
+                    <a href="https://linkedin.com/in/sofiaperonsantana" target="_blank">
+                        <img src="me.jpg" alt="Foto de Sofía Perón">
                     </a>
                 </div>
-            </section>
+            </div>
+            <div class="header-rule"></div>
+        </header>
 
-            <section id="datascience" class="section datascience-section">
-                <h2 class="section-title" data-es="Data Science" data-en="Data Science">Data Science</h2>
-                <div class="projects-grid">
-                    <a href="data-science-projects/canciones.html" class="project-card">
-                        <h3 class="project-title" data-es="Lectura Distante de Canciones Argentinas"
-                            data-en="Distant Reading of Argentine Songs">Lectura Distante de Canciones Argentinas</h3>
-                        <p class="project-description"
+        <nav class="nav">
+            <a href="#about" class="nav-link" data-es="Sobre mí" data-en="About me">Sobre mí</a>
+            <a href="#nlp" class="nav-link" data-es="Lenguaje Natural" data-en="Language Processing">Lenguaje Natural</a>
+            <a href="#publications" class="nav-link" data-es="Machine Learning en Física"
+                data-en="Machine Learning in Physics">Machine Learning en Física</a>
+            <a href="#datascience" class="nav-link" data-es="Data Science" data-en="Data Science">Data Science</a>
+            <a href="#talks" class="nav-link" data-es="Charlas" data-en="Talks">Charlas</a>
+            <a href="#contact" class="nav-link" data-es="Contacto" data-en="Contact">Contacto</a>
+        </nav>
+
+        <main class="main">
+            <section id="nlp" class="section">
+                <h2 class="section-title" data-es="Procesamiento de Lenguaje Natural" data-en="Natural Language Processing">Procesamiento de Lenguaje Natural</h2>
+                <div class="entries-grid">
+                    <a href="ai-projects/menu-chatbot-hybrid.html" class="entry">
+                        <div class="media placeholder">RAG</div>
+                        <div class="entry-title" data-es="Chatbot Híbrido de Menú (RAG)" data-en="Hybrid Menu Chatbot (RAG)">Chatbot Híbrido de Menú (RAG)</div>
+                        <p class="entry-desc"
+                            data-es="Chatbot que responde preguntas sobre el menú de un restaurante combinando búsqueda vectorial (RAG) con lookups determinísticos para datos exactos como precios y calorías, evitando que el LLM invente números."
+                            data-en="Chatbot that answers questions about a restaurant menu, combining vector search (RAG) with deterministic lookups for exact data like prices and calories, keeping the LLM from making up numbers.">
+                            Chatbot que responde preguntas sobre el menú de un restaurante combinando búsqueda vectorial (RAG) con lookups determinísticos para datos exactos como precios y calorías, evitando que el LLM invente números.</p>
+                        <div class="entry-tags">
+                            <span>RAG</span>
+                            <span>LLM</span>
+                            <span>Python</span>
+                        </div>
+                    </a>
+                    <a href="data-science-projects/canciones.html" class="entry">
+                        <div class="media">
+                            <img src="data-science-projects/lectura_distante/precission_plot.png" alt="Precisión por estilo musical" loading="lazy">
+                        </div>
+                        <div class="entry-title" data-es="Lectura Distante de Canciones Argentinas"
+                            data-en="Distant Reading of Argentine Songs">Lectura Distante de Canciones Argentinas</div>
+                        <p class="entry-desc"
                             data-es="Proyecto que aplica técnicas de NLP al análisis y clasificación de ~30.000 letras de canciones argentinas para estudiar variaciones semánticas y estilísticas, identificar temáticas, explorar su relación con la popularidad y evaluar distintos modelos."
                             data-en="Project applying NLP techniques to analyze and classify ~30,000 Argentine song lyrics to study semantic and stylistic variations, identify themes, explore their relationship with popularity, and evaluate different models.">
                             Proyecto que aplica técnicas de NLP al análisis y clasificación de ~30.000 letras de
                             canciones argentinas para estudiar variaciones semánticas y estilísticas, identificar
                             temáticas, explorar su relación con la popularidad y evaluar distintos modelos.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">NLP</span>
-                            <span class="project-tag">LDA</span>
-                            <span class="project-tag">Python</span>
+                        <div class="entry-tags">
+                            <span>NLP</span>
+                            <span>LDA</span>
+                            <span>Python</span>
                         </div>
                     </a>
-                    <a href="data-science-projects/decision-transformers.html" class="project-card">
-                        <h3 class="project-title" data-es="Decision Transformers para Recomendaciones"
+                </div>
+            </section>
+
+            <section id="publications" class="section">
+                <h2 class="section-title" data-es="Machine Learning en Física" data-en="Machine Learning in Physics">
+                    Machine Learning en Física</h2>
+                <div class="entries-grid">
+                    <a href="machine-learning-in-physics/dynamic-control-comparison.html" class="entry">
+                        <div class="media">
+                            <img src="https://img.youtube.com/vi/Y9kGxV-3Fnc/hqdefault.jpg" alt="Charla: Aprendizaje automático aplicado a la transmisión de estados cuánticos" loading="lazy">
+                        </div>
+                        <span class="entry-flag" data-es="Con charla · Physica Scripta 2026" data-en="With talk · Physica Scripta 2026">Con charla · Physica Scripta 2026</span>
+                        <div class="entry-title" data-es="Control Dinámico de Cadenas de Qubits"
+                            data-en="Dynamic Control of Qubit Chains">Control Dinámico de Cadenas de Qubits</div>
+                        <p class="entry-desc"
+                            data-es="Comparación de algoritmos genéticos y deep reinforcement learning para optimizar la transmisión de estados cuánticos mediante pulsos magnéticos."
+                            data-en="Comparison of genetic algorithms and deep reinforcement learning to optimize quantum state transfer using magnetic pulses.">
+                            Comparación de algoritmos genéticos y deep reinforcement learning para optimizar la
+                            transmisión de estados cuánticos mediante pulsos magnéticos.</p>
+                        <div class="entry-tags">
+                            <span data-es="Computación Cuántica" data-en="Quantum Computing">Computación Cuántica</span>
+                            <span data-es="Algoritmos Genéticos" data-en="Genetic Algorithms">Algoritmos Genéticos</span>
+                            <span>Reinforcement Learning</span>
+                        </div>
+                    </a>
+                    <a href="machine-learning-in-physics/dynamic-control-noise-robustness.html" class="entry">
+                        <div class="media">
+                            <img src="machine-learning-in-physics/Dynamic-Control/method_comparison_n32_a0.25.png" alt="Probabilidad de transmisión vs ruido: GA vs DQN para N=32" loading="lazy">
+                        </div>
+                        <div class="entry-title" data-es="Robustez de Control Cuántico frente a Ruido Dinámico"
+                            data-en="Quantum Control Robustness Against Dynamic Noise">
+                            Robustez de Control Cuántico frente a Ruido Dinámico</div>
+                        <p class="entry-desc"
+                            data-es="Continuación del trabajo de control dinámico: cómo se comportan algoritmos genéticos y DQN cuando el control deja de ser perfecto, con optimización de hiperparámetros bajo ruido y entrenamiento con desorden estático."
+                            data-en="Continuation of the dynamic control work: how genetic algorithms and DQN behave once control stops being perfect, with hyperparameter optimization under noise and training with static disorder.">
+                            Continuación del trabajo de control dinámico: cómo se comportan algoritmos genéticos y DQN
+                            cuando el control deja de ser perfecto, con optimización de hiperparámetros bajo ruido y
+                            entrenamiento con desorden estático.</p>
+                        <div class="entry-tags">
+                            <span data-es="Computación Cuántica" data-en="Quantum Computing">Computación Cuántica</span>
+                            <span>Reinforcement Learning</span>
+                            <span data-es="Robustez" data-en="Robustness">Robustez</span>
+                        </div>
+                    </a>
+                    <a href="machine-learning-in-physics/quantum-state-transfer-ga.html" class="entry">
+                        <div class="media">
+                            <img src="machine-learning-in-physics/Genetic-Algorithm/miniature.png" alt="Esquema del algoritmo genético" loading="lazy">
+                        </div>
+                        <div class="entry-title" data-es="Diseño de Cadenas de Espín con Algoritmos Genéticos"
+                            data-en="Spin Chains Design with Genetic Algorithms">
+                            Diseño de Cadenas de Espín con Algoritmos Genéticos</div>
+                        <p class="entry-desc"
+                            data-es="Optimización de cadenas de espín Heisenberg para lograr alta probabilidad de transmisión de excitaciones cuánticas usando algoritmos genéticos, con análisis de robustez ante desorden estático."
+                            data-en="Optimization of Heisenberg spin chains to achieve high transmission probability of quantum excitations using genetic algorithms, with robustness analysis against static disorder.">
+                            Optimización de cadenas de espín Heisenberg para lograr alta probabilidad de transmisión de
+                            excitaciones cuánticas usando algoritmos genéticos, con análisis de robustez ante desorden
+                            estático.</p>
+                        <div class="entry-tags">
+                            <span data-es="Computación Cuántica" data-en="Quantum Computing">Computación Cuántica</span>
+                            <span data-es="Algoritmos Genéticos" data-en="Genetic Algorithms">Algoritmos Genéticos</span>
+                            <span data-es="Optimización" data-en="Optimization">Optimización</span>
+                        </div>
+                    </a>
+                    <a href="machine-learning-in-physics/quantum-circuit-learning.html" class="entry">
+                        <div class="media">
+                            <img src="machine-learning-in-physics/Quantum-Circuit-Learning/circuit.png" alt="Diagrama del circuito cuántico parametrizado usado en QCL" loading="lazy">
+                        </div>
+                        <span class="entry-flag" data-es="Con charla · RAFA 2024" data-en="With talk · RAFA 2024">Con charla · RAFA 2024</span>
+                        <div class="entry-title" data-es="Quantum Circuit Learning" data-en="Quantum Circuit Learning">
+                            Quantum Circuit Learning</div>
+                        <p class="entry-desc"
+                            data-es="Diseño de circuitos cuánticos variacionales de baja profundidad como clasificadores, comparados contra algoritmos de machine learning clásicos, y exploración de su comportamiento frente al ruido en hardware cuántico real."
+                            data-en="Design of low-depth variational quantum circuits as classifiers, benchmarked against classical machine learning algorithms, and exploration of their behavior under noise on real quantum hardware.">
+                            Diseño de circuitos cuánticos variacionales de baja profundidad como clasificadores,
+                            comparados contra algoritmos de machine learning clásicos, y exploración de su
+                            comportamiento frente al ruido en hardware cuántico real.</p>
+                        <div class="entry-tags">
+                            <span data-es="Computación Cuántica" data-en="Quantum Computing">Computación Cuántica</span>
+                            <span data-es="Aprendizaje Supervisado" data-en="Supervised Learning">Aprendizaje Supervisado</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section id="datascience" class="section">
+                <h2 class="section-title" data-es="Data Science" data-en="Data Science">Data Science</h2>
+                <div class="entries-grid">
+                    <a href="data-science-projects/decision-transformers.html" class="entry">
+                        <div class="media">
+                            <img src="data-science-projects/Decision-Transformer-Recomendaciones-main/results/hit-rate-thumb.png" alt="Hit Rate @ 20: modelo final vs. referencia vs. baseline de popularidad" loading="lazy">
+                        </div>
+                        <div class="entry-title" data-es="Decision Transformers para Recomendaciones"
                             data-en="Decision Transformers for Recommendations">Decision Transformers para
-                            Recomendaciones</h3>
-                        <p class="project-description"
+                            Recomendaciones</div>
+                        <p class="entry-desc"
                             data-es="Proyecto que evalúa Decision Transformers como sistema de recomendación offline de películas, modelando interacciones usuario–ítem como trayectorias de un MDP y comparando su desempeño con métodos tradicionales."
                             data-en="Project evaluating Decision Transformers as an offline movie recommendation system, modeling user-item interactions as trajectories of an MDP and comparing performance with traditional methods.">
                             Proyecto que evalúa Decision Transformers como sistema de recomendación offline de
                             películas, modelando interacciones usuario–ítem como trayectorias de un MDP y comparando su
                             desempeño con métodos tradicionales.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Reinforcement Learning</span>
-                            <span class="project-tag">Transformers</span>
-                            <span class="project-tag">Python</span>
+                        <div class="entry-tags">
+                            <span>Reinforcement Learning</span>
+                            <span>Transformers</span>
+                            <span>Python</span>
                         </div>
                     </a>
-                    <a href="data-science-projects/Diplomatura/diplomatura.html" class="project-card">
-                        <h3 class="project-title" data-es="Diplomatura en Ciencia de Datos" data-en="Data Science Diploma">Diplomatura en Ciencia de Datos</h3>
-                        <p class="project-description" data-es="Selección de proyectos desarrollados en la diplomatura: análisis exploratorio, curación de datos, modelado predictivo y visualización." data-en="Selection of projects from the diploma: exploratory analysis, data curation, predictive modeling and visualization.">Selección de proyectos desarrollados en la diplomatura: análisis exploratorio, curación de datos, modelado predictivo y visualización.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Data Science</span>
-                            <span class="project-tag">Machine Learning</span>
-                            <span class="project-tag">Python</span>
+                    <a href="data-science-projects/Diplomatura/diplomatura.html" class="entry">
+                        <div class="media placeholder">DS</div>
+                        <div class="entry-title" data-es="Diplomatura en Ciencia de Datos" data-en="Data Science Diploma">Diplomatura en Ciencia de Datos</div>
+                        <p class="entry-desc" data-es="Selección de proyectos desarrollados en la diplomatura: análisis exploratorio, curación de datos, modelado predictivo y visualización." data-en="Selection of projects from the diploma: exploratory analysis, data curation, predictive modeling and visualization.">Selección de proyectos desarrollados en la diplomatura: análisis exploratorio, curación de datos, modelado predictivo y visualización.</p>
+                        <div class="entry-tags">
+                            <span>Data Science</span>
+                            <span>Machine Learning</span>
+                            <span>Python</span>
                         </div>
+                    </a>
+                </div>
+            </section>
+
+            <section id="talks" class="section">
+                <h2 class="section-title" data-es="Charlas" data-en="Talks">Charlas</h2>
+                <div class="talks-row">
+                    <a href="machine-learning-in-physics/dynamic-control-comparison.html" class="talk">
+                        <div class="talk-media">
+                            <img src="https://img.youtube.com/vi/Y9kGxV-3Fnc/hqdefault.jpg" alt="Miniatura de la charla: Aprendizaje automático aplicado a la transmisión de estados cuánticos" loading="lazy">
+                        </div>
+                        <span class="talk-title" data-es="Aprendizaje automático aplicado a la transmisión de estados cuánticos" data-en="Machine learning applied to quantum state transfer">Aprendizaje automático aplicado a la transmisión de estados cuánticos</span>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=p1N8WCGdpPc" target="_blank" class="talk">
+                        <div class="talk-media">
+                            <img src="https://img.youtube.com/vi/p1N8WCGdpPc/hqdefault.jpg" alt="Miniatura de la charla: Intro a la Computación Cuántica" loading="lazy">
+                        </div>
+                        <span class="talk-title" data-es="Intro a la Computación Cuántica" data-en="Intro to Quantum Computing">Intro a la Computación Cuántica</span>
+                    </a>
+                    <a href="machine-learning-in-physics/quantum-circuit-learning.html" class="talk">
+                        <div class="talk-media placeholder">QCL</div>
+                        <span class="talk-title" data-es="Quantum Circuit Learning" data-en="Quantum Circuit Learning">Quantum Circuit Learning</span>
                     </a>
                 </div>
             </section>
@@ -187,9 +255,6 @@
             <section id="contact" class="section contact-section">
                 <h2 class="section-title" data-es="Contacto" data-en="Get In Touch">Contacto</h2>
                 <div class="contact-content">
-                    <!-- <p data-es="¿Interesado en trabajar juntos? ¡Conectemos!"
-                        data-en="Interested in working together? Let's connect!">¿Interesado en trabajar juntos?
-                        ¡Conectemos!</p> -->
                     <div class="contact-links">
                         <a href="mailto:sofiperon98@gmail.com" class="contact-link">Email</a>
                         <a href="https://github.com/sofips" class="contact-link" target="_blank">GitHub</a>

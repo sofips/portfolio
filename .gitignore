@@ -1,0 +1,12 @@
+# Editor / tooling
+.claude/
+.agents/
+skills-lock.json
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Accidental nested project clones (keep only the built HTML page + assets
+# under ai-projects/, not the source repo itself)
+/menu-chatbot-hybrid/
