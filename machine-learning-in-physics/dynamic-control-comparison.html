@@ -140,7 +140,7 @@
                     <p data-es="Un barrido sistemático de los parámetros físicos del control —el campo magnético h y el paso temporal Δt— sobre una cadena de N=64 qubits mostró que el GA encuentra secuencias con probabilidad de transmisión P(t)&gt;0.99 en una región amplia de ese espacio de parámetros, sin necesidad de un ajuste fino." data-en="A systematic sweep of the control's physical parameters — magnetic field h and time step Δt — over a chain of N=64 qubits showed that the GA finds sequences with transmission probability P(t)&gt;0.99 across a wide region of that parameter space, without needing fine tuning.">Un barrido sistemático de los parámetros físicos del control —el campo magnético h y el paso temporal Δt— sobre una cadena de N=64 qubits mostró que el GA encuentra secuencias con probabilidad de transmisión P(t)&gt;0.99 en una región amplia de ese espacio de parámetros, sin necesidad de un ajuste fino.</p>
 
                     <div class="figure-block compact">
-                        <img src="Dynamic-Control/ga-physical-params.png" alt="Dependencia de la probabilidad de transmisión del GA respecto de los parámetros físicos del control">
+                        <img src="Dynamic-Control/ga-physical-params.png" width="1035" height="1447" alt="Dependencia de la probabilidad de transmisión del GA respecto de los parámetros físicos del control">
                         <p class="figure-caption" data-es="Probabilidad de transmisión del GA según los parámetros físicos del control (h, Δt), para N=64." data-en="GA transmission probability as a function of the control's physical parameters (h, Δt), for N=64.">Probabilidad de transmisión del GA según los parámetros físicos del control (h, Δt), para N=64.</p>
                     </div>
 
@@ -180,13 +180,13 @@
 
                     <div class="figure-block wide">
                         <h3 data-es="GA: acciones por sitio vs acciones de Zhang" data-en="GA: action-by-site vs Zhang actions">GA: acciones por sitio vs acciones de Zhang</h3>
-                        <img src="Dynamic-Control/genetic_action_comparison_n32.png" alt="Comparación de conjuntos de acciones del GA">
+                        <img src="Dynamic-Control/genetic_action_comparison_n32.png" width="14043" height="4855" alt="Comparación de conjuntos de acciones del GA">
                         <p class="figure-caption" data-es="(a) Probabilidad de transmisión máxima obtenida por el GA en función de la longitud de la cadena, usando el conjunto de acciones por sitio (rojo) y el conjunto propuesto por Zhang et al. (azul). Los cuadrados son el mejor valor sobre 30 poblaciones iniciales, los círculos el promedio de esos máximos. (b) Evolución temporal de P(t) para N=32 con ambos conjuntos de acciones, comparada con la evolución natural sin control (verde)." data-en="(a) Maximum transmission probability achieved by the GA as a function of chain length, using the action-by-site set (red) and the set proposed by Zhang et al. (blue). Squares are the best value over 30 initial populations, circles the average of those maxima. (b) Time evolution of P(t) for N=32 with both action sets, compared to the uncontrolled natural evolution (green).">(a) Probabilidad de transmisión máxima obtenida por el GA en función de la longitud de la cadena, usando el conjunto de acciones por sitio (rojo) y el conjunto propuesto por Zhang et al. (azul). Los cuadrados son el mejor valor sobre 30 poblaciones iniciales, los círculos el promedio de esos máximos. (b) Evolución temporal de P(t) para N=32 con ambos conjuntos de acciones, comparada con la evolución natural sin control (verde).</p>
                     </div>
 
                     <div class="figure-block wide">
                         <h3 data-es="DQN original: fidelidad vs longitud de cadena" data-en="Original DQN: fidelity vs chain length">DQN original: fidelidad vs longitud de cadena</h3>
-                        <img src="Dynamic-Control/drl_fidelity_n32.png" alt="Fidelidad del DQN original">
+                        <img src="Dynamic-Control/drl_fidelity_n32.png" width="14043" height="4855" alt="Fidelidad del DQN original">
                         <p class="figure-caption" data-es="(a) Probabilidad de transmisión máxima obtenida por el DQN (hiperparámetros originales de Zhang et al.) en función de la longitud de cadena, sobre 30 realizaciones de los pesos iniciales de la red. (b) Evolución temporal de P(t) para N=32 en cada realización (negro), comparada con la evolución natural (verde)." data-en="(a) Maximum transmission probability achieved by the DQN (original Zhang et al. hyperparameters) as a function of chain length, over 30 realizations of the network's initial weights. (b) Time evolution of P(t) for N=32 for each realization (black), compared to the natural evolution (green).">(a) Probabilidad de transmisión máxima obtenida por el DQN (hiperparámetros originales de Zhang et al.) en función de la longitud de cadena, sobre 30 realizaciones de los pesos iniciales de la red. (b) Evolución temporal de P(t) para N=32 en cada realización (negro), comparada con la evolución natural (verde).</p>
                     </div>
 
@@ -202,13 +202,13 @@
 
                     <div class="figure-block wide">
                         <h3 data-es="Fidelidad: GA vs DRL" data-en="Fidelity: GA vs DRL">Fidelidad: GA vs DRL</h3>
-                        <img src="Dynamic-Control/genetic_vs_drl_n32.png" alt="Comparación GA vs DRL">
+                        <img src="Dynamic-Control/genetic_vs_drl_n32.png" width="14043" height="4855" alt="Comparación GA vs DRL">
                         <p class="figure-caption" data-es="Comparación directa entre el GA con acciones por sitio (rojo) y el DQN original (negro): probabilidad de transmisión máxima vs longitud de cadena (a) y evolución temporal de P(t) para N=32 (b)." data-en="Direct comparison between the GA with action-by-site (red) and the original DQN (black): maximum transmission probability vs chain length (a) and time evolution of P(t) for N=32 (b).">Comparación directa entre el GA con acciones por sitio (rojo) y el DQN original (negro): probabilidad de transmisión máxima vs longitud de cadena (a) y evolución temporal de P(t) para N=32 (b).</p>
                     </div>
 
                     <div class="figure-block wide">
                         <h3 data-es="Tiempos de CPU" data-en="CPU Times">Tiempos de CPU</h3>
-                        <img src="Dynamic-Control/zhang_drl_ga_cpu_times_ls.png" alt="Tiempos de CPU">
+                        <img src="Dynamic-Control/zhang_drl_ga_cpu_times_ls.png" width="7948" height="3832" alt="Tiempos de CPU">
                         <p class="figure-caption" data-es="Tiempos de ejecución requeridos por GA (rojo) y DQN (negro) para alcanzar sus criterios de convergencia, en escala logarítmica." data-en="Running times required by GA (red) and DQN (black) to reach their convergence criteria, on a logarithmic scale.">Tiempos de ejecución requeridos por GA (rojo) y DQN (negro) para alcanzar sus criterios de convergencia, en escala logarítmica.</p>
                     </div>
 
@@ -226,17 +226,17 @@
                     <div class="figure-grid-3">
                         <div class="figure-block">
                             <h3 data-es="N=8" data-en="N=8">N=8</h3>
-                            <img src="Dynamic-Control/action_distribution_n8.png" alt="Distribución de acciones N=8">
+                            <img src="Dynamic-Control/action_distribution_n8.png" width="7965" height="3868" alt="Distribución de acciones N=8">
                             <p class="figure-caption" data-es="Frecuencia de uso de cada sitio (0 = sin acción)." data-en="Usage frequency of each site (0 = no action).">Frecuencia de uso de cada sitio (0 = sin acción).</p>
                         </div>
                         <div class="figure-block">
                             <h3 data-es="N=16" data-en="N=16">N=16</h3>
-                            <img src="Dynamic-Control/action_distribution_n16.png" alt="Distribución de acciones N=16">
+                            <img src="Dynamic-Control/action_distribution_n16.png" width="7965" height="3868" alt="Distribución de acciones N=16">
                             <p class="figure-caption" data-es="Frecuencia de uso de cada sitio (0 = sin acción)." data-en="Usage frequency of each site (0 = no action).">Frecuencia de uso de cada sitio (0 = sin acción).</p>
                         </div>
                         <div class="figure-block">
                             <h3 data-es="N=32" data-en="N=32">N=32</h3>
-                            <img src="Dynamic-Control/action_distribution_n32.png" alt="Distribución de acciones N=32">
+                            <img src="Dynamic-Control/action_distribution_n32.png" width="7965" height="3868" alt="Distribución de acciones N=32">
                             <p class="figure-caption" data-es="Frecuencia de uso de cada sitio (0 = sin acción)." data-en="Usage frequency of each site (0 = no action).">Frecuencia de uso de cada sitio (0 = sin acción).</p>
                         </div>
                     </div>
@@ -249,7 +249,7 @@
                     <h2 data-es="GA para Cadenas Largas" data-en="GA for Large Chains">GA para Cadenas Largas</h2>
 
                     <div class="figure-block wide">
-                        <img src="Dynamic-Control/genetic_for_large_dims.png" alt="GA para cadenas largas">
+                        <img src="Dynamic-Control/genetic_for_large_dims.png" width="12112" height="4932" alt="GA para cadenas largas">
                         <p class="figure-caption" data-es="Probabilidad de transmisión vs longitud de cadena, hasta N=128. Los cuadrados son el mejor valor sobre M poblaciones iniciales (alcanza el objetivo de 0.99 hasta N≤60); los círculos son el promedio de los máximos, que decae más rápido. Aun así, el GA mantiene probabilidades máximas mayores a 0.97 en cadenas de 128 qubits." data-en="Transmission probability vs chain length, up to N=128. Squares are the best value over M initial populations (reaches the 0.99 target for N≤60); circles are the average of the maxima, which decays faster. Even so, the GA maintains maximum probabilities above 0.97 for chains of 128 qubits.">Probabilidad de transmisión vs longitud de cadena, hasta N=128. Los cuadrados son el mejor valor sobre M poblaciones iniciales (alcanza el objetivo de 0.99 hasta N≤60); los círculos son el promedio de los máximos, que decae más rápido. Aun así, el GA mantiene probabilidades máximas mayores a 0.97 en cadenas de 128 qubits.</p>
                     </div>
 
