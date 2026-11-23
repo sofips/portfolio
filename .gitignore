@@ -10,3 +10,9 @@ Thumbs.db
 # Accidental nested project clones (keep only the built HTML page + assets
 # under ai-projects/, not the source repo itself)
 /menu-chatbot-hybrid/
+
+# Source material kept locally for reference (notebooks, reference code,
+# model checkpoints, unlinked PDFs/posters, draft .md notes) that the live
+# site never serves — mirrors the original paths under each project folder.
+# Not published now that the repo is public.
+/archivo/
